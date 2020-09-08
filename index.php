@@ -1,6 +1,8 @@
 <!-- index.php?action=listPosts example -->
 
+
 <?php 
+include('/assets/header.html');
 
 require('./controller/controller.php');
 
