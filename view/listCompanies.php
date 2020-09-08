@@ -4,11 +4,20 @@
 <h1> COGIP : Companies Directory </h1>
 
 <?php
+    echo "<table class='table'>
+                <tr>
+                    <th scope='col'>Name</th>
+                    <th scope='col'>TVA</th>
+                    <th scope='col'>Country</th>
+                </th>";
     while($row = $list->fetch()){
-        echo $row['company_name'] . "<br />";
-        echo $row['country'] . "<br />";
-        echo $row['company_vat'] . "<br />";
+        echo "<tr>";
+        echo "<td>" . $row['company_name'] . "</td>";
+        echo "<td>" . $row['country'] . "</td>";
+        echo "<td>" . $row['company_vat'] . "</td>";
+        echo "</tr>";
     }
+    echo "</table>";
 
     $content = ob_get_clean();
     require('template.php');
