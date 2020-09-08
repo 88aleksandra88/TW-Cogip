@@ -1,5 +1,6 @@
 <?php 
 
+require_once('../db/db.php');
 require('model.php');
 
 function listInvoices()
