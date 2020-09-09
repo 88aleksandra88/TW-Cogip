@@ -1,8 +1,9 @@
 <?php 
-require('controller/controller.php');
+require('controller.php');
 
 if(isset($_GET['action'])){
     if($_GET['action'] == "listCompanies"){
+        echo 'indextest';
         listCompanies();
     } else {
         echo 'Error: no company list available';

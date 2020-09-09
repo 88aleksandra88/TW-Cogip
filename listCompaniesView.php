@@ -20,5 +20,6 @@
     echo "</table>";
 
     $content = ob_get_clean();
-    require('./base.php');
+    
+    require('base.php');
 ?>
