@@ -1,4 +1,10 @@
-<?php $title = "COGIP - List of companies"; ?>
+
+<?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+$title = "COGIP - List of companies"; ?>
 
 <?php ob_start(); ?>
 <h1> COGIP : Companies Directory </h1>
