@@ -8,6 +8,7 @@ require('./controller/controller.php');
 if(isset($_GET['action'])){
     if($_GET['action'] == "listCompanies"){
         echo 'indextest';
+        providersListCompanies();
         listCompanies();
     } else {
         echo 'Error: no company list available';

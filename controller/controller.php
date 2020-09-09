@@ -10,13 +10,14 @@ require_once('./model/CompanyManager.php');
 // require('../model/InvoiceManager.php');
 // require('../model/LoginManager.php');
 
-
-
 function listCompanies()
 {
-   $clientsList = getClientsCompanies();
+   $clientsList = getClientsCompanies();    
+   require('./view/listCompaniesView.php');
+}
+
+function providersListCompanies(){
    $providersList = getProvidersCompanies();
-    
    require('./view/listCompaniesView.php');
 }
 

@@ -36,9 +36,9 @@ $title = "COGIP - List of companies"; ?>
     </th>";
     while($row = $providersList->fetch()){
             echo "<tr>";
-            echo "<td>" . $row['company_name'] . "</td>";
-            echo "<td>" . $row['country'] . "</td>";
-            echo "<td>" . $row['company_vat'] . "</td>";
+            echo "<td>" . $row['first_name'] . "</td>";
+            echo "<td>" . $row['last_name'] . "</td>";
+            echo "<td>" . $row['email'] . "</td>";
             echo "</tr>";
     }
     echo "</table>";
