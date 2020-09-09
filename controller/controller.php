@@ -1,6 +1,7 @@
 <?php 
 
-require('model/model.php');
+require_once('../db/db.php');
+require('model.php');
 
 function listCompanies(){
    $list = getListCompanies();
