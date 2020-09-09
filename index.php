@@ -15,6 +15,9 @@ if(isset($_GET['action'])){
     else if($_GET['action'] == "listInvoices"){
         listInvoices();
     }
+    else if($_GET['action'] == "adminPanel"){
+        adminPanel();
+    }
 }
 else {
     echo "Error: action not defined";

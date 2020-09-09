@@ -3,40 +3,41 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// require('../model/AdminManager.php');
+require_once('./model/AdminManager.php');
 // require_once('Connection.php');
-require_once('./model/CompanyManager.php');
-// require('../model/ContactManager.php');
-// require('../model/InvoiceManager.php');
-// require('../model/LoginManager.php');
+// require_once('./model/CompanyManager.php');
+// require_once('./model/ContactManager.php');
+// require_once('./model/InvoiceManager.php');
+// require('./model/LoginManager.php');
 
-
-
-function listCompanies()
-{
-   $list = getListCompanies();
-    
-   require('./view/listCompaniesView.php');
-}
-
-
-// function invoice()
+// function listCompanies()
 // {
-//     $invoiceManager = new InvoiceManager();
-
-//     $invoice = $invoiceManager->getPost($_GET['id']);
-
-//     require('../view/invoiceView.php');
+//    $list = getListCompanies();
+    
+//    require('./view/listCompaniesView.php');
 // }
 
-function listContacts() {
+// function listContacts() 
+// {
+//    $list = getListContacts(); 
 
-   $list = getListContacts();
-   require('view/listContactsView.php');
-}
+//    require('./view/listContactsView.php');
+// }
 
-function listInvoices() {
+// function listInvoices() 
+// {
+//    $list = getListInvoices(); 
 
-   $list = getListInvoices();
-   require('view/listInvoicesView.php');
+//    require('./view/listInvoicesView.php');
+// }
+
+function adminPanel()
+{
+   $adminManager = new AdminManager();
+   $list = $adminManager->getLastInvoices();
+   $listDeux = $adminManager->getLastCompanies();
+   // $lastContacts = getLastContacts();
+   // $lastCompanies = getLastCompanies();
+
+   require('./view/adminView.php');
 }
