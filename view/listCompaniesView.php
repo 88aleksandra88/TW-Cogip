@@ -19,13 +19,11 @@ $title = "COGIP - List of companies"; ?>
     <th scope='col'>Country</th>
     </th>";
     while($row = $clientsList->fetch()){
-        if($row['company_type'] === "3"){
             echo "<tr>";
             echo "<td>" . $row['company_name'] . "</td>";
             echo "<td>" . $row['country'] . "</td>";
             echo "<td>" . $row['company_vat'] . "</td>";
             echo "</tr>";
-        }
     }
     echo "</table>";
 
@@ -37,13 +35,11 @@ $title = "COGIP - List of companies"; ?>
     <th scope='col'>Country</th>
     </th>";
     while($row = $providersList->fetch()){
-        if($row['company_type'] === "4"){
             echo "<tr>";
             echo "<td>" . $row['company_name'] . "</td>";
             echo "<td>" . $row['country'] . "</td>";
             echo "<td>" . $row['company_vat'] . "</td>";
             echo "</tr>";
-        }
     }
     echo "</table>";
 
