@@ -6,8 +6,47 @@ error_reporting(E_ALL);
 require('./controller/controller.php');
 
 if(isset($_GET['action'])) {
-    if($_GET['action'] == "listCompanies") {
-        listCompanies();
+    switch ($_GET['action']) {
+        case 'listCompanies':
+            listCompanies();
+            break;
+    
+        case 'listContacts':
+            listContacts();
+            break;
+    
+        case 'listInvoices':
+            listInvoices();
+            break;
+    
+        case 'detailCompany':
+            detailCompany();
+            break;
+    
+        case 'detailContact':
+            detailContact();
+            break;
+    
+        case 'detailInvoice':
+            detailInvoice();
+            break;
+        
+        case 'newCompany':
+            newCompany();
+            break;
+    
+        case 'newContact':
+            newContact();
+            break;
+    
+        case 'newInvoice':
+            newInvoice();
+            break;
+        
+        default:
+            echo "ERROR: action undefined :( </br>
+                (Check that you didn't make a typo in the URL ;)";
+            break;
     }
     else if($_GET['action'] == "listContacts") {
         listContacts();
@@ -27,7 +66,4 @@ if(isset($_GET['action'])) {
     else if($_GET['action'] == "detailInvoice") {
         detailInvoice();
     }
-}
-else {
-    echo "Error: action is undefined";
 }
