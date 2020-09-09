@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 try {
-    $dbcon = new PDO("mysql:host=localhost;dbname=cogip;port=8889","root","root");
+    $dbcon = new PDO("mysql:host=mysqldb;dbname=cogip;","root","root");
     echo'connection success';
 } catch (exception $e){
     echo'Connection failed' . $e->getMessage();

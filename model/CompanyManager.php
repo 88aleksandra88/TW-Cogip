@@ -3,10 +3,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-function getListCompanies()
+function getClientsCompanies($type)
 { 
     include_once('Connection.php');
-    $companyList =  $dbcon->query('SELECT * FROM companies');
+    $compList =  $dbcon->query('SELECT * FROM companies WHERE company_type = ' . $type);
 
-    return $companyList;
+    return $compList;
 }
