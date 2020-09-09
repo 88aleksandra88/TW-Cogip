@@ -21,3 +21,21 @@ function listInvoices() {
    $list = getListInvoices();
    require('view/listInvoicesView.php');
 }
+
+function detailCompany() {
+   
+   $details = getCompany();
+   require('view/companyView.php');
+}
+
+function detailContact() {
+
+   $details = getContact();
+   require('view/contactView.php');
+}
+
+function detailInvoice() {
+
+   $details = getInvoice();
+   require('view/invoiceView.php');
+}

@@ -13,7 +13,7 @@
                 </th>";
     while($row = $list->fetch()){
         echo "<tr>";
-        echo "<td>" . $row['invoice_number'] . "</td>";
+        echo "<td><a href='index.php?action=detailInvoice&id=".$row['id']."'>".$row['invoice_number']."</a></td>";
         echo "<td>" . $row['invoice_date'] . "</td>";
         echo "<td>" . $row['user_id'] . "</td>";
         echo "<td>" . $row['company_id'] . "</td>";
