@@ -1,16 +1,23 @@
 <?php
+require_once('./model/Connection.php');
 
-function getListContacts() { 
-    include_once('model/Connection.php');
-    $contactList =  $dbcon->query('SELECT * FROM users');
+class ContactManager extends Connection
+{
+    function getContact() 
+    {
+        $db = $this->dbConnect();
+        $i = $_GET['id'];
+        $contactDetails = $db->query('SELECT * FROM users WHERE id='.$i);
+    
+        return $contactDetails;
+    }
 
-    return $contactList;
+    function getListContacts() 
+    { 
+        $db = $this->dbConnect();
+        $contactList =  $db->query('SELECT * FROM users');
+
+        return $contactList;
+    }
 }
 
-function getContact() {
-    include_once('model/Connection.php');
-    $i = $_GET['id'];
-    $contactDetails = $dbcon->query('SELECT * FROM users WHERE id='.$i);
-
-    return $contactDetails;
-}
