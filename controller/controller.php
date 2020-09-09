@@ -10,3 +10,13 @@ function listCompanies(){
    $list = getListCompanies();
    require('view/listCompaniesView.php');
 }
+
+
+function invoice()
+{
+    $invoiceManager = new InvoiceManager();
+
+    $invoice = $invoiceManager->getPost($_GET['id']);
+
+    require('../view/invoiceView.php');
+}

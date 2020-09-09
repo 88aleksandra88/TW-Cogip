@@ -1,5 +1,5 @@
 <?php
-require_once('Connection.php');
+require('Connection.php');
 
 function getListCompanies()
 {
