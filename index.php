@@ -4,21 +4,15 @@
 <?php 
 include('/assets/header.html');
 
-require('./controller/controller.php');
+require('controller/controller.php');
 
-if(isset($_GET['action'])) {
-    if($_GET['action'] == 'listInvoices') {
-        listInvoices();
-    } 
-    elseif ($_GET['action'] == 'invoice'){
-        if(isset($_GET['id']) && $_GET['id'] > 0) {
-            invoice();
-        } 
-        else {
-            echo 'error : no invoice';
-        }
+if(isset($_GET['action'])){
+    if($_GET['action'] == "listCompanies"){
+        listCompanies();
+    } else {
+        echo 'Erreur..';
     }
+} else {
+    echo "Mauvaise page ?";
 }
-else {
-    listInvoice();
-}
+?>

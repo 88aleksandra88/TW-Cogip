@@ -1,18 +1,10 @@
 <?php 
 
-require('model.php');
+require('model/model.php');
 
-function listInvoices()
-{
-    $invoices = getInvoices();
-
-    require('invoicesListView.php');
+function listCompanies(){
+   $list = getListCompanies();
+   require('view/listCompanies.php');
 }
 
-function invoice()
-{
-    $invoice = getInvoice($_GET['id']);
-
-    require('invoiceView.php');
-}
-
+?>
