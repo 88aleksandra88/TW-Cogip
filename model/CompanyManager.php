@@ -7,6 +7,6 @@ function getClientsCompanies($type)
 { 
     include_once('Connection.php');
     $compList =  $dbcon->query('SELECT * FROM companies WHERE company_type = ' . $type);
-
+    
     return $compList;
 }

@@ -18,7 +18,7 @@ $title = "COGIP - List of companies"; ?>
     <th scope='col'>TVA</th>
     <th scope='col'>Country</th>
     </th>";
-    while($row = $list->fetch()){
+    while($row = $clientsList->fetch()){
         if($row['company_type'] === "3"){
             echo "<tr>";
             echo "<td>" . $row['company_name'] . "</td>";
@@ -36,7 +36,7 @@ $title = "COGIP - List of companies"; ?>
     <th scope='col'>TVA</th>
     <th scope='col'>Country</th>
     </th>";
-    while($row = $list->fetch()){
+    while($row = $providersList->fetch()){
         if($row['company_type'] === "4"){
             echo "<tr>";
             echo "<td>" . $row['company_name'] . "</td>";

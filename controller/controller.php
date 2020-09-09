@@ -14,8 +14,8 @@ require_once('./model/CompanyManager.php');
 
 function listCompanies()
 {
-   $clientList = getClientsCompanies();
-   $providersList = getProvidersCompanies();
+   $clientsList = getClientsCompanies("3");
+   $providersList = getClientsCompanies("4");
     
    require('./view/listCompaniesView.php');
 }
