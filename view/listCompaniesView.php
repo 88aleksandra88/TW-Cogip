@@ -18,7 +18,7 @@ $title = "COGIP - List of companies"; ?>
                 </th>";
     while($row = $list->fetch()){
         echo "<tr>";
-        echo "<td>" . $row['company_name'] . "</td>";
+        echo "<td><a href='index.php?action=detailCompany&id=".$row['id']."'>".$row['company_name']."</a></td>";
         echo "<td>" . $row['country'] . "</td>";
         echo "<td>" . $row['company_vat'] . "</td>";
         echo "</tr>";
