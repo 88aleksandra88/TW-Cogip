@@ -39,3 +39,18 @@ function detailInvoice() {
    $details = getInvoice();
    require('view/invoiceView.php');
 }
+
+function newCompany() {
+
+   require('view/newCompany.php');
+}
+
+function newContact() {
+   
+   require('view/newContact.php');
+}
+
+function newInvoice() {
+
+   require('view/newInvoice.php');
+}
