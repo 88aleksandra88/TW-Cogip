@@ -20,5 +20,5 @@
     echo "</table>";
 
     $content = ob_get_clean();
-    require('template.php');
+    require('base.php');
 ?>
