@@ -1,4 +1,4 @@
-<?php $title = "Companies list ! "; ?>
+<?php $title = "COGIP - List of companies"; ?>
 
 <?php ob_start(); ?>
 <h1> COGIP : Companies Directory </h1>
