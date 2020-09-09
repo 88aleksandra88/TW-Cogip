@@ -11,7 +11,6 @@ require_once('CompanyManager.php');
 
 function listCompanies()
 {
-    echo 'testcontrolleur';
    $list = getListCompanies();
     
    require('listCompaniesView.php');
