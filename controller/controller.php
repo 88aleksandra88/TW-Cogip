@@ -28,3 +28,15 @@ function listCompanies()
 
 //     require('../view/invoiceView.php');
 // }
+
+function listContacts() {
+
+   $list = getListContacts();
+   require('view/listContactsView.php');
+}
+
+function listInvoices() {
+
+   $list = getListInvoices();
+   require('view/listInvoicesView.php');
+}
