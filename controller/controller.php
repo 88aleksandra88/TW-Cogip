@@ -1,11 +1,12 @@
 <?php 
 
-require_once('../db/db.php');
-require('model.php');
+require('../model/AdminManager.php');
+require('../model/CompanyManager.php');
+require('../model/CompanyManager.php');
+require('../model/InvoiceManager.php');
+require('../model/LoginManager.php');
 
 function listCompanies(){
    $list = getListCompanies();
-   require('view/listCompanies.php');
+   require('view/listCompaniesView.php');
 }
-
-?>

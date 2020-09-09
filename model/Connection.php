@@ -35,4 +35,4 @@
         }
     }
 
-    $dbcon = new Connection('localhost', '8889', 'sql_php', 'root', 'root');
+    $dbcon = new Connection('localhost', '8889', 'cogip', 'root', 'root');
