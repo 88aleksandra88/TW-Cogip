@@ -1,7 +1,7 @@
 <?php 
 
 // require('../model/AdminManager.php');
-require_once('Connection.php');
+// require_once('Connection.php');
 require_once('CompanyManager.php');
 // require('../model/ContactManager.php');
 // require('../model/InvoiceManager.php');

@@ -36,9 +36,9 @@
 // var_dump($dbcon->dbConnect());
 // // $res =  $dbcon->dbConnect->query('SELECT * FROM companies');
 // // var_dump($res);
-try {
+// try {
     $dbcon = new PDO("mysql:host=localhost;dbname=cogip;port=8889","root","root");
     echo'connection success';
-} catch (exception $e){
-    echo'Connection failed' . $e->getMessage();
-}
+// } catch (exception $e){
+//     echo'Connection failed' . $e->getMessage();
+// }
