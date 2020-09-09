@@ -34,8 +34,8 @@
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">Members section</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/Login/login.php">Log in</a>
-                            <a class="dropdown-item" href="/Login/logout.php">Log out</a>
+                            <a class="dropdown-item" href="/login must be split/login.php">Log in</a>
+                            <a class="dropdown-item" href="/login must be split/logout.php">Log out</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/login must be split/registration.php">Register</a>
                         </div>
