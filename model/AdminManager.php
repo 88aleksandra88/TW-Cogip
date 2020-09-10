@@ -12,7 +12,7 @@ class AdminManager extends Connection
 {
     function getLastInvoices()
     { 
-        $result = $this->dbConnect()->query('SELECT invoice_number, user_id  FROM invoices ORDER BY invoice_date DESC LIMIT 0, 5');
+        $result = $this->dbConnect()->query('SELECT invoices.invoice_number, users.last_name, users.first_name  FROM invoices INNER JOIN users ON invoices.user_id=users.id ORDER BY invoice_date DESC LIMIT 0, 5');
 
         return $result;
     }
@@ -26,7 +26,7 @@ class AdminManager extends Connection
 
     function getLastContacts()
     {
-        $result = $this->dbConnect()->query('SELECT first_name, last_name, email FROM users');
+        $result = $this->dbConnect()->query('SELECT first_name, last_name, email FROM users ORDER BY last_name DESC LIMIT 0, 5');
 
         return $result;
     }
