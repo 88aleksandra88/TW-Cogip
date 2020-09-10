@@ -13,74 +13,74 @@ class Controller
 {
    function adminPanel()
    {
-      $adminManager = new AdminManager();
-      $lastInvoices = $adminManager->getLastInvoices();
-      $lastCompanies = $adminManager->getLastCompanies();
-      $lastContacts = $adminManager->getLastContacts();
+      $lastInvoices = (new AdminManager)->getLastInvoices();
+      $lastCompanies = (new AdminManager)->getLastCompanies();
+      $lastContacts = (new AdminManager)->getLastContacts();
 
       require('./view/adminView.php');
    }
 
-
    function detailCompany() 
    {
-      $companyManager = new CompanyManager();
-      $details = $companyManager->getCompany();
+      $details = (new CompanyManager)->getCompany();
 
       require('./view/companyView.php');
    }
 
-
    function listCompanies()
    {  
-      $companyManager = new CompanyManager();
-      $clientsList = $companyManager->getClientsCompany();
-      $providersList = $companyManager->getProvidersCompany();
+      $clientsList = (new CompanyManager)->getClientsCompany();
+      $providersList = (new CompanyManager)->getProvidersCompany();
       
       require('./view/listCompaniesView.php');
    }
 
+   function newCompany() 
+   {
+      $newCompany = (new CompanyManager)->newCompany();
+
+      require('view/newCompany.php');
+   }
+
    function detailContact() 
    {
-      $contactManager = new ContactManager();
-      $detailContact = $contactManager->getContact();
+      $detailContact = (new ContactManager)->getContact();
 
       require('./view/contactView.php');
    }
 
    function listContacts() 
    {
-      $contactManager = new ContactManager();
-      $listContacts = $contactManager->getListContacts(); 
+      $listContacts = (new ContactManager)->getListContacts(); 
 
       require('./view/listContactsView.php');
    }
-}
 
+   function newContact() 
+   {
+      $newContact = (new ContactManager)->newContact();
+      
+      require('view/newContact.php');
+   }
 
-// function invoice()
-// {
-//     $invoiceManager = new InvoiceManager();
+   function detailInvoice() 
+   {
+      $detailInvoice = (new InvoiceManager)->getInvoice();
 
+      require('view/invoiceView.php');
+   }
 
+   function listInvoices() 
+   {
+      $listInvoices = (new InvoiceManager)->getListInvoices(); 
 
-function detailInvoice() {
+      require('./view/listInvoicesView.php');
+   }
 
-   $details = getInvoice();
-   require('view/invoiceView.php');
-}
+   function newInvoice() 
+   {
+      $listInvoices = (new InvoiceManager)->newInvoice(); 
 
-function newCompany() {
-
-   require('view/newCompany.php');
-}
-
-function newContact() {
-   
-   require('view/newContact.php');
-}
-
-function newInvoice() {
-
-   require('view/newInvoice.php');
+      require('view/newInvoice.php');
+   }
 }

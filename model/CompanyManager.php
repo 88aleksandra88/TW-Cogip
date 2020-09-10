@@ -24,17 +24,26 @@ class CompanyManager extends Connection
         return $result;
     }
 
-    function getClientsCompany(){ 
+    function getClientsCompany()
+    { 
         $db = $this->dbConnect();
         $result = $db->query('SELECT *, company_name AS company,  company_vat AS vat FROM companies WHERE company_type = 3');
 
         return $result;
     }
 
-    function getProvidersCompany(){
+    function getProvidersCompany()
+    {
         $db = $this->dbConnect();
         $result = $db->query('SELECT *, company_name AS company,  company_vat AS vat  FROM companies WHERE company_type = 4');
 
         return $result;
+    }
+
+    function newCompany()
+    {
+        $db = $this->dbConnect();
+        //! Missing function
+
     }
 }
