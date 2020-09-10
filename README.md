@@ -21,6 +21,7 @@ This is the first MVC-oriented TeamWork.
 ### Techno 
 *   PHP vanilla
 *   MVC-oriented
+*   OOP-Thinking
 *   SQL through MySql
 *   SASS & Bootstrap
 
@@ -29,12 +30,13 @@ This is the first MVC-oriented TeamWork.
 * Learn MVC basics
 * Upgrade PHP stack
 * Upgrade SQL stack
-* Learn deeper relationnal databse management 
+* Upgrade OOP-Thinking stack
+* Learn deeper relationnal database management 
 * Upgrade knowledge in login system / Restricted access page
 
 
 ## Collaborators
-:star:[François Wauters](https://github.com/fwauters)
+:star:[François Wauters](https://github.com/fwauters)   
 :star:[Aleksandra Slovik](https://github.com/88aleksandra88)  
 :star:[Robin Jacquemart](https://github.com/JackRob)  
 :star:[Nicolas Denoël](https://github.com/nicode-io/) 
