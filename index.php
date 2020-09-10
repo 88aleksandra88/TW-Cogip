@@ -5,11 +5,14 @@ error_reporting(E_ALL);
 
 require('./controller/controller.php');
 
+$controller = new Controller();
+
+
 if(isset($_GET['action'])) 
 {
     if($_GET['action'] == "listContacts") 
     {
-        listContacts();
+        $controller->listContacts();
     }
     else if($_GET['action'] == "listInvoices") 
     {
@@ -21,11 +24,11 @@ if(isset($_GET['action']))
     }
     else if($_GET['action'] == "detailCompany") 
     {
-        detailCompany();
+        $controller->detailCompany();
     }
     else if($_GET['action'] == "detailContact") 
     {
-        detailContact();
+        $controller->detailContact();
     }
     else if($_GET['action'] == "newCompany") 
     {
@@ -34,10 +37,10 @@ if(isset($_GET['action']))
     else if($_GET['action'] == "newInvoice") 
     {
         newInvoice();
-    if($_GET['action'] == "listCompanies"){
-        echo 'indextest';
-        providersListCompanies();
-        listCompanies();
+    }
+   else if($_GET['action'] == "listCompanies"){
+        //  listCompanies();
+         $controller->listCompanies();
     } else {
         echo "ERROR: action undefined :( </br>
                 (Check that you didn't make a typo in the URL ;)";

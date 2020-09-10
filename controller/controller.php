@@ -51,7 +51,7 @@ class Controller
    function listContacts() 
    {
       $contactManager = new ContactManager();
-      $listContacts = $contaxtManager->getListContacts(); 
+      $listContacts = $contactManager->getListContacts(); 
 
       require('./view/listContactsView.php');
    }
@@ -60,17 +60,16 @@ class Controller
 
 
 
-function listInvoices() 
-function listCompanies()
-{
-   $clientsList = getClientsCompanies();    
-   require('./view/listCompaniesView.php');
-}
+// function listCompanies()
+// {
+//    $clientsList = getClientsCompany();    
+//    require('./view/listCompaniesView.php');
+// }
 
-function providersListCompanies(){
-   $providersList = getProvidersCompanies();
-   require('./view/listCompaniesView.php');
-}
+// function providersListCompanies(){
+//    $providersList = getProvidersCompany();
+//    require('./view/listCompaniesView.php');
+// }
 
 
 // function invoice()

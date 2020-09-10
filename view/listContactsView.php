@@ -11,7 +11,7 @@ ob_start();
                     <th scope='col'>Email</th>
                     <th scope='col'>Company ID</th>
                 </th>";
-    while($row = $list->fetch()){
+    while($row = $listContacts->fetch()){
         echo "<tr>";
         echo "<td><a href='index.php?action=detailContact&id=".$row['id']."'>".$row['first_name']."</a></td>";
         echo "<td><a href='index.php?action=detailContact&id=".$row['id']."'>".$row['last_name']."</a></td>";
