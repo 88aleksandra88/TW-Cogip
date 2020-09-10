@@ -9,40 +9,36 @@ class CompanyManager extends Connection
 {
     function getCompany() 
     {
-        $db = $this->dbConnect();
-        $i = $_GET['id'];
-        $result = $db->query('SELECT * FROM companies WHERE id='.$i);
+        // $id = $_GET['id'];
+        $result = $this->dbConnect()->query('SELECT * FROM companies  WHERE companies.id=1' );
     
         return $result;
     }
 
     function getListCompanies() 
     { 
-        $db = $this->dbConnect();
-        $result =  $db->query('SELECT * FROM companies');
+        $result =  $this->dbConnect()->query('SELECT * FROM companies');
     
         return $result;
     }
 
     function getClientsCompany()
     { 
-        $db = $this->dbConnect();
-        $result = $db->query('SELECT *, company_name AS company,  company_vat AS vat FROM companies WHERE company_type = 3');
+        $result = $this->dbConnect()->query('SELECT *, company_name AS company,  company_vat AS vat FROM companies WHERE company_type = 3');
 
         return $result;
     }
 
     function getProvidersCompany()
     {
-        $db = $this->dbConnect();
-        $result = $db->query('SELECT *, company_name AS company,  company_vat AS vat  FROM companies WHERE company_type = 4');
+        $result = $this->dbConnect()->query('SELECT *, company_name AS company,  company_vat AS vat  FROM companies WHERE company_type = 4');
 
         return $result;
     }
 
     function newCompany()
     {
-        $db = $this->dbConnect();
+        // $db = $this->dbConnect()->;
         //! Missing function
 
     }

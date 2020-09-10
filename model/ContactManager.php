@@ -12,24 +12,22 @@ class ContactManager extends Connection
 {
     function getContact() 
     {
-        $db = $this->dbConnect();
-        $i = $_GET['id'];
-        $contactDetails = $db->query('SELECT * FROM users WHERE id='.$i);
+        // $i = $_GET['id'];
+        $contactDetails = $this->dbConnect()->query('SELECT * FROM users WHERE id=1');
     
         return $contactDetails;
     }
 
     function getListContacts() 
     { 
-        $db = $this->dbConnect();
-        $contactList =  $db->query('SELECT * FROM users');
+        $contactList = $this->dbConnect()->query('SELECT * FROM users');
 
         return $contactList;
     }
 
     function newContact() 
     { 
-        $db = $this->dbConnect();
+        // $newContact = $this->dbConnect();
         // ! Missing function
     }
 }

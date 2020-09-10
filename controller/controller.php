@@ -22,7 +22,7 @@ class Controller
 
    function detailCompany() 
    {
-      $details = (new CompanyManager)->getCompany();
+      $companyDetails = (new CompanyManager)->getCompany();
 
       require('./view/companyView.php');
    }
@@ -44,7 +44,7 @@ class Controller
 
    function detailContact() 
    {
-      $detailContact = (new ContactManager)->getContact();
+      $contactDetails = (new ContactManager)->getContact();
 
       require('./view/contactView.php');
    }
@@ -65,7 +65,7 @@ class Controller
 
    function detailInvoice() 
    {
-      $detailInvoice = (new InvoiceManager)->getInvoice();
+      $invoiceDetails = (new InvoiceManager)->getInvoice();
 
       require('view/invoiceView.php');
    }

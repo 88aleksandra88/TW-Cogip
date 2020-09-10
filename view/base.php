@@ -1,17 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="COGIP">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
-        crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <title> <?php $title ?></title>
     </head>     
     <body>
+
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img class="mb-2" src="" alt="logo" width="24" height="24">
+        <nav class="pl-5 navbar navbar-expand-lg navbar-light bg-light">
+            <img class="mb-2" src="" alt="logo" width="24" height="24">
             <a class="navbar-brand" href="#">COGIP</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
                 aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,12 +42,9 @@
                         </div>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
             </section>
         </nav>
+
         <!-- Main content -->
         <main role='main'>
 
@@ -57,44 +54,41 @@
         </main>
 
         <!-- Footer -->
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
-    <div class="row">
-      <div class="col-12 col-md">
-      <!--- Logo a mettre ---------->
-        <img class="mb-2" src="" alt="logo" width="24" height="24">
-        <small class="d-block mb-3 text-muted">&copy; 1950-2020</small>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Features</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Cool stuff</a></li>
-          <li><a class="text-muted" href="#">Random feature</a></li>
-          <li><a class="text-muted" href="#">Team feature</a></li>
-          <li><a class="text-muted" href="#">Stuff for developers</a></li>
-          <li><a class="text-muted" href="#">Another one</a></li>
-          <li><a class="text-muted" href="#">Last time</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Resource</a></li>
-          <li><a class="text-muted" href="#">Resource name</a></li>
-          <li><a class="text-muted" href="#">Another resource</a></li>
-          <li><a class="text-muted" href="#">Final resource</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>About</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Team</a></li>
-          <li><a class="text-muted" href="#">Locations</a></li>
-          <li><a class="text-muted" href="#">Privacy</a></li>
-          <li><a class="text-muted" href="#">Terms</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+        <footer class="pl-5 pt-4 my-md-5 pt-md-5 border-top">
+            <section class="row">
+                <article class="col-12 col-md">
+                <!--- Logo a mettre ---------->
+                    <img class="mb-2" src="" alt="logo" width="24" height="24">
+                    <small class="d-block mb-3 text-muted">&copy; 1950-2020</small>
+                </article>
+                <article class="col-6 col-md">
+                    <h5>Direct access</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="#">Invoices</a></li>
+                        <li><a class="text-muted" href="#">Contacts</a></li>
+                        <li><a class="text-muted" href="#">Companies</a></li>
+                    </ul>
+                </article>
+                <article class="col-6 col-md">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="#">Twitter</a></li>
+                        <li><a class="text-muted" href="#">Linkedin</a></li>
+                        <li><a class="text-muted" href="#">Facebook</a></li>
+                        <li><a class="text-muted" href="#">Instagram</a></li>
+                    </ul>
+                </article>
+                <article class="col-6 col-md">
+                    <h5>About</h5>
+                    <ul class="list-unstyled text-small">
+                    <li><a class="text-muted" href="#">Team</a></li>
+                    <li><a class="text-muted" href="#">Legal</a></li>
+                    <li><a class="text-muted" href="#">Privacy</a></li>
+                    <li><a class="text-muted" href="#">Terms</a></li>
+                    </ul>
+                </article>
+            </section>
+        </footer>
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
