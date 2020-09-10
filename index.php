@@ -16,7 +16,7 @@ if(isset($_GET['action']))
     }
     else if($_GET['action'] == "listInvoices") 
     {
-        listInvoices();
+        $controller->listInvoices();
     }
     else if($_GET['action'] == "adminPanel")
     {
