@@ -5,6 +5,9 @@ error_reporting(E_ALL);
 
 require('./controller/controller.php');
 
+$controller = new Controller();
+
+
 if(isset($_GET['action'])) 
 {
     if($_GET['action'] == "listContacts") 
@@ -36,8 +39,8 @@ if(isset($_GET['action']))
         newInvoice();
     }
    else if($_GET['action'] == "listCompanies"){
-        providersListCompanies();
-        listCompanies();
+        //  listCompanies();
+         $controller->listCompanies();
     } else {
         echo "ERROR: action undefined :( </br>
                 (Check that you didn't make a typo in the URL ;)";

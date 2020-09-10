@@ -60,16 +60,16 @@ class Controller
 
 
 
-function listCompanies()
-{
-   $clientsList = getClientsCompany();    
-   require('./view/listCompaniesView.php');
-}
+// function listCompanies()
+// {
+//    $clientsList = getClientsCompany();    
+//    require('./view/listCompaniesView.php');
+// }
 
-function providersListCompanies(){
-   $providersList = getProvidersCompany();
-   require('./view/listCompaniesView.php');
-}
+// function providersListCompanies(){
+//    $providersList = getProvidersCompany();
+//    require('./view/listCompaniesView.php');
+// }
 
 
 // function invoice()
