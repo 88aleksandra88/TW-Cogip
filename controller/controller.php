@@ -11,17 +11,6 @@ require_once('./model/InvoiceManager.php');
 
 class Controller 
 {
-     function getLogged(){
-
-      require('view/login.php');
-   }
-
-   function getRegister(){
-
-      require('view/registration.php');
-   }
-class Controller 
-{
    function adminPanel()
    {
       $lastInvoices = (new AdminManager)->getLastInvoices();
@@ -93,5 +82,15 @@ class Controller
       $listInvoices = (new InvoiceManager)->newInvoice(); 
 
       require('view/newInvoice.php');
+   }
+
+   function getLogged(){
+
+      require('view/login.php');
+   }
+
+   function getRegister(){
+
+      require('view/registration.php');
    }
 }

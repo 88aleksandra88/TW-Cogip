@@ -1,6 +1,6 @@
 <?php 
 // include('./view/base.php');
-require('controller/controller.php');
+require('controller/Controller.php');
 
 // A adapter avec le router etc....
 $controller = new Controller();
