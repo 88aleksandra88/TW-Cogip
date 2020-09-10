@@ -51,7 +51,7 @@ class Controller
    function listContacts() 
    {
       $contactManager = new ContactManager();
-      $listContacts = $contaxtManager->getListContacts(); 
+      $listContacts = $contactManager->getListContacts(); 
 
       require('./view/listContactsView.php');
    }
