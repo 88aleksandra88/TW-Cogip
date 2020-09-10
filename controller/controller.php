@@ -60,12 +60,12 @@ class Controller
 
 
 
-// function listInvoices() 
-// {
-//    $list = getListInvoices(); 
+function listInvoices() 
+{
+   $list = getListInvoices(); 
 
-//    require('./view/listInvoicesView.php');
-// }
+   require('./view/listInvoicesView.php');
+}
 
 
 
