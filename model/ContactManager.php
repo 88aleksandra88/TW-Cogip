@@ -19,5 +19,11 @@ class ContactManager extends Connection
 
         return $contactList;
     }
+
+    function newContact() 
+    { 
+        $db = $this->dbConnect();
+        // ! Missing function
+    }
 }
 
