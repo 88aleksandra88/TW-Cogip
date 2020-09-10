@@ -12,24 +12,23 @@ class AdminManager extends Connection
 {
     function getLastInvoices()
     { 
-        $db = $this->dbConnect();
-        $result = $db->query('SELECT invoice_number, user_id  FROM invoices ORDER BY invoice_date DESC LIMIT 0, 5');
+        $result = $this->dbConnect()->query('SELECT invoice_number, user_id  FROM invoices ORDER BY invoice_date DESC LIMIT 0, 5');
 
         return $result;
     }
 
     function getLastCompanies()
     {
-        $db = $this->dbConnect();
-        $result = $db->query('SELECT user_id  FROM invoices ORDER BY invoice_date DESC LIMIT 0, 5');
+        $result = ($this->dbConnect())->query('SELECT company_name, country  FROM companies');
 
         return $result;
     }
 
     function getLastContacts()
     {
-        $db = $this->dbConnect();
-        $result = $db->query('SELECT first_name, last_name, email FROM users ORDER BY last_name DESC LIMIT 0, 5');
+        $result = $this->dbConnect()->query('SELECT first_name, last_name, email FROM users');
+
+        return $result;
     }
 
 }

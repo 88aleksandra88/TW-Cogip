@@ -14,22 +14,42 @@ $title = "COGIP - Panel Admin"; ?>
                 <tr>
                     <th scope='col'>Invoice ID</th>
                     <th scope='col'>User ID</th>
-                </th>";
-    while($row = $list->fetch()){
+                </t>";
+    while($row = $lastInvoices->fetch()){
         echo "<tr>";
         echo "<td>" . $row['invoice_number'] . "</td>";
         echo "<td>" . $row['user_id'] . "</td>";
+        echo "<td><button>EDIT</button><button>DELETE</button></td>";
         echo "</tr>";
     }
     echo "</table>";
+
     echo "<table class='table'>
                 <tr>
-                    <th scope='col'>Invoice ID</th>
-                    <th scope='col'>User ID</th>
+                    <th scope='col'>Company Name</th>
+                    <th scope='col'>Country</th>
                 </th>";
-    while($row = $listDeux->fetch()){
+    while($row = $lastCompanies->fetch()){
         echo "<tr>";
-        echo "<td>" . $row['user_id'] . "</td>";
+        echo "<td>" . $row['company_name'] . "</td>";
+        echo "<td>" . $row['country'] . "</td>";
+        echo "<td><button>EDIT</button><button>DELETE</button></td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+
+    echo "<table class='table'>
+                <tr>
+                    <th scope='col'>Last Name</th>
+                    <th scope='col'>First Name</th>
+                    <th scope='col'>Email</th>
+                </th>";
+    while($row = $lastContacts->fetch()){
+        echo "<tr>";
+        echo "<td>" . $row['last_name'] . "</td>";
+        echo "<td>" . $row['first_name'] . "</td>";
+        echo "<td>" . $row['email'] . "</td>";
+        echo "<td><button>EDIT</button><button>DELETE</button></td>";
         echo "</tr>";
     }
     echo "</table>";

@@ -15,7 +15,6 @@ class Router extends Controller
     {
         if (isset($_GET['action'])) 
         {   
-            echo 'enter if';
             //& Admin routing
             if ($_GET['action'] == 'adminPanel')
             {
