@@ -3,7 +3,8 @@
 ob_start();
 $row = $details->fetch(); ?>
 
-<h1> COGIP - Contact: <?php echo $row['first_name']." ".$row['last_name']; ?></h1>
+<html>
+    <h1> COGIP - Contact: <?php echo $row['first_name']." ".$row['last_name']; ?></h1>
 
 <?php
     echo "<p>";
