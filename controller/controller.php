@@ -15,4 +15,9 @@ class Controller
 
       require('view/login.php');
    }
+
+   function getRegister(){
+
+      require('view/registration.php');
+   }
 }

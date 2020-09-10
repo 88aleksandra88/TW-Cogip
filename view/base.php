@@ -38,7 +38,7 @@
                             <a class="dropdown-item" href="?action=login">Log in</a>
                             <a class="dropdown-item" href="./login must be split/logout.php">Log out</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="./login must be split/registration.php">Register</a>
+                            <a class="dropdown-item" href="?action=registration">Register</a>
                         </div>
                     </li>
                 </ul>
