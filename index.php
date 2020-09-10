@@ -34,8 +34,8 @@ if(isset($_GET['action']))
     else if($_GET['action'] == "newInvoice") 
     {
         newInvoice();
-    if($_GET['action'] == "listCompanies"){
-        echo 'indextest';
+    }
+   else if($_GET['action'] == "listCompanies"){
         providersListCompanies();
         listCompanies();
     } else {

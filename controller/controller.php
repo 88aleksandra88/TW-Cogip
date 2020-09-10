@@ -60,15 +60,14 @@ class Controller
 
 
 
-function listInvoices() 
 function listCompanies()
 {
-   $clientsList = getClientsCompanies();    
+   $clientsList = getClientsCompany();    
    require('./view/listCompaniesView.php');
 }
 
 function providersListCompanies(){
-   $providersList = getProvidersCompanies();
+   $providersList = getProvidersCompany();
    require('./view/listCompaniesView.php');
 }
 
