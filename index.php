@@ -34,6 +34,10 @@ if(isset($_GET['action']))
     else if($_GET['action'] == "newInvoice") 
     {
         newInvoice();
+    if($_GET['action'] == "listCompanies"){
+        echo 'indextest';
+        providersListCompanies();
+        listCompanies();
     } else {
         echo "ERROR: action undefined :( </br>
                 (Check that you didn't make a typo in the URL ;)";

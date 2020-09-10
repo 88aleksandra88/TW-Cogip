@@ -61,13 +61,21 @@ class Controller
 
 
 function listInvoices() 
+function listCompanies()
 {
-   $list = getListInvoices(); 
+   $clientsList = getClientsCompanies();    
+   require('./view/listCompaniesView.php');
+}
 
-   require('./view/listInvoicesView.php');
+function providersListCompanies(){
+   $providersList = getProvidersCompanies();
+   require('./view/listCompaniesView.php');
 }
 
 
+// function invoice()
+// {
+//     $invoiceManager = new InvoiceManager();
 
 
 
