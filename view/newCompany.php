@@ -1,8 +1,13 @@
 <?php
     ob_start();
+
+    if (isset($_POST['company_name']) AND isset($_POST['company_vat'])) {
+        include_once('model/CompanyManager.php');
+        addCompany();        
+    };
 ?>
 <section class="row">
-    <form class="container col-10">
+    <form method="post" action="" class="container col-10">
         <label for="company_name">Company name</label>
         <input id="company_name" name="company_name" class="form-control" type="text" value="">
         <label for="country">Country</label>
@@ -259,6 +264,7 @@
             <option value="3">Client</option>
             <option value="4">Provider</option>
         </select>
+        <button class="btn btn-secondary" type="submit" name="button">Envoyer</button>
     </form>
 </section>
 <?php
