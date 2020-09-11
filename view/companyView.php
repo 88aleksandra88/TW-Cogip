@@ -8,7 +8,6 @@ ob_start();
         
 $title = "COGIP - Company Details"; 
 ?>
-
 <section class="jumbotron d-flex flex-row justify-content-end">
     <h1 class="pr-5 text-info"><i class="fas fa-building"></i> Company Details</h1>
 </section>
@@ -43,19 +42,17 @@ $title = "COGIP - Company Details";
             <table class='table'>
                 <h3><span class="badge badge-primary">Company contacts</span></h3>
                 <tr class="row bg-light text-primary">
-                    <th class='col-2'>Last Name</th>
+                    <th class='col-3'>Last Name</th>
                     <th class='col-3'>First Name</th>
                     <th class='col-3'>Email</th>
-                    <th class='col-2'>phone</th>
+                    <th class='col-3'>phone</th>
                 </tr>
                 <?php while($row = $companyContacts->fetch()){ ?>
                 <tr class="row">
-                    <td class="col-2"><a href='index.php?action=detailContact&id="<?= $row['id']?>"'><?= $row['last_name']?></a></td>
+                    <td class="col-3"><a href='index.php?action=detailContact&id="<?= $row['id']?>"'><?= $row['last_name']?></a></td>
                     <td class='col-3'><?= $row['first_name']?></td>
                     <td class='col-3'><a href="mailto:<?=$row['email']?>"><?= $row['email']?></a></td>
-                    <td class='col-2'><?= $row['phone']?></td>
-                    <td class='col-1'><button class="btn btn-primary btn-warning">EDIT</button></td>
-                    <td class='col-1'><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
+                    <td class='col-3'><?= $row['phone']?></td>
                 </tr>
                 <?php }?>
             </table>
@@ -66,15 +63,13 @@ $title = "COGIP - Company Details";
             <table class='table'>
                 <h3><span class="badge badge-primary">Invoices</span></h3>
                 <tr class="row bg-light text-primary">
-                    <th class='col-2'>Number</th>
+                    <th class='col-4'>Number</th>
                     <th class='col-8'>Content</th>
                 </tr>
                 <?php while($row = $companyInvoices->fetch()){ ?>
                 <tr class="row">
-                    <td class='col-2'><a href='index.php?action=detailInvoice&id="<?= $row['id']?>"'><?= $row['invoice_number']?></a></td>
+                    <td class='col-4'><a href='index.php?action=detailInvoice&id="<?= $row['id']?>"'><?= $row['invoice_number']?></a></td>
                     <td class='col-8'><?= $row['invoice_content']?></td>
-                    <td class='col-1'><button class="btn btn-primary btn-warning">EDIT</button></td>
-                    <td class='col-1'><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
                 </tr>
                 <?php }?>
             </table>

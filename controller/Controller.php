@@ -64,7 +64,7 @@ class Controller
 
    function newContact() 
    {
-      $newContact = (new ContactManager)->newContact();
+      $newContact = (new ContactManager)->addContact();
       
       require('view/newContact.php');
    }

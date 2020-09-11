@@ -49,18 +49,16 @@ $title = "COGIP - Invoice Details";
                 <h3><span class="badge badge-primary">Companies</span></h3>
                 <tr class="row bg-light text-primary">
                     <th class='col-3'>Company</th>
-                    <th class='col-2'>Country</th>
+                    <th class='col-3'>Country</th>
                     <th class='col-3'>Type</th>
-                    <th class='col-2'>VAT Number</th>
+                    <th class='col-3'>VAT Number</th>
                 </tr>
                 <?php while($row = $invoiceCompany->fetch()){ ?>
                 <tr class="row">
                     <td class='col-3'><a href='index.php?action=detailCompany&id="<?= $row['id']?>"'><?= $row['company_name']?></a></td>
-                    <td class='col-2'><?= $row['country']?></td>
+                    <td class='col-3'><?= $row['country']?></td>
                     <td class='col-3'><?= $row['company_type']?></td>
-                    <td class='col-2'><?= $row['company_vat']?></td>
-                    <td class='col-1'><button class="btn btn-primary btn-warning">EDIT</button></td>
-                    <td class='col-1'><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
+                    <td class='col-3'><?= $row['company_vat']?></td>
                 </tr>
                 <?php }?>
             </table>

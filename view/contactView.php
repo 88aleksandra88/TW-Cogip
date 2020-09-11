@@ -21,18 +21,17 @@ $title = "COGIP - Contact Details";
                 <h3><span class="badge badge-primary">Personnal informations</span></h3>
                 <tr class="row bg-light text-primary">
                     <th class='col-3'>Last Name</th>
-                    <th class='col-2'>First Name</th>
+                    <th class='col-3'>First Name</th>
                     <th class='col-3'>Email</th>
-                    <th class='col-2'>phone</th>
+                    <th class='col-3'>phone</th>
                 </tr>
                 <?php while($row = $contactDetails->fetch()){ ?>
                 <tr class="row">
                     <td class='col-3'><?= $row['last_name']?></td>
-                    <td class='col-2'><?= $row['first_name']?></td>
+                    <td class='col-3'><?= $row['first_name']?></td>
                     <td class='col-3'><a href="mailto:<?=$row['email']?>"><?= $row['email']?></a></td>
-                    <td class='col-2'><?= $row['phone']?></td>
-                    <td class='col-1'><button class="btn btn-primary btn-warning">EDIT</button></td>
-                    <td class='col-1'><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
+                    <td class='col-3'><?= $row['phone']?></td>
+
                 </tr>
                 <?php }?>
             </table>
@@ -44,16 +43,16 @@ $title = "COGIP - Contact Details";
                 <h3><span class="badge badge-primary">Companies</span></h3>
                 <tr class="row bg-light text-primary">
                     <th class='col-3'>Company</th>
-                    <th class='col-2'>Country</th>
+                    <th class='col-3'>Country</th>
                     <th class='col-3'>Type</th>
-                    <th class='col-2'>VAT Number</th>
+                    <th class='col-3'>VAT Number</th>
                 </tr>
                 <?php while($row = $contactCompanies->fetch()){ ?>
                 <tr class="row">
                     <td class='col-3'><a href='index.php?action=detailCompany&id="<?= $row['company_id']?>"'><?= $row['company_name']?></a></td>
-                    <td class='col-2'><?= $row['country']?></td>
+                    <td class='col-3'><?= $row['country']?></td>
                     <td class='col-3'><?= $row['company_type']?></td>
-                    <td class='col-2'><?= $row['company_vat']?></td>
+                    <td class='col-3'><?= $row['company_vat']?></td>
                     <td class='col-1'><button class="btn btn-primary btn-warning">EDIT</button></td>
                     <td class='col-1'><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
                 </tr>
@@ -66,15 +65,13 @@ $title = "COGIP - Contact Details";
             <table class='table'>
                 <h3><span class="badge badge-primary">Invoices</span></h3>
                 <tr class="row bg-light text-primary">
-                    <th class='col-1'>Number</th>
+                    <th class='col-3'>Number</th>
                     <th class='col-9'>Content</th>
                 </tr>
                 <?php while($row = $contactInvoices->fetch()){ ?>
                 <tr class="row">
                     <td><a href='index.php?action=detailInvoice&id="<?= $row['invoice_id']?>"'><?= $row['invoice_number']?></a></td>
                     <td class='col-9'><?= $row['invoice_content']?></td>
-                    <td class='col-1'><button class="btn btn-primary btn-warning">EDIT</button></td>
-                    <td class='col-1'><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
                 </tr>
                 <?php }?>
             </table>

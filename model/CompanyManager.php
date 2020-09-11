@@ -31,43 +31,38 @@ class CompanyManager extends Connection
 
     function getClientsCompany()
     { 
-        $result = $this->dbConnect()->query('SELECT *, company_name AS company,  company_vat AS vat FROM companies WHERE company_type = 3');
+        $result = $this->dbConnect()->query('SELECT *, company_name AS company,  company_vat AS vat FROM companies WHERE company_type = 3 ORDER BY company_name ASC');
 
         return $result;
     }
 
     function getProvidersCompany()
     {
-        $result = $this->dbConnect()->query('SELECT *, company_name AS company,  company_vat AS vat  FROM companies WHERE company_type = 4');
+        $result = $this->dbConnect()->query('SELECT *, company_name AS company,  company_vat AS vat  FROM companies WHERE company_type = 4 ORDER BY company_name ASC');
 
         return $result;
     }
 
-    function newCompany()
+    function addCompany() 
     {
-        // $db = $this->dbConnect()->;
-        //! Missing function
+        include_once('model/Connection.php');
 
+        $name = $_POST['company_name'];
+        $country = $_POST['country'];
+        $vat = $_POST['company_vat'];
+        $type = $_POST['company_type'];
+
+        $sql = "INSERT INTO companies (company_name, country, company_vat, company_type) 
+                            VALUES (:company_name, :country, :company_vat, :company_type)";
+            
+        $stmt = $dbcon->prepare($sql);
+        $stmt->execute(['company_name' => $name,
+                        'country' => $country,
+                        'company_vat' => $vat,
+                        'company_type' => $type]);
+
+                        $stmt->debugDumpParams();
     }
 
     
-}
-function addCompany() {
-    include_once('model/Connection.php');
-
-    $name = $_POST['company_name'];
-    $country = $_POST['country'];
-    $vat = $_POST['company_vat'];
-    $type = $_POST['company_type'];
-
-    $sql = "INSERT INTO companies (company_name, country, company_vat, company_type) 
-                        VALUES (:company_name, :country, :company_vat, :company_type)";
-        
-    $stmt = $dbcon->prepare($sql);
-    $stmt->execute(['company_name' => $name,
-                    'country' => $country,
-                    'company_vat' => $vat,
-                    'company_type' => $type]);
-
-                    $stmt->debugDumpParams();
 }

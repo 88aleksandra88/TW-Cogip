@@ -4,12 +4,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$title = "COGIP - List of companies"; ?>
+$title = "COGIP - Companies Directory";
 
-<!-- Content start -->
-<?php ob_start(); ?>
+// Content start
+ob_start(); 
+?>
+
 <section class="jumbotron d-flex flex-row justify-content-end">
-    <h1 class="mr-5 text-info"><i class="fas fa-building"></i>Company Directory</h1>
+    <h1 class="mr-5 text-info"><i class="fas fa-building"></i> Company Directory</h1>
 </section>
 <section class="container">
     <article class="column">
@@ -29,7 +31,7 @@ $title = "COGIP - List of companies"; ?>
                     <tr>
                         <td><a href='index.php?action=detailCompany&id=<?=$row['id']?>"'><?=$row['company']?></td>
                         <td><?=$row['country']?></td>
-                        <td><?=$row['vat']?></td>
+                        <td><a href="index.php?action=detailCompany&id=<?=$row['id']?>"><?=$row['vat']?></td></a>
                     </tr>
                     <?php } ?>
             </table>

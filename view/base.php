@@ -29,7 +29,16 @@
                         <a class="nav-link" href="?action=listCompanies">Companies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?action=listContacts">Contact</a>
+                        <a class="nav-link" href="?action=listContacts">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?action=newInvoice">New Invoice</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?action=newCompany">New Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?action=newContact">New Contact</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"

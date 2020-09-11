@@ -18,18 +18,21 @@ ob_start();
         <!-- Contact section -->
         <section class="col">
             <table class='table'>
-                <tr>
-                    <th scope='col'>Firstame</th>
-                    <th scope='col'>Lastname</th>
-                    <th scope='col'>Email</th>
-                    <th scope='col'>Company ID</th>
-                </th>
+                <h3><span class="badge badge-primary">Contacts</span></h3>
+                <thead class='thead-light'>
+                    <tr>
+                        <th scope='col'>Lastname</th>
+                        <th scope='col'>Firstame</th>
+                        <th scope='col'>Email</th>
+                        <th scope='col'>Company</th>
+                    </th>
+                </thead>
                 <?php  while($row = $listContacts->fetch()){ ?>
                 <tr>
-                    <td><a href="index.php?action=detailContact&id=<?=$row['id']?>"><?=$row['first_name']?></a></td>
                     <td><a href="index.php?action=detailContact&id=<?=$row['id']?>"><?=$row['last_name']?></a></td>
+                    <td><a href="index.php?action=detailContact&id=<?=$row['id']?>"><?=$row['first_name']?></a></td>
                     <td><a href="mailto:<?=$row['email']?>"><?= $row['email']?></a></td>
-                    <td><?= $row['company_id']?> </td>
+                    <td><a href="index.php?action=detailCompany&id=<?=$row['id']?>"><?= $row['company_name']?></a></td>
                 </tr>
             <?php } ?>
             </table>
@@ -37,8 +40,6 @@ ob_start();
     
     </article>
 </section>
-
-
 
 <?php
 // End recording
