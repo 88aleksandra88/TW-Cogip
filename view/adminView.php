@@ -10,15 +10,17 @@ ob_start();
 $title = "COGIP - Administration panel"; 
 ?>
 
-
 <section class="jumbotron d-flex flex-row justify-content-end">
-    <h1 class="mr-5">Administration Panel <span class="badge badge-info">Private</span></h1>
+    <h1 class="mr-5 text-info"><i class="fas fa-users-cog"></i> Administration Panel</h1>
 </section>
 <section class="container">
     <article class="row">
+
+        <!-- Display last created invoices -->
         <section class="col">
             <table class='table'>
-                <tr class="bg-info text-white">
+                <span class="badge badge-primary">Last 5 Invoices</span>
+                <tr class="row bg-light text-primary">
                     <th scope='col'>Invoice ID</th>
                     <th scope='col'>Last Name</th>
                     <th scope='col'>First Name</th>
@@ -33,9 +35,12 @@ $title = "COGIP - Administration panel";
                 <?php }?>
             </table>
         </section>
+
+        <!-- Display last created companies -->
         <section class="col">
             <table class='table'>
-                <tr class="bg-info text-white">
+                <span class="badge badge-primary">Last 5 Companies</span>
+                <tr class="row bg-light text-primary">
                     <th scope='col'>Company Name</th>
                     <th scope='col'>Country</th>
                 </tr>
@@ -49,9 +54,12 @@ $title = "COGIP - Administration panel";
                 <?php }?>
             </table>
         </section>
+
+        <!-- Display last created contacts -->
         <section class="col">
             <table class='table'>
-                <tr class="bg-info text-white">
+                <span class="badge badge-primary">Last five Contacts</span>
+                <tr class="row bg-light text-primary">
                     <th scope='col'>Last Name</th>
                     <th scope='col'>First Name</th>
                     <th scope='col'>Email</th>
@@ -66,6 +74,7 @@ $title = "COGIP - Administration panel";
                 <?php }?>
             </table>
         </section>
+
     </article>
 </section>
 
