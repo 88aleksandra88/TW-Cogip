@@ -25,9 +25,9 @@ $title = "COGIP - Administration panel";
                 </tr>
                 <?php while($row = $lastInvoices->fetch()){ ?>
                 <tr>
-                    <td><?= $row['invoice_number']?></td>
-                    <td><?= $row['last_name']?></td>
-                    <td><?= $row['first_name']?></td>
+                    <td><a href='index.php?action=detailInvoice&id="<?= $row['invoice_id']?>"'><?= $row['invoice_number']?></a></td>
+                    <td><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['last_name']?></a></td>
+                    <td><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['first_name']?></td></a>
                     <td><button class="btn btn-primary btn-warning">EDIT</button><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
                 </tr>
                 <?php }?>
@@ -43,7 +43,8 @@ $title = "COGIP - Administration panel";
                 <tr>
                     <td><?= $row['company_name']?></td>
                     <td><?= $row['country']?></td>
-                    <td><button class="btn btn-primary btn-warning">EDIT</button><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
+                    <td><button class="btn btn-primary btn-warning">EDIT</button></td>
+                    <td><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
                 </tr>
                 <?php }?>
             </table>

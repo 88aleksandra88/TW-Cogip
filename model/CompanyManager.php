@@ -7,12 +7,19 @@ error_reporting(E_ALL);
 
 class CompanyManager extends Connection
 {
-    function getCompany() 
+    function getCompanyDetails() 
     {
-        // $id = $_GET['id'];
-        $result = $this->dbConnect()->query('SELECT * FROM companies  WHERE companies.id=1' );
-    
-        return $result;
+        return $this->dbConnect()->query('SELECT * FROM companies  WHERE companies.id='.$_GET['id']);
+    }
+
+    function getCompanyContacts()
+    {
+        return $this->dbConnect()->query('SELECT * FROM users WHERE company_id='.$_GET['id']);
+    }
+
+    function getCompanyInvoices()
+    {
+        return $this->dbConnect()->query('SELECT * FROM invoices WHERE company_id='.$_GET['id']);
     }
 
     function getListCompanies() 
