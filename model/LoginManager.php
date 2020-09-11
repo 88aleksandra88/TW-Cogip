@@ -72,7 +72,7 @@ class LoginManager extends Connection {
 // LOGIN  PART
       function login(){
             $errors = array();
-            $db = mysqli_connect('localhost', 'root', '', 'cogip');
+            $db = mysqli_connect('mysqldb', 'root', 'root', 'cogip');
 
             if (isset($_POST['login_user'])) {
                   $username = mysqli_real_escape_string($db, $_POST['username']);
@@ -97,8 +97,8 @@ class LoginManager extends Connection {
                               $_SESSION['success'] = "You are now logged in";
                               header('location:   ./index.php');
                         }else {
-                               array_push($errors, "Wrong username/password combination");
-                               return $errors;
+                              //  array_push($errors, "Wrong username/password combination");
+                              echo "There is an error with your password";
                         }
                   }
             }

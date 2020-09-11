@@ -20,16 +20,16 @@
             <section class="collapse navbar-collapse" id="navbarColor03">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Invoices</a>
+                        <a class="nav-link" href="?action=listInvoices">Invoices</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Companies</a>
+                        <a class="nav-link" href="?action=listCompanies">Companies</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="?action=listContacts">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
