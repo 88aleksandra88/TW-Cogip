@@ -59,7 +59,7 @@
                 <article class="col-12 col-md">
                 <!--- Logo a mettre ---------->
                     <img class="mb-2" src="" alt="logo" width="24" height="24">
-                    <small class="d-block mb-3 text-muted">&copy; 1950-2020</small>
+                    <small class="d-block mb-3 text-muted">Vive la COGIP!</small>
                 </article>
                 <article class="col-6 col-md">
                     <h5>Direct access</h5>

@@ -8,45 +8,56 @@ $title = "COGIP - List of companies"; ?>
 
 <!-- Content start -->
 <?php ob_start(); ?>
-<h1 class="m-4 text-center"> COGIP : Companies Directory </h1>
+<section class="jumbotron d-flex flex-row justify-content-end">
+    <h1 class="mr-5 text-info"><i class="fas fa-building"></i>Company Directory</h1>
+</section>
+<section class="container">
+    <article class="column">
 
-<!--  Clients Table  -->
-<h2> Clients </h2>
-<table class='table'>
-    <thead class='thead-dark'>
-        <tr>
-            <th scope='col'>Name</th>
-            <th scope='col'>Country</th>
-            <th scope='col'>TVA</th>
-        </tr>
-    </thead>
-        <?php while($row = $clientsList->fetch()){ ?>
-        <tr>
-            <td><a href='index.php?action=detailCompany&id=<?=$row['id']?>"'><?=$row['company']?></td>
-            <td><?=$row['country']?></td>
-            <td><?=$row['vat']?></td>
-        </tr>
-        <?php } ?>
-</table>
+        <!-- Customer section -->
+        <section class="col">
+            <table class='table'>
+                <h2><span class="badge badge-primary">Clients</span></h2>
+                <thead class='thead-light'>
+                    <tr>
+                        <th scope='col'>Name</th>
+                        <th scope='col'>Country</th>
+                        <th scope='col'>TVA</th>
+                    </tr>
+                </thead>
+                    <?php while($row = $clientsList->fetch()){ ?>
+                    <tr>
+                        <td><a href='index.php?action=detailCompany&id=<?=$row['id']?>"'><?=$row['company']?></td>
+                        <td><?=$row['country']?></td>
+                        <td><?=$row['vat']?></td>
+                    </tr>
+                    <?php } ?>
+            </table>
+        </section>
 
- <!-- Providers Table -->
- <h2>Providers</h2>
-<table class='table'>
-        <thead class='thead-dark'>
-            <tr>
-                <th scope='col'>Name</th>
-                <th scope='col'>Country</th>
-                <th scope='col'>TVA</th>
-            </tr>
-        </thead>
-<?php while($row = $providersList->fetch()){?>
-        <tr>
-            <td><a href="index.php?action=detailCompany&id=<?=$row['id']?>"><?=$row['company']?></td>
-            <td><?=$row['country']?></td>
-            <td><?=$row['vat']?></td>
-        </tr>
-<?php } ?>
-</table>
+        <!-- Provider section -->
+        <section class="col">
+            <table class='table'>
+                    <h2><span class="badge badge-primary">Providers</span></h2>
+                    <thead class='thead-light'>
+                        <tr>
+                            <th scope='col'>Name</th>
+                            <th scope='col'>Country</th>
+                            <th scope='col'>TVA</th>
+                        </tr>
+                    </thead>
+            <?php while($row = $providersList->fetch()){?>
+                    <tr>
+                        <td><a href="index.php?action=detailCompany&id=<?=$row['id']?>"><?=$row['company']?></td>
+                        <td><?=$row['country']?></td>
+                        <td><?=$row['vat']?></td>
+                    </tr>
+            <?php } ?>
+            </table>
+        </section>
+
+    </article>
+</section>
 
 <?php
     $content = ob_get_clean();

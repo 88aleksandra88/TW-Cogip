@@ -18,7 +18,7 @@ $title = "COGIP - Company Details";
         <!-- Company details -->
         <section class="col">
             <table class='table'>
-                <span class="badge badge-primary">Company informations</span>
+                <h2><span class="badge badge-primary">Company informations</span></h2>
                 <tr class="row bg-light text-primary">
                     <th class='col-2'>VAT Number</th>
                     <th class='col-3'>Company Name</th>
@@ -41,7 +41,7 @@ $title = "COGIP - Company Details";
         <!-- Contacts for this company -->
         <section class="col">
             <table class='table'>
-                <span class="badge badge-primary">Company contacts</span>
+                <h2><span class="badge badge-primary">Company contacts</span></h2>
                 <tr class="row bg-light text-primary">
                     <th class='col-2'>Last Name</th>
                     <th class='col-3'>First Name</th>
@@ -64,7 +64,7 @@ $title = "COGIP - Company Details";
         <!-- Invoices for this company -->
         <section class="col">
             <table class='table'>
-                <span class="badge badge-primary">Invoices</span>
+                <h2><span class="badge badge-primary">Invoices</span></h2>
                 <tr class="row bg-light text-primary">
                     <th class='col-2'>Number</th>
                     <th class='col-8'>Content</th>

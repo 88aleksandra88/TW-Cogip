@@ -10,7 +10,7 @@ class Connection
 {
     protected function dbConnect()
     {
-        $db = new \PDO('mysql:host=localhost;dbname=cogip;charset=utf8', 'root', ''); 
+        $db = new \PDO('mysql:host=localhost;dbname=cogip;charset=utf8', 'root', 'root'); 
 
         return $db;
     }
