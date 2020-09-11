@@ -59,6 +59,14 @@ class Router extends Controller
             {
                 $this->newInvoice();
             } 
+            else if ($_GET['action'] == 'registration') 
+            {
+                $this->getRegister();
+            } 
+            else if ($_GET['action'] == 'login') 
+            {
+                $this->getLogged();
+            } 
             else 
             {
                 echo 'ERROR: action undefined :( </br>(Check that you didn\'t make a typo in the URL)';
@@ -66,6 +74,7 @@ class Router extends Controller
         } 
         else 
         {
+            $this->getLogged();
             echo 'No ACTION defined';
         }
     }

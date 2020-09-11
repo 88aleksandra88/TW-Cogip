@@ -25,7 +25,7 @@ $title = "COGIP - Log in"; ?>
                 <button type="submit" class="btn btn-primary" name="login_user">Login</button>
         </div>
         <p>
-                Not yet a member? <a href='?action=registration.php'>Sign up</a>
+                Not yet a member? <a href='?action=registration'>Sign up</a>
         </p>
         </form>
 </html>

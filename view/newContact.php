@@ -7,7 +7,7 @@
         <input id="first_name" name="first_name" class="form-control" type="text" value="">
         <label for="last_name">Last name</label>
         <input id="last_name" name="last_name" class="form-control" type="text" value="">
-        <label for="email">E-mail<?php echo "<em style='color:red;'>".$errors['email']."</em>"; ?></label>
+        <label for="email">E-mail<?= "<em style='color:red;'>".$errors['email']."</em>"; ?></label>
         <input id="email" name="email" class="form-control" type="email" placeholder="name@example.com" value="">
         <label for="company_id">Company ID</label>
         <select id="company_id" name="company_id" class="form-control">
