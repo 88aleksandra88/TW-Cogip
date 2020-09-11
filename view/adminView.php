@@ -14,23 +14,24 @@ $title = "COGIP - Administration panel";
     <h1 class="mr-5 text-info"><i class="fas fa-users-cog"></i> Administration Panel</h1>
 </section>
 <section class="container">
-    <article class="row">
+    <article class="column">
 
         <!-- Display last created invoices -->
         <section class="col">
             <table class='table'>
                 <span class="badge badge-primary">Last 5 Invoices</span>
                 <tr class="row bg-light text-primary">
-                    <th scope='col'>Invoice ID</th>
-                    <th scope='col'>Last Name</th>
-                    <th scope='col'>First Name</th>
+                    <th col='col-2'>Invoice ID</th>
+                    <th col='col-4'>Last Name</th>
+                    <th col='col-4'>First Name</th>
                 </tr>
                 <?php while($row = $lastInvoices->fetch()){ ?>
-                <tr>
-                    <td><a href='index.php?action=detailInvoice&id="<?= $row['invoice_id']?>"'><?= $row['invoice_number']?></a></td>
-                    <td><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['last_name']?></a></td>
-                    <td><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['first_name']?></td></a>
-                    <td><button class="btn btn-primary btn-warning">EDIT</button><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
+                <tr class="row">
+                    <td class='col-2'><a href='index.php?action=detailInvoice&id="<?= $row['invoice_id']?>"'><?= $row['invoice_number']?></a></td>
+                    <td class='col-4'><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['last_name']?></a></td>
+                    <td class='col-4'><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['first_name']?></td></a>
+                    <td class='col-1'><button class="btn btn-primary btn-warning">EDIT</button></td>
+                    <td class='col-1'><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
                 </tr>
                 <?php }?>
             </table>
@@ -41,8 +42,8 @@ $title = "COGIP - Administration panel";
             <table class='table'>
                 <span class="badge badge-primary">Last 5 Companies</span>
                 <tr class="row bg-light text-primary">
-                    <th scope='col'>Company Name</th>
-                    <th scope='col'>Country</th>
+                    <th col='col'>Company Name</th>
+                    <th col='col'>Country</th>
                 </tr>
                 <?php while($row = $lastCompanies->fetch()){ ?>
                 <tr>
@@ -60,9 +61,9 @@ $title = "COGIP - Administration panel";
             <table class='table'>
                 <span class="badge badge-primary">Last five Contacts</span>
                 <tr class="row bg-light text-primary">
-                    <th scope='col'>Last Name</th>
-                    <th scope='col'>First Name</th>
-                    <th scope='col'>Email</th>
+                    <th col='col-3'>Last Name</th>
+                    <th col='col-3'>First Name</th>
+                    <th col='col-4'>Email</th>
                 </tr>
                 <?php while($row = $lastContacts->fetch()){ ?>
                 <tr>
