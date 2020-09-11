@@ -87,13 +87,13 @@ class Controller
    }
 
    function getLogged(){
-      $login = (new LoginManager);
+      $login = new LoginManager;
       $login->login();
       require('view/login.php');
    }
 
    function getRegister(){
-      $register = (new LoginManager);
+      $register = new LoginManager;
       $register->register();
       require('view/registration.php');
    }
