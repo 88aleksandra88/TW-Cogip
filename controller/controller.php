@@ -7,7 +7,9 @@ require_once('./model/AdminManager.php');
 require_once('./model/CompanyManager.php');
 require_once('./model/ContactManager.php');
 require_once('./model/InvoiceManager.php');
-// require_once('./model/LoginManager.php');
+require_once('./model/LoginManager.php');
+// require_once('./model/errors.php');
+
 
 class Controller 
 {
@@ -90,12 +92,14 @@ class Controller
    }
 
    function getLogged(){
-
+      $login = new LoginManager;
+      $login->login();
       require('view/login.php');
    }
 
    function getRegister(){
-
+      $register = new LoginManager;
+      $register->register();
       require('view/registration.php');
    }
 }

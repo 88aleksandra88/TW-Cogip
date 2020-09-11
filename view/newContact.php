@@ -12,7 +12,7 @@
         <input id="first_name" name="first_name" class="form-control" type="text" value="">
         <label for="last_name">Last name</label>
         <input id="last_name" name="last_name" class="form-control" type="text" value="">
-        <label for="email">E-mail</label>
+        <label for="email">E-mail<?= "<em style='color:red;'>".$errors['email']."</em>"; ?></label>
         <input id="email" name="email" class="form-control" type="email" placeholder="name@example.com" value="">
         <label for="phone">Phone Number</label>
         <input id="phone" name="phone" class="form-control" type="text" placeholder="0400/000000" value="">
