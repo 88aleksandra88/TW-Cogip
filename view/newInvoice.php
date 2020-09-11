@@ -1,14 +1,15 @@
 <?php
     ob_start();
+
+    if (isset($_POST['invoice_number']) AND isset($_POST['invoice_content'])) {
+        include_once('model/InvoiceManager.php');
+        addInvoice();
+    };
 ?>
 <section class="row">
-    <form class="container col-10">
+    <form method="post" action="" class="container col-10">
         <label for="invoice_number">Invoice Number</label>
         <input id="invoice_number" name="invoice_number" class="form-control" type="number" value="">
-        <label for="invoice_date">Date</label>
-        <input id="invoice_date" name="invoice_date" class="form-control" type="date" value="">
-        <label for="email">E-mail<?php echo "<em style='color:red;'>".$errors['email']."</em>"; ?></label>
-        <input id="email" name="email" class="form-control" type="email" placeholder="name@example.com" value="">
         <label for="company_id">Company ID</label>
         <select id="company_id" name="company_id" class="form-control">
             <option value="1">1</option>
@@ -35,6 +36,9 @@
             <option value="9">9</option>
             <option value="10">10</option>
         </select>
+        <label for="invoice_content">Content</label>
+        <textarea id="invoice_content" name="invoice_content" class="form-control" value=""></textarea>
+        <button class="btn btn-secondary" type="submit" name="button">Envoyer</button>
     </form>
 </section>
 <?php
