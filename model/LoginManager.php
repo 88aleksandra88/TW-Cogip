@@ -97,6 +97,13 @@ class LoginManager extends Connection {
                               header('location:   ./index.php');
                         }else {
                                array_push($errors, "Wrong username/password combination");
+                               if (count($errors) > 0){
+                                   echo' <div class="error">';
+                                          foreach ($errors as $error){
+                                            array_push($errors, $error );
+                                          }
+                                    echo '</div>';
+                              }
                                return $errors;
                         }
                   }

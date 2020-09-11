@@ -13,7 +13,7 @@ $title = "COGIP - Log in"; ?>
         <h2>Login</h2>
 </div>
 <form method="post" action="index.php"> 
-<?php include('./model/errors.php'); ?>
+        <?= $errors ?>
         <div class="input-group">
                 <label>Username</label>
                 <input type="text" name="username" >

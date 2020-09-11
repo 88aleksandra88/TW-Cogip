@@ -1,6 +1,6 @@
 <?php  
 //$errors = ["Wrong username/password combination"];
-require("LoginManager.php");
+// require("LoginManager.php");
 if (count($errors) > 0){ ?>
   <div class="error">
   	<?php foreach ($errors as $error){ ?>
