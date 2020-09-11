@@ -18,7 +18,7 @@ $title = "COGIP - Invoice Details";
         <!-- Invoice details -->
         <section class="col">
             <table class="table">
-                <h2><span class="badge badge-primary">Invoice informations</span></h2>
+                <h3><span class="badge badge-primary">Invoice informations</span></h3>
                 <tr class="row bg-light text-primary">
                     <th class="col-4">Invoice ID</th>
                     <th class="col-4">Last Name</th>
@@ -46,7 +46,7 @@ $title = "COGIP - Invoice Details";
         <!-- Company for this invoice -->
         <section class="col">
             <table class='table'>
-                <h2><span class="badge badge-primary">Companies</span></h2>
+                <h3><span class="badge badge-primary">Companies</span></h3>
                 <tr class="row bg-light text-primary">
                     <th class='col-3'>Company</th>
                     <th class='col-2'>Country</th>

@@ -14,10 +14,10 @@ $title = "COGIP - List of companies"; ?>
 <section class="container">
     <article class="column">
 
-        <!-- Customer section -->
+        <!-- Clients section -->
         <section class="col">
             <table class='table'>
-                <h2><span class="badge badge-primary">Clients</span></h2>
+                <h3><span class="badge badge-primary">Clients</span></h3>
                 <thead class='thead-light'>
                     <tr>
                         <th scope='col'>Name</th>
@@ -38,7 +38,7 @@ $title = "COGIP - List of companies"; ?>
         <!-- Provider section -->
         <section class="col">
             <table class='table'>
-                    <h2><span class="badge badge-primary">Providers</span></h2>
+                    <h3><span class="badge badge-primary">Providers</span></h3>
                     <thead class='thead-light'>
                         <tr>
                             <th scope='col'>Name</th>
@@ -50,7 +50,7 @@ $title = "COGIP - List of companies"; ?>
                     <tr>
                         <td><a href="index.php?action=detailCompany&id=<?=$row['id']?>"><?=$row['company']?></td>
                         <td><?=$row['country']?></td>
-                        <td><?=$row['vat']?></td>
+                        <td><a href="index.php?action=detailCompany&id=<?=$row['id']?>"><?=$row['vat']?></a></td>
                     </tr>
             <?php } ?>
             </table>

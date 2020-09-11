@@ -5,9 +5,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require('./controller/Controller.php');
-// echo 'before class';
-// $this = new Controller();
-// echo 'after class';
 
 class Router extends Controller 
 {
@@ -74,7 +71,7 @@ class Router extends Controller
         } 
         else 
         {
-            $this->getLogged();
+            // $this->getLogged();
             echo 'No ACTION defined';
         }
     }

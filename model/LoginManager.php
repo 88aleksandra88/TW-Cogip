@@ -8,6 +8,7 @@ error_reporting(E_ALL);
 class LoginManager extends Connection {
 
       function register(){
+            $db = $this->dbConnect();
             session_start();
 
             $username = "";
@@ -16,7 +17,7 @@ class LoginManager extends Connection {
             $password = "";
             //$emailSanitized = "";
 
-            $db = mysqli_connect('localhost', 'root', '', 'cogip');
+            // $db = mysqli_connect('localhost', 'root', 'root', 'cogip');
 
             // REGISTER USER
             if (isset($_POST['reg_user'])) {

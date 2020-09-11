@@ -19,7 +19,7 @@ $title = "COGIP - Administration panel";
         <!-- Display last created invoices -->
         <section class="col">
             <table class='table'>
-                <h2><span class="badge badge-primary">Last 5 Invoices</span></h2>
+                <h3><span class="badge badge-primary">Last 5 Invoices</span></h3>
                 <tr class="row bg-light text-primary">
                     <th col='col-2'>Invoice ID</th>
                     <th col='col-4'>Last Name</th>
@@ -40,7 +40,7 @@ $title = "COGIP - Administration panel";
         <!-- Display last created companies -->
         <section class="col">
             <table class='table'>
-                <h2><span class="badge badge-primary">Last 5 Companies</span></h2>
+                <h3><span class="badge badge-primary">Last 5 Companies</span></h3>
                 <tr class="row bg-light text-primary">
                     <th col='col'>Company Name</th>
                     <th col='col'>Country</th>
@@ -59,7 +59,7 @@ $title = "COGIP - Administration panel";
         <!-- Display last created contacts -->
         <section class="col">
             <table class='table'>
-                <h2><span class="badge badge-primary">Last 5 Contacts</span></h2>
+                <h3><span class="badge badge-primary">Last 5 Contacts</span></h3>
                 <tr class="row bg-light text-primary">
                     <th col='col-3'>Last Name</th>
                     <th col='col-3'>First Name</th>
