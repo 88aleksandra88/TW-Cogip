@@ -10,12 +10,22 @@ require_once('./model/Connection.php');
 
 class ContactManager extends Connection
 {
-    function getContact() 
+    function getContactDetails() 
     {
-        // $i = $_GET['id'];
-        $contactDetails = $this->dbConnect()->query('SELECT * FROM users WHERE id=1');
-    
-        return $contactDetails;
+        $id = $_GET['id'];
+        return $this->dbConnect()->query('SELECT * FROM users WHERE id='.$id);
+    }
+
+    function getContactCompanies()
+    {
+        $id = $_GET['id'];
+        return $this->dbConnect()->query('SELECT companies.*, users.* FROM companies INNER JOIN users ON users.company_id=companies.id WHERE users.id='.$id);
+    }
+
+    function getContactInvoices()
+    {
+        $id = $_GET['id'];
+        return $this->dbConnect()->query('SELECT invoices.*, invoices.id AS invoice_id, users.*  FROM invoices INNER JOIN users ON invoices.user_id=users.id WHERE users.id='.$id);
     }
 
     function getListContacts() 

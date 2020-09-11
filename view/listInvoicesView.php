@@ -11,7 +11,7 @@
                     <th scope='col'>Contact ID</th>
                     <th scope='col'>Company ID</th>
                 </th>";
-    while($row = $list->fetch()){
+    while($row = $listInvoices->fetch()){
         echo "<tr>";
         echo "<td><a href='index.php?action=detailInvoice&id=".$row['id']."'>".$row['invoice_number']."</a></td>";
         echo "<td>" . $row['invoice_date'] . "</td>";
