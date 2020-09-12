@@ -6,6 +6,10 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 class LoginManager extends Connection {
+      public $er = "TEST";
+      public function getError(){
+            return $this->er;
+      }
 
       function register(){
             session_start();
@@ -69,7 +73,7 @@ class LoginManager extends Connection {
       }
            
 // LOGIN  PART
-      function login(){
+       function login(){
             $errors = array();
             $db = mysqli_connect('mysqldb', 'root', 'root', 'cogip');
 
@@ -99,7 +103,7 @@ class LoginManager extends Connection {
                               header('location:   ./index.php');
                         }else {
                               //  array_push($errors, "Wrong username/password combination");
-                              echo "Wrong information or account inexistant";
+                              return  "Wrong information or account inexistant";
                         }
                   }
             }

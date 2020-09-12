@@ -5,15 +5,17 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 // require('./model/errors.php');
 
+$logErr = new LoginManager();
+
 $title = "COGIP - Log in"; ?>
 
 <?php ob_start();?>
 <html>
-<?= $username ?>
 <div class="header">
         <h2>Login</h2>
 </div>
 <form method="post" action="index.php"> 
+        <?=$logErr->login() ?>
         <div class="input-group">
                 <label>Username</label>
                 <input type="text" name="username" >
