@@ -78,10 +78,12 @@ class LoginManager extends Connection {
                   $password = mysqli_real_escape_string($db, $_POST['password']);
             
                   if (empty($username)) {
-                         array_push($errors, "Username is required");
+                        //  array_push($errors, "Username is required");
+                        echo "Empty Username";
                   }
                   if (empty($password)) {
-                    array_push($errors, "Password is required");
+                  //   array_push($errors, "Password is required");
+                        echo "Empty Password";
                   }
             
                   if (count($errors) == 0) {
@@ -93,11 +95,11 @@ class LoginManager extends Connection {
                               echo "Vous êtes connecté ! ";
                               $_SESSION['username'] = $username;
                               $_SESSION['password'] = password_hash($password, PASSWORD_DEFAULT);
-                              $_SESSION['success'] = "You are now logged in";
+                              $_SESSION['success'] = "You are no connected !";
                               header('location:   ./index.php');
                         }else {
                               //  array_push($errors, "Wrong username/password combination");
-                              echo "There is an error with your password";
+                              echo "Wrong information or account inexistant";
                         }
                   }
             }

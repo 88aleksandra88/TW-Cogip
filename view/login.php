@@ -9,6 +9,7 @@ $title = "COGIP - Log in"; ?>
 
 <?php ob_start();?>
 <html>
+<?= $username ?>
 <div class="header">
         <h2>Login</h2>
 </div>
