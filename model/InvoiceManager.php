@@ -29,32 +29,27 @@ class InvoiceManager extends Connection
 
     function addInvoice() 
     {
-        include_once('model/Connection.php');
+        $number = "";
+        $invContent = "";
+        $idComp = "";
+        $idUser = "";
 
-        $number = $_POST['invoice_number'];
-        $content = $_POST['invoice_content'];
-        $idComp = $_POST['company_id'];
-        $idUser = $_POST['user_id'];
+        require('view/newInvoice.php');
 
         date_default_timezone_set('Europe/Brussels');
         $tz = date_default_timezone_get();
         $date = date('Y-m-d H:i:s');
-        echo $date;
 
         $sql = "INSERT INTO invoices (invoice_number, invoice_date, invoice_content, user_id, company_id) 
                             VALUES (:invoice_number, :invoice_date, :invoice_content, :user_id, :company_id)";
             
-        $stmt = $dbcon->prepare($sql);
+        $stmt = $this->dbConnect()->prepare($sql);
         $stmt->execute(['invoice_number' => $number,
                         'invoice_date' => $date,
-                        'invoice_content' => $content,
+                        'invoice_content' => $invContent,
                         'user_id' => $idUser,
                         'company_id' => $idComp]);
-
-        $stmt->debugDumpParams();
     }
-
-    
 }
 
 

@@ -1,9 +1,13 @@
 <?php
     ob_start();
 
-    if (isset($_POST['first_name']) AND isset($_POST['last_name']) AND isset($_POST['email'])) {
-        include_once('model/ContactManager.php');
-        addContact();
+    if (isset($_POST['first_name']) AND isset($_POST['last_name'])
+    AND isset($_POST['email']) AND isset($_POST['phone'])) {
+        $firstname = $_POST['first_name'];
+        $lastname = $_POST['last_name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $id = $_POST['company_id'];
     };
 ?>
 <section class="jumbotron d-flex flex-row justify-content-end">
@@ -17,7 +21,7 @@
             <input id="first_name" name="first_name" class="form-control" type="text" value="">
             <label class="p-1 mt-2 text-primary" for="last_name">Last name</label>
             <input id="last_name" name="last_name" class="form-control" type="text" value="">
-            <label class="p-1 mt-2 text-primary" for="email">E-mail<?= "<em style='color:red;'>".$errors['email']."</em>"; ?></label>
+            <label class="p-1 mt-2 text-primary" for="email">E-mail></label>
             <input id="email" name="email" class="form-control" type="email" placeholder="name@example.com" value="">
             <label class="p-1 mt-2 text-primary" for="phone">Phone Number</label>
             <input id="phone" name="phone" class="form-control" type="text" placeholder="0400/000000" value="">
