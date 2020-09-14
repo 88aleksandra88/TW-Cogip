@@ -69,6 +69,10 @@ class Router extends Controller
             {
                 $this->getLogged();
             } 
+            else if ($_GET['action'] == 'logout') 
+            {
+                $this->getLogout();
+            } 
             else 
             {
                 echo 'ERROR: action undefined :( </br>(Check that you didn\'t make a typo in the URL)';

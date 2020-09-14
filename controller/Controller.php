@@ -103,8 +103,14 @@ class Controller
 
    function getRegister(){
       $register = new LoginManager;
-      $register->register();
+      // $register->register(); 
       require('view/registration.php');
+   }
+
+   function getLogout(){
+      $logout = new LoginManager;
+      $logout->logout(); 
+      require('view/logout.php');
    }
 }
 
