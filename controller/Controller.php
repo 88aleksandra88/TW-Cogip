@@ -99,7 +99,7 @@ class Controller
 
    function getRegister(){
       $register = new LoginManager;
-      $register->register();
+      // $register->register();
       require('view/registration.php');
    }
 }

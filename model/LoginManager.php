@@ -6,20 +6,15 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 class LoginManager extends Connection {
-      public $er = "TEST";
-      public function getError(){
-            return $this->er;
-      }
 
       function register(){
             $db = $this->dbConnect();
-            session_start();
+            // session_start();
             $errors = array();
             $displayError = "";
 
             $username = "";
             $email    = "";
-            $errors = array(); 
             $password = "";
             //$emailSanitized = "";
 
@@ -58,11 +53,10 @@ class LoginManager extends Connection {
                         if ($user['email'] === $email) {
                               array_push($errors, "email already exists");
                         }
-                  }
+                  } 
 
-                  // Finally, register user if there are no errors in the form
-                  if (count($errors) == 0) {
-                        echo "On met tout dans la DB ! ";  // Test d'erreurs affichage
+                  if (count($errors) == 0) {      
+                        // echo "On met tout dans la DB ! ";  // Test d'erreurs affichage
                         $password = ($hashed_password);
 
                         $query = "INSERT INTO registration (username, email, password) 
@@ -70,8 +64,9 @@ class LoginManager extends Connection {
                         mysqli_query($db, $query);
                         $_SESSION['username'] = $username;
                         $_SESSION['success'] = "You are now logged in";
-                        header('location: ?action=login');
+                        // header('location: http://localhost:2018/TW-Cogip/index.php?action=login');
                   } else {
+                        echo "erreurs";
                         foreach($errors as $error){
                               $displayError .= '- ' . $error . '<br />';
                         }
@@ -82,7 +77,7 @@ class LoginManager extends Connection {
            
 // LOGIN  PART
        function login(){
-            $errors = array();
+            // $errors = array();
             $displayError = "";
             $db = mysqli_connect('mysqldb', 'root', 'root', 'cogip');
 
@@ -110,7 +105,7 @@ class LoginManager extends Connection {
                               $_SESSION['username'] = $username;
                               $_SESSION['password'] = password_hash($password, PASSWORD_DEFAULT);
                               $_SESSION['success'] = "You are no connected !";
-                              header('location:   ./index.php');
+                              header('location:   http://localhost:2018/TW-Cogip/index.php?action=adminPanel');
                         }else {
                                array_push($errors, "Wrong username/password combination");
                               // return  "Wrong information or account inexistant";

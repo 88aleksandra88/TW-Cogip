@@ -11,20 +11,22 @@ $title = "COGIP - Log in"; ?>
 
 <?php ob_start();?>
 <html>
-<div class="header">
-        <h2>Login</h2>
-</div>
-<form method="post" action="index.php"> 
+<section class="jumbotron d-flex flex-row justify-content-end">
+    <h1 class="mr-5 text-info"><i class="fa fa-sign-in"></i> Log in</h1>
+</section>
+
+<form method="post" action="?action=adminPanel"> 
         <?= $login->login(); ?>
-        <div class="input-group">
-                <label>Username</label>
-                <input type="text" name="username" >
+        <legend>Log in</legend>
+        <div class="input-group" class="form-group row">
+                <label class="col-form-label">Username</label>
+                <input type="text" name="username" required >
         </div>
-        <div class="input-group">
-                <label>Password</label>
-                <input type="password" name="password">
+        <div class="input-group" class="form-grpup row">
+                <label  class="col-form-label">Password</label>
+                <input type="password" name="password" required>
         </div>
-        <div class="input-group">
+        <div class="input-group" class="form-group row">
                 <button type="submit" class="btn btn-outline-success" name="login_user">Login</button>
         </div>
         <p>
