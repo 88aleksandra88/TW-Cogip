@@ -4,6 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once('./model/AdminManager.php');
+require_once('./model/ModoManager.php');
 require_once('./model/CompanyManager.php');
 require_once('./model/ContactManager.php');
 require_once('./model/InvoiceManager.php');
@@ -20,6 +21,15 @@ class Controller
       $lastContacts = (new AdminManager)->getLastContacts();
 
       require('./view/adminView.php');
+   }
+
+   function modoPanel()
+   {
+      $lastInvoices = (new ModoManager)->getLastInvoices();
+      $lastCompanies = (new ModoManager)->getLastCompanies();
+      $lastContacts = (new ModoManager)->getLastContacts();
+
+      require('./view/modoView.php');
    }
 
    function detailCompany() 
@@ -41,7 +51,7 @@ class Controller
 
    function newCompany() 
    {
-      $newCompany = (new CompanyManager)->newCompany();
+      $newCompany = (new CompanyManager)->addCompany();
 
       require('view/newCompany.php');
    }

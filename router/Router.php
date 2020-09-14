@@ -17,6 +17,11 @@ class Router extends Controller
             {
                 $this->adminPanel();
             } 
+            //& Modo routing
+            else if ($_GET['action'] == 'modoPanel')
+            {
+                $this->modoPanel();
+            } 
             //& Company routing
             else if ($_GET['action'] == 'detailCompany') 
             {
