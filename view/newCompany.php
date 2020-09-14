@@ -2,8 +2,10 @@
     ob_start();
 
     if (isset($_POST['company_name']) AND isset($_POST['company_vat'])) {
-        include_once('model/CompanyManager.php');
-        addCompany();        
+        $name = $_POST['company_name'];
+        $country = $_POST['country'];
+        $vat = $_POST['company_vat'];
+        $type = $_POST['company_type'];
     };
 ?>
 <section class="jumbotron d-flex flex-row justify-content-end">
