@@ -4,6 +4,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+//Test de connexion
+if(empty(($_SESSION['username']))){
+    header('location: ../index.php');
+}
 // Start recording view
 ob_start(); 
 
@@ -11,6 +15,8 @@ $title = "COGIP - Administration panel";
 ?>
 
 <section class="jumbotron d-flex flex-row justify-content-end">
+    <!-- Test de connexion -->
+    <p> Bienvenue <?= $_SESSION['username'] ?> ! </p>
     <h1 class="mr-5 text-info"><i class="fas fa-users-cog"></i> Administration Panel</h1>
 </section>
 <section class="container">

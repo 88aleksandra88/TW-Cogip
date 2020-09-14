@@ -64,13 +64,13 @@ class LoginManager extends Connection {
                         mysqli_query($db, $query);
                         $_SESSION['username'] = $username;
                         $_SESSION['success'] = "You are now logged in";
-                        header('location: index.php');
+                        echo $_SESSION['username'];
+                        header('location: ./index.php');
                   } else {
-                        echo "erreurs";
                         foreach($errors as $error){
                               $displayError .= '- ' . $error . '<br />';
                         }
-                        return $displayError;
+                       return $displayError;
                   }
             }
       }
@@ -105,7 +105,7 @@ class LoginManager extends Connection {
                               $_SESSION['username'] = $username;
                               $_SESSION['password'] = password_hash($password, PASSWORD_DEFAULT);
                               $_SESSION['success'] = "You are no connected !";
-                              header('location:   http://localhost:2018/TW-Cogip/index.php?action=adminPanel');
+                              header('location:   ./index.php');
                         }else {
                                array_push($errors, "Wrong username/password combination");
                               // return  "Wrong information or account inexistant";
@@ -121,5 +121,10 @@ class LoginManager extends Connection {
                         return $displayError;
                   }
             }
+      }
+
+      function logout(){
+            unset($_SESSION['username']);
+            header("location: ./index.php");
       }
 }
