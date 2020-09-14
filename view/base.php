@@ -65,7 +65,7 @@
             <section class="row">
                 <article class="col-12 col-md">
                 <!--- Logo a mettre ---------->
-                    <img class="mb-2" src='./img/logo1.png' alt="logo" width="60" height="60">
+                    <img class="mb-2" src='./img/logo2.png' alt="logo" width="60" height="60">
                     <small class="d-block mb-3 text-muted">Vive la COGIP!</small>
                 </article>
                 <article class="col-6 col-md">
