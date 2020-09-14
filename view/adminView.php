@@ -6,7 +6,8 @@ error_reporting(E_ALL);
 
 //Test de connexion
 if(empty(($_SESSION['username']))){
-    header('location: ../index.php');
+    header('location: ./index.php');
+    exit();
 }
 // Start recording view
 ob_start(); 

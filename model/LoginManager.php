@@ -66,6 +66,7 @@ class LoginManager extends Connection {
                         $_SESSION['success'] = "You are now logged in";
                         echo $_SESSION['username'];
                         header('location: ./index.php');
+                        exit();
                   } else {
                         foreach($errors as $error){
                               $displayError .= '- ' . $error . '<br />';
@@ -105,7 +106,8 @@ class LoginManager extends Connection {
                               $_SESSION['username'] = $username;
                               $_SESSION['password'] = password_hash($password, PASSWORD_DEFAULT);
                               $_SESSION['success'] = "You are no connected !";
-                              header('location:   ./index.php');
+                              // header('location:   ./index.php');
+                              exit();
                         }else {
                                array_push($errors, "Wrong username/password combination");
                               // return  "Wrong information or account inexistant";
@@ -126,5 +128,6 @@ class LoginManager extends Connection {
       function logout(){
             unset($_SESSION['username']);
             header("location: ./index.php");
+            exit();
       }
 }
