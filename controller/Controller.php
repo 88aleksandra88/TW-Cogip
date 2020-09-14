@@ -11,9 +11,13 @@ require_once('./model/InvoiceManager.php');
 require_once('./model/LoginManager.php');
 // require_once('./model/errors.php');
 
-
 class Controller 
 {
+   function welcome()
+   {
+      require('./view/welcome.php');
+   }
+
    function adminPanel()
    {
       $lastInvoices = (new AdminManager)->getLastInvoices();

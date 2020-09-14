@@ -6,7 +6,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 class LoginManager extends Connection {
-
+      
       function register(){
             $db = $this->dbConnect();
             // session_start();
@@ -18,20 +18,23 @@ class LoginManager extends Connection {
             $password = "";
             //$emailSanitized = "";
 
-            $db = mysqli_connect('localhost', 'root', 'root', 'cogip');
+            $db = mysqli_connect('mysqldb', 'root', 'root', 'cogip');
 
             // REGISTER USER
             if (isset($_POST['reg_user'])) {
                   // receive all input values from the form
                   $username = mysqli_real_escape_string($db, $_POST['username']);
+                  $username= filter_var($username, FILTER_SANITIZE_STRING);
                   $email = mysqli_real_escape_string($db, $_POST['email']);
-                  //$emailSanitized = filter_var($email, FILTER_SANITIZE_EMAIL);
+                  $email= filter_var($email, FILTER_SANITIZE_EMAIL);
                   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
+                  $password_1= filter_var($password_1, FILTER_SANITIZE_STRING);
                   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
+                  $password_2= filter_var($password_2, FILTER_SANITIZE_STRING);
                   $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
                   // form validation: ensure that the form is correctly filled ...
-                  // by adding (array_push()) corresponding error unto $errors array
+                  //by adding (array_push()) corresponding error unto $errors array
                   if (empty($username)) { array_push($errors, "Username is required"); }
                   if (empty($email)) { array_push($errors, "Email is required"); }
                   if (empty($password_1)) { array_push($errors, "Password is required"); }
@@ -51,7 +54,7 @@ class LoginManager extends Connection {
                         }
 
                         if ($user['email'] === $email) {
-                              array_push($errors, "email already exists");
+                              array_push($errors, "Email already exists");
                         }
                   } 
 
@@ -62,10 +65,10 @@ class LoginManager extends Connection {
                         $query = "INSERT INTO registration (username, email, password) 
                                     VALUES('$username', '$email', '$password')";
                         mysqli_query($db, $query);
-                        $_SESSION['username'] = $username;
-                        $_SESSION['success'] = "You are now logged in";
-                        echo $_SESSION['username'];
-                        header('location: ./index.php');
+                        // $_SESSION['username'] = $username;
+                        // $_SESSION['success'] = "You are now logged in";
+                        // echo $_SESSION['username'];
+                        header('location: ./view/login.php');
                         exit();
                   } else {
                         foreach($errors as $error){
@@ -80,13 +83,17 @@ class LoginManager extends Connection {
        function login(){
             // $errors = array();
             $displayError = "";
-            $db = mysqli_connect('localhost', 'root', 'root', 'cogip');
+            $db = mysqli_connect('mysqldb', 'root', 'root', 'cogip');
 
             if (isset($_POST['login_user'])) {
                   $username = mysqli_real_escape_string($db, $_POST['username']);
+                  $username= filter_var($username, FILTER_SANITIZE_STRING);
                   $password = mysqli_real_escape_string($db, $_POST['password']);
+                  $password = mysqli_real_escape_string($db, $_POST['password']);
+
+                  
             
-                  if (empty($username)) {
+                 if (empty($username)) {
                          array_push($errors, "Username is required");
 
                         // $errors = "Empty Username";
@@ -105,8 +112,9 @@ class LoginManager extends Connection {
                               echo "Vous êtes connecté ! ";
                               $_SESSION['username'] = $username;
                               $_SESSION['password'] = password_hash($password, PASSWORD_DEFAULT);
+                              //print_r($_SESSION);
                               $_SESSION['success'] = "You are no connected !";
-                              // header('location:   ./index.php');
+                              header('location:   ./index.php');
                               exit();
                         }else {
                                array_push($errors, "Wrong username/password combination");
@@ -126,6 +134,7 @@ class LoginManager extends Connection {
       }
 
       function logout(){
+            // session_start();
             unset($_SESSION['username']);
             header("location: ./index.php");
             exit();

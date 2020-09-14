@@ -9,16 +9,16 @@ $title = "COGIP - Log in"; ?>
 <html>
 
 <section class="jumbotron d-flex flex-row justify-content-end">
-    <h1 class="mr-5 text-info"><i class="fa fa-sign-in"></i>Log in</h1>
+    <h1 class="mr-5 text-info"><i class="fa fa-sign-in"></i> Log in</h1>
 </section>
 
 <section class="container">
         <form method="post" action="" class="column"> 
                 <?= $login->login(); ?>
 
-                <h3><span class="form-group col-md-2 badge badge-primary">Log in</span></h3>
 
                 <div class="form-group col-md-5">
+                <h3><span class="col-auto badge badge-primary"> Log in</span></h3>
                         <label for="exampleInputPassword1">Username</label><span style="color: red; display: inline; float: none;">*</span>
                         <input type="text" name="username"  value="<?php $username; ?>" class="form-control"  placeholder="Username" required>
                 </div>

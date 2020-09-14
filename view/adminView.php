@@ -5,9 +5,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //Test de connexion
-if(empty(($_SESSION['username']))){
+if(empty($_SESSION['username'])){
     header('location: ./index.php');
-    exit();
+    die();
 }
 // Start recording view
 ob_start(); 
