@@ -14,7 +14,7 @@ $title = "COGIP - Log in";
 </div>
 
 <form method="post" action="">
-
+	<?= $register->register(); ?>
 	<div class="input-group">
 		<label>Username</label>
 		<input type="text" name="username" value="<?php $username; ?>">

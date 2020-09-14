@@ -93,7 +93,7 @@ class Controller
 
    function getLogged(){
       $login = new LoginManager;
-      $login->login();
+      // $login->login();
       require('view/login.php');
    }
 

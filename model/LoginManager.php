@@ -6,10 +6,16 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 class LoginManager extends Connection {
+      public $er = "TEST";
+      public function getError(){
+            return $this->er;
+      }
 
       function register(){
             $db = $this->dbConnect();
             session_start();
+            $errors = array();
+            $displayError = "";
 
             $username = "";
             $email    = "";
@@ -17,7 +23,7 @@ class LoginManager extends Connection {
             $password = "";
             //$emailSanitized = "";
 
-            // $db = mysqli_connect('localhost', 'root', 'root', 'cogip');
+            $db = mysqli_connect('mysqldb', 'root', 'root', 'cogip');
 
             // REGISTER USER
             if (isset($_POST['reg_user'])) {
@@ -64,14 +70,20 @@ class LoginManager extends Connection {
                         mysqli_query($db, $query);
                         $_SESSION['username'] = $username;
                         $_SESSION['success'] = "You are now logged in";
-                        header('location: ./index.php');
+                        header('location: ?action=login');
+                  } else {
+                        foreach($errors as $error){
+                              $displayError .= '- ' . $error . '<br />';
+                        }
+                        return $displayError;
                   }
             }
       }
            
 // LOGIN  PART
-      function login(){
+       function login(){
             $errors = array();
+            $displayError = "";
             $db = mysqli_connect('mysqldb', 'root', 'root', 'cogip');
 
             if (isset($_POST['login_user'])) {
@@ -80,11 +92,14 @@ class LoginManager extends Connection {
             
                   if (empty($username)) {
                          array_push($errors, "Username is required");
+
+                        // $errors = "Empty Username";
                   }
                   if (empty($password)) {
                     array_push($errors, "Password is required");
+                        // $pwdError = "Empty Password";
                   }
-            
+                  
                   if (count($errors) == 0) {
                         $password = password_hash($password, PASSWORD_DEFAULT);
                         $query = "SELECT * FROM registration WHERE username='$username' AND password='$password' ";
@@ -94,12 +109,21 @@ class LoginManager extends Connection {
                               echo "Vous êtes connecté ! ";
                               $_SESSION['username'] = $username;
                               $_SESSION['password'] = password_hash($password, PASSWORD_DEFAULT);
-                              $_SESSION['success'] = "You are now logged in";
+                              $_SESSION['success'] = "You are no connected !";
                               header('location:   ./index.php');
                         }else {
-                              //  array_push($errors, "Wrong username/password combination");
-                              echo "There is an error with your password";
+                               array_push($errors, "Wrong username/password combination");
+                              // return  "Wrong information or account inexistant";
+                              foreach($errors as $error){
+                                    $displayError .=  '- ' . $error;
+                              }
+                              return $displayError;
                         }
+                  } else {
+                        foreach($errors as $error){
+                              $displayError .= '- ' . $error . '<br />';
+                        }
+                        return $displayError;
                   }
             }
       }
