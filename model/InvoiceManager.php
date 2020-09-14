@@ -50,6 +50,12 @@ class InvoiceManager extends Connection
                         'user_id' => $idUser,
                         'company_id' => $idComp]);
     }
+
+    // function deleteInvoice()
+    // {
+    //     $id = $_GET['id'];
+    //     $deleteInvoice = $this->dbConnect()->query('DELETE FROM table_name WHERE condition;');
+    // }
 }
 
 

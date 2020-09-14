@@ -61,6 +61,10 @@ class Router extends Controller
             {
                 $this->newInvoice();
             } 
+            else if ($_GET['action'] == 'deleteInvoice') 
+            {
+                $this->deleteInvoice();
+            } 
             else if ($_GET['action'] == 'registration') 
             {
                 $this->getRegister();

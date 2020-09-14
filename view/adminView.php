@@ -41,7 +41,7 @@ $title = "COGIP - Administration panel";
                     <td class='col-4'><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['last_name']?></a></td>
                     <td class='col-3'><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['first_name']?></td></a>
                     <td class='col-1'><button class="btn btn-light border-warning text-center text-warning"><i class="fas fa-edit"></i></button></td>
-                    <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><i class="fas fa-times"></i></button></td>
+                    <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><a href="index.php?action=deleteInvoice&id=<?= $row['invoice_id']?>"></a><i class="fas fa-times"></i></button></td>
                 </tr>
                 <?php }?>
             </table>
@@ -65,7 +65,7 @@ $title = "COGIP - Administration panel";
                     <td class='col-4'><?= $row['country']?></td>
                     <td class='col-3'><a href='index.php?action=detailCompany&id=<?=$row['id']?>"'><?= $row['company_vat']?></a></td>
                     <td class='col-1'><button class="btn btn-light border-warning text-center text-warning"><i class="fas fa-edit"></i></button></td>
-                    <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><i class="fas fa-times"></i></button></td>
+                    <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><a href="delete.php?id="<?=$row['id']?>"></a><i class="fas fa-times"></i></button></td>
                 </tr>
                 <?php }?>
             </table>

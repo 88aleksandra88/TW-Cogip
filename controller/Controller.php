@@ -95,6 +95,11 @@ class Controller
       $newInvoice = (new InvoiceManager)->addInvoice(); 
    }
 
+   function deleteInvoice()
+   {
+      $deleteInvoice = (new InvoiceManager)->deleteInvoice();
+   }
+
    function getLogged(){
       $login = new LoginManager;
       // $login->login();
