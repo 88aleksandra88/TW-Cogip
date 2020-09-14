@@ -1,11 +1,7 @@
 <?php
-//  include('./login must be split/server.php'); 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-// require('./model/errors.php');
-
-// $logErr = new LoginManager();
 
 $title = "COGIP - Log in"; ?>
 
@@ -18,17 +14,22 @@ $title = "COGIP - Log in"; ?>
 <form method="post" action="?action=adminPanel"> 
         <?= $login->login(); ?>
         <legend>Log in</legend>
+
+        <div class="form-group">
+                <label for="exampleInputPassword1">Username</label>
+                <input type="text" name="username"  value="<?php $username; ?>" class="form-control"  placeholder="Username" required>
+        </div>
+
+        <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" class="form-control"  name="password"  placeholder="Password" required>
+        </div>
+
+
         <div class="input-group" class="form-group row">
-                <label class="col-form-label">Username</label>
-                <input type="text" name="username" required >
+                <button type="submit" class="btn btn-outline-primary" name="login_user">Login</button>
         </div>
-        <div class="input-group" class="form-grpup row">
-                <label  class="col-form-label">Password</label>
-                <input type="password" name="password" required>
-        </div>
-        <div class="input-group" class="form-group row">
-                <button type="submit" class="btn btn-outline-success" name="login_user">Login</button>
-        </div>
+
         <p>
                 Not yet a member? <a href='?action=registration'>Sign up</a>
         </p>

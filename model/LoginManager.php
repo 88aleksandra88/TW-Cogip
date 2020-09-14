@@ -64,7 +64,7 @@ class LoginManager extends Connection {
                         mysqli_query($db, $query);
                         $_SESSION['username'] = $username;
                         $_SESSION['success'] = "You are now logged in";
-                        // header('location: http://localhost:2018/TW-Cogip/index.php?action=login');
+                        header('location: index.php');
                   } else {
                         echo "erreurs";
                         foreach($errors as $error){

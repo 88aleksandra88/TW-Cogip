@@ -6,16 +6,16 @@ error_reporting(E_ALL);
 $title = "COGIP - Log in";
 ?>
 
+<?php ob_start();?>
 <section class="jumbotron d-flex flex-row justify-content-end">
     <h1 class="mr-5 text-info"><i class="fa fa-id-card"></i> Registration</h1>
 </section>
 
-<div class="header">
-        <h2>Registration</h2>
-</div>
-
 <form method="post" action="">
 	<?= $register->register() ?>
+
+	<legend>Registration</legend>
+
     <div class="form-group">
       <label for="exampleInputPassword1">Username</label>
       <input type="text" name="username"  value="<?php $username; ?>" class="form-control"  placeholder="Username" required>
@@ -38,7 +38,7 @@ $title = "COGIP - Log in";
     </div>
 
 	<div class="input-group">
-		<button type="submit" class="btn btn-outline-success" name="reg_user">Register</button>
+		<button type="submit" class="btn btn-outline-primary" name="reg_user">Register</button>
 	</div>
 
 	<p>
