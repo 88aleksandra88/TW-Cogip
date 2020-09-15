@@ -46,7 +46,7 @@
                             <a class="dropdown-item" href="?action=login">Log in</a>
                             <a class="dropdown-item" href="?action=logout">Log out</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="?action=registration">Register</a>
+                             <a class="dropdown-item" href="?action=registration">Register</a>
                         </div>
                     </li>
                 </ul>

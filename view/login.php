@@ -1,3 +1,4 @@
+<?php ob_start();?>
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -5,7 +6,6 @@ error_reporting(E_ALL);
 
 $title = "COGIP - Log in"; ?>
 
-<?php ob_start();?>
 <html>
 
 <section class="jumbotron d-flex flex-row justify-content-end">
@@ -44,6 +44,6 @@ $title = "COGIP - Log in"; ?>
 <?php
 $content = ob_get_clean();    
 require('base.php');
-?>
+
 
 
