@@ -56,6 +56,8 @@ class Controller
    function newCompany() 
    {
       $newCompany = (new CompanyManager)->addCompany();
+
+      require('view/newCompany.php');
    }
 
    function detailContact() 
@@ -74,9 +76,12 @@ class Controller
       require('./view/listContactsView.php');
    }
 
-   function newContact() 
+   function newContact()
    {
+      $listCompanies = (new ContactManager)->getListCompanies();
       $newContact = (new ContactManager)->addContact();
+
+      require('view/newContact.php');
    }
 
    function detailInvoice() 
@@ -96,7 +101,11 @@ class Controller
 
    function newInvoice() 
    {
-      $newInvoice = (new InvoiceManager)->addInvoice(); 
+      $listCompanies = (new InvoiceManager)->getListCompanies();
+      $listContacts = (new InvoiceManager)->getListContacts();
+      $newInvoice = (new InvoiceManager)->addInvoice();
+
+      require('view/newInvoice.php');
    }
 
    function deleteInvoice()

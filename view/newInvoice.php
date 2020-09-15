@@ -1,12 +1,5 @@
 <?php
     ob_start();
-
-    if (isset($_POST['invoice_number']) AND isset($_POST['invoice_content'])) {
-        $number = $_POST['invoice_number'];
-        $invContent = $_POST['invoice_content'];
-        $idComp = $_POST['company_id'];
-        $idUser = $_POST['user_id'];
-    };
 ?>
 <section class="jumbotron d-flex flex-row justify-content-end">
     <h1 class="pr-5 text-info"><i class="fas fa-file-invoice-dollar"></i> Create new invoice</h1>
@@ -17,31 +10,21 @@
             <h3><span class="badge badge-primary">New invoice</span></h3>
             <label class="p-1 mt-2 text-primary" for="invoice_number">Invoice Number</label>
             <input id="invoice_number" name="invoice_number" class="form-control" type="number" value="">
-            <label class="p-1 mt-2 text-primary" for="company_id">Company ID</label>
+            <label class="p-1 mt-2 text-primary" for="company_id">Company</label>
             <select id="company_id" name="company_id" class="form-control">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option> <!-- Temporaire ! => ajout systeme dynamique -->
-                <option value="6">6</option>              <!--  avec les ID de la db in progress -->
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
+            <?php
+                echo "<option value='' selected></option>";
+                foreach ($listCompanies as $row) {
+                echo "<option value=".$row['id'].">".$row['company_name']."</option>";
+            }; ?>
             </select>
-            <label class="p-1 mt-2 text-primary" for="user_id">Contact ID</label>
+            <label class="p-1 mt-2 text-primary" for="user_id">Contact</label>
             <select id="user_id" name="user_id" class="form-control">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option> <!-- Temporaire ! => ajout systeme dynamique -->
-                <option value="6">6</option>              <!--  avec les ID de la db in progress -->
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
+            <?php
+                echo "<option value='' selected></option>";
+                foreach ($listContacts as $row) {
+                echo "<option value=".$row['id'].">".$row['first_name']." ".$row['last_name']."</option>";
+            }; ?>
             </select>
             <label class="p-1 mt-2 text-primary" for="invoice_content">Content</label>
             <textarea id="test" name="invoice_content" class="form-control" value=""></textarea>

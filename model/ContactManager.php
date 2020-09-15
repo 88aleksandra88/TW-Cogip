@@ -31,19 +31,26 @@ class ContactManager extends Connection
     function getListContacts() 
     { 
         $contactList = $this->dbConnect()->query('SELECT users.*, companies.company_name AS company_name FROM users INNER JOIN companies ON users.company_id=companies.id ORDER BY users.last_name');
-
         return $contactList;
     }
 
     function addContact() 
-    {   
-        $firstname = "";
-        $lastname = "";
-        $email = "";
-        $phone = "";
-        $id = "";
+    {
+        $firstname = '';
+        $lastname = '';
+        $email = '';
+        $phone = '';
+        $id = '';
 
-        require('view/newContact.php');
+        if (isset($_POST['first_name']) AND isset($_POST['last_name'])
+        AND isset($_POST['email']) AND isset($_POST['phone']) AND isset($_POST['company_id']))
+        {
+            $firstname = $_POST['first_name'];
+            $lastname = $_POST['last_name'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $id = $_POST['company_id'];
+        };
 
         $sql = "INSERT INTO users (first_name, last_name, email, phone, company_id) 
                             VALUES (:first_name, :last_name, :email, :phone, :company_id)";
@@ -54,6 +61,13 @@ class ContactManager extends Connection
                         'email' => $email,
                         'phone' => $phone,
                         'company_id' => $id]);
+    }
+    function getListCompanies()
+    {
+        $result =  $this->dbConnect()->query('SELECT * FROM companies');
+        $rows = $result->fetchAll();
+
+        return $rows;
     }
 }
 

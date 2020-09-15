@@ -29,12 +29,19 @@ class InvoiceManager extends Connection
 
     function addInvoice() 
     {
-        $number = "";
-        $invContent = "";
-        $idComp = "";
-        $idUser = "";
+        $number = '';
+        $invContent = '';
+        $idComp = '';
+        $idUser = '';
 
-        require('view/newInvoice.php');
+        if (isset($_POST['invoice_number']) AND isset($_POST['invoice_content'])
+        AND isset($_POST['user_id']) AND isset($_POST['company_id']))
+        {
+            $number = $_POST['invoice_number'];
+            $invContent = $_POST['invoice_content'];
+            $idComp = $_POST['company_id'];
+            $idUser = $_POST['user_id'];
+        };
 
         date_default_timezone_set('Europe/Brussels');
         $tz = date_default_timezone_get();
@@ -51,11 +58,21 @@ class InvoiceManager extends Connection
                         'company_id' => $idComp]);
     }
 
-    // function deleteInvoice()
-    // {
-    //     $id = $_GET['id'];
-    //     $deleteInvoice = $this->dbConnect()->query('DELETE FROM table_name WHERE condition;');
-    // }
+    function getListCompanies()
+    {
+        $result =  $this->dbConnect()->query('SELECT * FROM companies');
+        $rows = $result->fetchAll();
+
+        return $rows;
+    }
+
+    function getListContacts()
+    {
+        $result = $this->dbConnect()->query('SELECT * FROM users');
+        $rows = $result->fetchAll();
+
+        return $rows;
+    }
 }
 
 
