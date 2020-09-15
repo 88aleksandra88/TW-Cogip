@@ -50,7 +50,12 @@ class CompanyManager extends Connection
         $vat = "";
         $type = "";
 
-        require('view/newCompany.php');
+        if (isset($_POST['company_name']) AND isset($_POST['company_vat'])) {
+            $name = $_POST['company_name'];
+            $country = $_POST['country'];
+            $vat = $_POST['company_vat'];
+            $type = $_POST['company_type'];
+        };
 
         $sql = "INSERT INTO companies (company_name, country, company_vat, company_type) 
                             VALUES (:company_name, :country, :company_vat, :company_type)";

@@ -1,12 +1,5 @@
 <?php
     ob_start();
-
-    if (isset($_POST['company_name']) AND isset($_POST['company_vat'])) {
-        $name = $_POST['company_name'];
-        $country = $_POST['country'];
-        $vat = $_POST['company_vat'];
-        $type = $_POST['company_type'];
-    };
 ?>
 <section class="jumbotron d-flex flex-row justify-content-end">
     <h1 class="pr-5 text-info"><i class="fas fa-building"></i> Create new company</h1>
