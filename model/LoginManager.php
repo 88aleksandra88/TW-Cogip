@@ -9,7 +9,6 @@ class LoginManager extends Connection {
       
       function register(){
             $db = $this->dbConnect();
-            session_start();
             $errors = array();
             $displayError = "";
 
@@ -65,11 +64,8 @@ class LoginManager extends Connection {
                         $query = "INSERT INTO registration (username, email, password) 
                                     VALUES('$username', '$email', '$password')";
                         mysqli_query($db, $query);
-                        // $_SESSION['username'] = $username;
-                        // $_SESSION['success'] = "You are now logged in";
-                        // echo $_SESSION['username'];
-                        // header('location:./view/login.php');
-                        // exit();
+                        header('location:?action=login');
+                        exit();
                   } else {
                         foreach($errors as $error){
                               $displayError .= '- ' . $error . '<br />';
@@ -107,7 +103,7 @@ class LoginManager extends Connection {
                         $results = mysqli_query($db, $query);
                         $row = mysqli_fetch_array($results, MYSQLI_NUM);
                         $verifyPwd = password_verify($password, $row[3]);
-                        
+                        var_dump($verifyPwd);
                         if (mysqli_num_rows($results) == 1) {
                               echo "phase 3";
                               session_start();

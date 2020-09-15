@@ -1,6 +1,12 @@
 <?php
     ob_start();
 
+    //Test de connexion
+if(empty($_SESSION['username'])){
+    header('location:./index.php');
+    exit();
+}
+
     if (isset($_POST['invoice_number']) AND isset($_POST['invoice_content'])) {
         $number = $_POST['invoice_number'];
         $invContent = $_POST['invoice_content'];

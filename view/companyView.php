@@ -1,10 +1,15 @@
 <?php 
+// Start recording view
+ob_start(); 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Start recording view
-ob_start(); 
+//Test de connexion
+if(empty($_SESSION['username'])){
+    header('location:./index.php');
+    exit();
+}
         
 $title = "COGIP - Company Details"; 
 ?>

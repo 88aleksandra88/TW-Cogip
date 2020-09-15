@@ -1,12 +1,18 @@
 <?php
+// Start recording
+ob_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $title = "COGIP - List of contacts";
 
-// Start recording
-ob_start();
+//Test de connexion
+if(empty($_SESSION['username'])){
+    header('location:./index.php');
+    exit();
+}
+
 ?>
 
 <section class="jumbotron d-flex flex-row justify-content-end">
@@ -46,4 +52,4 @@ ob_start();
 $content = ob_get_clean();
 
 require('base.php');
-?>
+
