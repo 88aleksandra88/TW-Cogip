@@ -1,18 +1,18 @@
-
 <?php 
+// Content start
+ob_start(); 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+//Test de connexion
 if(empty($_SESSION['username'])){
-    header('location: ./view/login.php');
-    die();
+    header('location:./index.php');
+    exit();
 }
 
 $title = "COGIP - Companies Directory";
 
-// Content start
-ob_start(); 
 ?>
 
 <section class="jumbotron d-flex flex-row justify-content-end">
@@ -70,4 +70,3 @@ ob_start();
     $content = ob_get_clean();
     
     require('base.php');
-?>

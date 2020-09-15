@@ -1,5 +1,20 @@
 <?php
     ob_start();
+
+//Test de connexion
+if(empty($_SESSION['username'])){
+    header('location:./index.php');
+    exit();
+}
+
+    if (isset($_POST['first_name']) AND isset($_POST['last_name'])
+    AND isset($_POST['email']) AND isset($_POST['phone'])) {
+        $firstname = $_POST['first_name'];
+        $lastname = $_POST['last_name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $id = $_POST['company_id'];
+    };
 ?>
 <section class="jumbotron d-flex flex-row justify-content-end">
     <h1 class="pr-5 text-info"><i class="fas fa-address-book"></i> Create new contact</h1>
@@ -31,4 +46,3 @@
 <?php
     $content = ob_get_clean();
     require('base.php');
-?>

@@ -1,5 +1,18 @@
 <?php
     ob_start();
+
+    //Test de connexion
+if(empty($_SESSION['username'])){
+    header('location:./index.php');
+    exit();
+}
+
+    if (isset($_POST['invoice_number']) AND isset($_POST['invoice_content'])) {
+        $number = $_POST['invoice_number'];
+        $invContent = $_POST['invoice_content'];
+        $idComp = $_POST['company_id'];
+        $idUser = $_POST['user_id'];
+    };
 ?>
 <section class="jumbotron d-flex flex-row justify-content-end">
     <h1 class="pr-5 text-info"><i class="fas fa-file-invoice-dollar"></i> Create new invoice</h1>
@@ -35,4 +48,3 @@
 <?php
     $content = ob_get_clean();
     require('base.php');
-?>

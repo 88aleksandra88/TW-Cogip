@@ -1,3 +1,4 @@
+<?php ob_start();?>
 <?php
 //  include('./login must be split/server.php'); 
 ini_set('display_errors', 1);
@@ -6,7 +7,6 @@ error_reporting(E_ALL);
 $title = "COGIP - Log in";
 ?>
 
-<?php ob_start();?>
 <section class="jumbotron d-flex flex-row justify-content-end">
     <h1 class="mr-5 text-info"><i class="fa fa-id-card"></i> Registration</h1>
 </section>
@@ -15,7 +15,7 @@ $title = "COGIP - Log in";
 
     <form method="post" action="" class="column">
 
-    <?= $register->register() ?>
+    <?= $register->register(); ?>
 
 
       <div class="form-group col-md-5">
@@ -56,4 +56,3 @@ $title = "COGIP - Log in";
 <?php
 $content = ob_get_clean();
 require('base.php');
-?>
