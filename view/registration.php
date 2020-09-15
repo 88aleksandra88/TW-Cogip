@@ -17,9 +17,9 @@ $title = "COGIP - Log in";
 
     <?= $register->register() ?>
 
-      <h3><span class="col-md-2 badge badge-primary">Registration</span></h3>
 
       <div class="form-group col-md-5">
+      <h3><span class="col-auto badge badge-primary">Registration</span></h3>
           <label for="exampleInputPassword1">Username</label><span style="color: red; display: inline; float: none;">*</span>
           <input type="text" name="username"  value="<?php $username; ?>" class="form-control"  placeholder="Username" required>
         </div>

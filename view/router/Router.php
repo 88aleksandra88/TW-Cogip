@@ -5,6 +5,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require('./controller/Controller.php');
+// echo 'before class';
+// $this = new Controller();
+// echo 'after class';
 
 class Router extends Controller 
 {
@@ -16,11 +19,6 @@ class Router extends Controller
             if ($_GET['action'] == 'adminPanel')
             {
                 $this->adminPanel();
-            } 
-            //& Modo routing
-            else if ($_GET['action'] == 'modoPanel')
-            {
-                $this->modoPanel();
             } 
             //& Company routing
             else if ($_GET['action'] == 'detailCompany') 
@@ -61,10 +59,6 @@ class Router extends Controller
             {
                 $this->newInvoice();
             } 
-            else if ($_GET['action'] == 'deleteInvoice') 
-            {
-                $this->deleteInvoice();
-            } 
             else if ($_GET['action'] == 'registration') 
             {
                 $this->getRegister();
@@ -73,10 +67,6 @@ class Router extends Controller
             {
                 $this->getLogged();
             } 
-            else if ($_GET['action'] == 'logout') 
-            {
-                $this->getLogout();
-            } 
             else 
             {
                 echo 'ERROR: action undefined :( </br>(Check that you didn\'t make a typo in the URL)';
@@ -84,8 +74,8 @@ class Router extends Controller
         } 
         else 
         {
-            // $this->getLogged();
-            $this->welcome();
+            $this->getLogged();
+            echo 'No ACTION defined';
         }
     }
 }

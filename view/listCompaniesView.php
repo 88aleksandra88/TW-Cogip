@@ -4,6 +4,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+if(empty($_SESSION['username'])){
+    header('location: ./view/login.php');
+    die();
+}
+
 $title = "COGIP - Companies Directory";
 
 // Content start
