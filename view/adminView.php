@@ -16,9 +16,10 @@ $title = "COGIP - Administration panel";
 
     <!-- Test de connexion -->
  
-<section class="jumbotron d-flex flex-row justify-content-end">
-    <p class="display-4 mr-5 text-info"> Welcome<span class="font-weight-bold text-warning"> <?= $_SESSION['username'] ?></span> !</p>
-    <h1 class="display-4 mr-5 text-info"><i class="fas fa-user-tie"></i> Personnal Panel</h1>
+<section class="jumbotron d-flex justify-content-end">
+    <p class="display-4 mr-5 text-info text-center"> Welcome<span class="font-weight-bold text-primary text-capitalize"> <?= $_SESSION['username'] ?></span> !</p>
+    
+    
 </section>
 <section class="container">
     <article class="column">

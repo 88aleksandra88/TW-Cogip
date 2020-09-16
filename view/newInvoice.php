@@ -20,7 +20,7 @@
 <section class="column">
     <article class="col">
         <form method="post" action="" class="container col-10">
-            <h3><span class="badge badge-primary">New invoice</span></h3>
+            <h3 class="text-info">New invoice</h3>
             <label class="p-1 mt-2 text-primary" for="invoice_number">Invoice Number</label>
             <input id="invoice_number" name="invoice_number" class="form-control" type="number" value="">
             <label class="p-1 mt-2 text-primary" for="company_id">Company</label>
@@ -41,7 +41,7 @@
             </select>
             <label class="p-1 mt-2 text-primary" for="invoice_content">Content</label>
             <textarea id="test" name="invoice_content" class="form-control" value=""></textarea>
-            <button class="btn btn-warning mt-2 text-white" type="submit" name="button">Envoyer</button>
+            <button class="btn btn-warning mt-2 mb-2 text-dark font-weight-bold" type="submit" name="button">Envoyer</button>
         </form>
     </article>
 </section>

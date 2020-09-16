@@ -79,7 +79,7 @@
                     </li>
                 <?php } else { ?>
                     <li class="nav-item mx-2">
-                            <a class="nav-link btn btn-danger btn-sm text-white" href="?action=adminPanel">Admin Panel</a>
+                            <a class="nav-link btn btn-outline-info btn-sm text-info" href="?action=adminPanel">Admin Panel</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-outline-secondary btn-sm " href="?action=logout"><i class="fa fa-sign-in"></i> Log out</a>

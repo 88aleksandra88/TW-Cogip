@@ -20,7 +20,7 @@
 <section class="column">
     <article class="col">
         <form method="post" action="" class="container col-10">
-            <h3><span class="badge badge-primary">New company</span></h3>
+            <h3 class="text-info">New company</h3>
             <label class="p-1 mt-2 text-primary" for="company_name">Company name</label>
             <input id="company_name" name="company_name" class="form-control" type="text" value="">
             <label class="p-1 mt-2 text-primary" for="country">Country</label>
@@ -282,7 +282,7 @@
             <option value="3">Client</option>
             <option value="4">Provider</option>
         </select>
-        <button class="btn btn-warning mt-2 text-white" type="submit" name="button">Envoyer</button>
+        <button class="btn btn-warning mt-2 mb-2 text-dark font-weight-bold" type="submit" name="button">Envoyer</button>
     </form>
 </section>
 <?php
