@@ -38,7 +38,7 @@ $title = "COGIP - Log in"; ?>
                 </div>
 
                 <p class="col-md-6">
-                        Not yet a member? <a href='?action=registration'>Sign up</a>
+                        Not yet a member? <a class="text-warning" href='?action=registration'>Sign up</a>
                 </p>
         </form>
 

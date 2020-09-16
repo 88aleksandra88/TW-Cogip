@@ -51,7 +51,7 @@ $title = "COGIP - Log in";
       </div>
 
       <p class="col-md-5">
-        Already a member? <a href="?action=login">Sign in</a>
+        Already a member? <a class="text-warning" href="?action=login">Sign in</a>
       </p>
 
     </form>
