@@ -11,76 +11,43 @@
 
         <!-- Navigation -->
         <nav class="pl-5 navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">COGIP</a>
+            <a class="navbar-brand" href="#"><img src="./img/cogip_logo.png" alt="La Cogip" width="100vw" height="100vw"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
                 aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <section class="collapse navbar-collapse" id="navbarColor03">
-
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
-
-                    <?php if(!empty($_SESSION)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=listInvoices">Invoices</a>
-                    </li> 
-                    <?php } ?>
-
-                    <?php if(!empty($_SESSION)) { ?>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=listCompanies">Companies</a>
                     </li>
-                    <?php } ?>
-                    
-                    <?php if(!empty($_SESSION)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=listContacts">Contacts</a>
                     </li>
-                    <?php } ?>
-
-                    <?php if(!empty($_SESSION)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=newInvoice">New Invoice</a>
                     </li>
-                    <?php } ?>
-
-                    <?php if(!empty($_SESSION)) { ?>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="?action=newCompany">New Company</a>
                     </li>
-                    <?php } ?>
-
-                    <?php if(!empty($_SESSION)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=newContact">New Contact</a>
                     </li>
-                    <?php } ?>
-
-                    <?php if(!empty($_SESSION)) { ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?action=adminView">Admin Panel</a>
-                    </li>
-                    <?php } ?>
-
-
-                    <?php if(empty($_SESSION)){ ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">Members section</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="?action=login">Log in</a>
+                            <a class="dropdown-item" href="?action=logout">Log out</a>
                             <div class="dropdown-divider"></div>
                              <a class="dropdown-item" href="?action=registration">Register</a>
                         </div>
-                    </li>
-                        <?php } else { ?>
-
-                    <li class="nav-item">
-                            <a class="nav-link btn btn-outline-secondary btn-sm " href="?action=logout"><i class="fa fa-sign-in"></i> Log out</a>
-                        <?php } ?>
                     </li>
                 </ul>
             </section>
@@ -96,10 +63,10 @@
         <!-- Footer -->
         <footer class="pl-5 pt-4 mb-md-5 pt-md-5 border-top">
             <section class="row">
-                <article class="col-12 col-md">
+                <article class="col-12 col-md d-flex justify-content-center flex-column align-items-center">
                 <!--- Logo a mettre ---------->
-                    <img class="mb-2" src='./img/logo2.png' alt="logo" width="60" height="60">
-                    <small class="d-block mb-3 text-muted">Vive la COGIP!</small>
+                    <img class="mb-2" src="./img/cogip_logo.png" alt="La Cogip" width="60" height="60">
+                    <p class="d-block mb-3 text-muted">Vive la COGIP!</p>
                 </article>
                 <article class="col-6 col-md">
                     <h5>Direct access</h5>
