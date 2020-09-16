@@ -23,7 +23,7 @@ $title = "COGIP - Log in"; ?>
 
 
                 <div class="form-group col-md-5">
-                <h3><span class="col-auto badge badge-warning"> Log in</span></h3>
+                <h3 class="text-info"> Log in</h3>
                         <label for="exampleInputPassword1">Username</label><span style="color: red; display: inline; float: none;">*</span>
                         <input type="text" name="username"  value="<?php $username; ?>" class="form-control"  placeholder="Username" required>
                 </div>
@@ -34,7 +34,7 @@ $title = "COGIP - Log in"; ?>
                 </div>
 
                 <div class="form-group col-md-6" class="form-group row ">
-                        <button type="submit" class="btn btn-outline-warning" name="login_user">Login</button>
+                        <button type="submit" class="btn btn-warning text-dark font-weight-bold" name="login_user">Login</button>
                 </div>
 
                 <p class="col-md-6">
