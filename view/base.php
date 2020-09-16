@@ -10,7 +10,7 @@
     <body>
 
         <!-- Navigation -->
-        <nav class="pl-5 navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="pl-5 navbar navbar-expand-lg navbar-light bg-light ">
             <a class="navbar-brand" href="#">COGIP</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
                 aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,19 +41,19 @@
                     </li>
                     <?php } ?>
 
-                    <?php if(!empty($_SESSION)) { ?>
+                    <?php if(!empty($_SESSION && $_SESSION['type'] != 0)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=newInvoice">New Invoice</a>
                     </li>
                     <?php } ?>
 
-                    <?php if(!empty($_SESSION)) { ?>
+                    <?php if(!empty($_SESSION && $_SESSION['type'] != 0)) { ?>
                      <li class="nav-item">
                         <a class="nav-link" href="?action=newCompany">New Company</a>
                     </li>
                     <?php } ?>
 
-                    <?php if(!empty($_SESSION)) { ?>
+                    <?php if(!empty($_SESSION && $_SESSION['type'] != 0)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=newContact">New Contact</a>
                     </li>
@@ -61,7 +61,7 @@
 
                     <?php if(!empty($_SESSION)) { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="?action=adminView">Admin Panel</a>
+                        <a class="nav-link" href="?action=adminPanel">Admin Panel</a>
                     </li>
                     <?php } ?>
 

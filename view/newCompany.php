@@ -2,10 +2,10 @@
     ob_start();
 
     //Test de connexion
-if(empty($_SESSION['username'])){
-    header('location:./index.php');
-    exit();
-}
+    if(empty($_SESSION['username']) || $_SESSION['type'] == 0){
+        header('location:./index.php');
+        exit();
+    }
 
     if (isset($_POST['company_name']) AND isset($_POST['company_vat'])) {
         $name = $_POST['company_name'];

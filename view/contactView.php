@@ -58,8 +58,10 @@ $title = "COGIP - Contact Details";
                     <td class='col-3'><?= $row['country']?></td>
                     <td class='col-3'><?= $row['company_type']?></td>
                     <td class='col-3'><?= $row['company_vat']?></td>
+                    <?php if($_SESSION['type'] == 1) { ?>
                     <td class='col-1'><button class="btn btn-primary btn-warning">EDIT</button></td>
                     <td class='col-1'><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
+                    <?php } ?>
                 </tr>
                 <?php }?>
             </table>

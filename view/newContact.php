@@ -2,11 +2,10 @@
     ob_start();
 
 //Test de connexion
-if(empty($_SESSION['username'])){
+if(empty($_SESSION['username']) || $_SESSION['type'] == 0){
     header('location:./index.php');
     exit();
 }
-
     if (isset($_POST['first_name']) AND isset($_POST['last_name'])
     AND isset($_POST['email']) AND isset($_POST['phone'])) {
         $firstname = $_POST['first_name'];

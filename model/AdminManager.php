@@ -17,7 +17,7 @@ class AdminManager extends Connection
 
     function getLastCompanies()
     {
-        return $this->dbConnect()->query('SELECT company_name, country, company_vat, company_type  FROM companies');
+        return $this->dbConnect()->query('SELECT id, company_name, country, company_vat, company_type  FROM companies');
     }
 
     function getLastContacts()
