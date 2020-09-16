@@ -35,6 +35,7 @@ class Controller
    {  
       $clientsList = (new CompanyManager)->getClientsCompany();
       $providersList = (new CompanyManager)->getProvidersCompany();
+      $deleteCompany = (new CompanyManager)->deleteCompany();
       
       require('./view/listCompaniesView.php');
    }
@@ -57,7 +58,8 @@ class Controller
 
    function listContacts() 
    {
-      $listContacts = (new ContactManager)->getListContacts(); 
+      $listContacts = (new ContactManager)->getListContacts();
+      $deleteContact = (new ContactManager)->deleteContact();
 
       require('./view/listContactsView.php');
    }
@@ -80,7 +82,8 @@ class Controller
 
    function listInvoices() 
    {
-      $listInvoices = (new InvoiceManager)->getListInvoices(); 
+      $listInvoices = (new InvoiceManager)->getListInvoices();
+      $deleteInvoice = (new InvoiceManager)->deleteInvoice();
 
       require('./view/listInvoicesView.php');
    }

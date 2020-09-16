@@ -69,6 +69,22 @@ class ContactManager extends Connection
 
         return $rows;
     }
+    function deleteContact()
+    {
+        if (isset($_POST['delete']))
+        {
+            try {
+                $id = $_POST['delete'];
+                $sql = "DELETE FROM `users` WHERE `id`=$id";
+
+                $stmt = $this->dbConnect();
+                $stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $stmt->exec($sql);
+                header('Location: index.php?action=listContacts');
+            }
+            catch (PDOException $e) {
+                echo $sql . "<br>" . $e->getMessage();
+            }
+        };
+    }
 }
-
-

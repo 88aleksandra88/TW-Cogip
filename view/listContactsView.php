@@ -1,4 +1,5 @@
 <?php
+ob_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -6,7 +7,7 @@ error_reporting(E_ALL);
 $title = "COGIP - List of contacts";
 
 // Start recording
-ob_start();
+
 ?>
 
 <section class="jumbotron d-flex flex-row justify-content-end">
@@ -33,6 +34,8 @@ ob_start();
                     <td><a href="index.php?action=detailContact&id=<?=$row['id']?>"><?=$row['first_name']?></a></td>
                     <td><a href="mailto:<?=$row['email']?>"><?= $row['email']?></a></td>
                     <td><a href="index.php?action=detailCompany&id=<?=$row['id']?>"><?= $row['company_name']?></a></td>
+                    <td class='col-1'><form method="post"><button type="submit" name="edit" class="btn btn-primary btn-warning" value=<?=$row['id']?>>EDIT</button></form></td>
+                    <td class='col-1'><form method="post"><button type="submit" name="delete" class="ml-2 btn btn-primary btn-danger" value=<?=$row['id']?>>DELETE</button></form></td>
                 </tr>
             <?php } ?>
             </table>
@@ -46,4 +49,3 @@ ob_start();
 $content = ob_get_clean();
 
 require('base.php');
-?>

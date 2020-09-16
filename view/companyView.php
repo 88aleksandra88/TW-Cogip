@@ -1,10 +1,8 @@
-<?php 
+<?php
+ob_start(); 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-// Start recording view
-ob_start(); 
         
 $title = "COGIP - Company Details"; 
 ?>
@@ -30,8 +28,6 @@ $title = "COGIP - Company Details";
                     <td class='col-3'><?= $row['company_name']?></td>
                     <td class='col-3'><?= $row['country']?></td>
                     <td class='col-2'><?= $row['company_type']?></td>
-                    <td class='col-1'><button class="btn btn-primary btn-warning">EDIT</button></td>
-                    <td class='col-1'><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
                 </tr>
                 <?php }?>
             </table>
@@ -84,4 +80,3 @@ $title = "COGIP - Company Details";
     $content = ob_get_clean();
     
     require('base.php');
-?>

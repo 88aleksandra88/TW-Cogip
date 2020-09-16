@@ -66,5 +66,24 @@ class CompanyManager extends Connection
                         'country' => $country,
                         'company_vat' => $vat,
                         'company_type' => $type]);
-    } 
+    }
+
+    function deleteCompany()
+    {
+        if (isset($_POST['delete']))
+        {
+            try {
+                $id = $_POST['delete'];
+                $sql = "DELETE FROM `companies` WHERE `id`=$id";
+
+                $stmt = $this->dbConnect();
+                $stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $stmt->exec($sql);
+                header('Location: index.php?action=listCompanies');
+            }
+            catch (PDOException $e) {
+                echo $sql . "<br>" . $e->getMessage();
+            }
+        };
+    }
 }

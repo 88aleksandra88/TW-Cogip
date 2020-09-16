@@ -1,13 +1,12 @@
 
 <?php 
+ob_start(); 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $title = "COGIP - Companies Directory";
 
-// Content start
-ob_start(); 
 ?>
 
 <section class="jumbotron d-flex flex-row justify-content-end">
@@ -32,6 +31,8 @@ ob_start();
                         <td><a href='index.php?action=detailCompany&id=<?=$row['id']?>"'><?=$row['company']?></td>
                         <td><?=$row['country']?></td>
                         <td><a href="index.php?action=detailCompany&id=<?=$row['id']?>"><?=$row['vat']?></td></a>
+                        <td class='col-1'><form method="post"><button type="submit" name="edit" class="btn btn-primary btn-warning" value=<?=$row['id']?>>EDIT</button></form></td>
+                        <td class='col-1'><form method="post"><button type="submit" name="delete" class="ml-2 btn btn-primary btn-danger" value=<?=$row['id']?>>DELETE</button></form></td>
                     </tr>
                     <?php } ?>
             </table>
@@ -53,6 +54,8 @@ ob_start();
                         <td><a href="index.php?action=detailCompany&id=<?=$row['id']?>"><?=$row['company']?></td>
                         <td><?=$row['country']?></td>
                         <td><a href="index.php?action=detailCompany&id=<?=$row['id']?>"><?=$row['vat']?></a></td>
+                        <td class='col-1'><form method="post"><button type="submit" name="edit" class="btn btn-primary btn-warning" value=<?=$row['id']?>>EDIT</button></form></td>
+                    <td class='col-1'><form method="post"><button type="submit" name="delete" class="ml-2 btn btn-primary btn-danger" value=<?=$row['id']?>>DELETE</button></form></td>
                     </tr>
             <?php } ?>
             </table>
@@ -65,4 +68,3 @@ ob_start();
     $content = ob_get_clean();
     
     require('base.php');
-?>

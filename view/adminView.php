@@ -1,11 +1,9 @@
 
-<?php 
+<?php
+ob_start(); 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-// Start recording view
-ob_start(); 
 
 $title = "COGIP - Administration panel"; 
 ?>
@@ -85,4 +83,3 @@ $title = "COGIP - Administration panel";
     $content = ob_get_clean();
     
     require('base.php');
-?>

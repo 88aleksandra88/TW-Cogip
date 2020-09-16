@@ -1,5 +1,5 @@
 <?php
-//  include('./login must be split/server.php'); 
+ob_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -9,7 +9,6 @@ error_reporting(E_ALL);
 
 $title = "COGIP - Log in"; ?>
 
-<?php ob_start();?>
 <html>
 <div class="header">
         <h2>Login</h2>
@@ -36,6 +35,3 @@ $title = "COGIP - Log in"; ?>
 <?php
 $content = ob_get_clean();    
 require('base.php');
-?>
-
-

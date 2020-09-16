@@ -1,10 +1,8 @@
-<?php 
+<?php
+ob_start(); 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-// Start recording view
-ob_start(); 
 
 $title = "COGIP - Invoice Details"; 
 ?>
@@ -36,8 +34,6 @@ $title = "COGIP - Invoice Details";
                 </td>
                 <tr class="row">
                     <td class="col-10"><?= $row['invoice_content']?></td>
-                    <td class="col-1"><button class="btn btn-primary btn-warning">EDIT</button></td>
-                    <td class="col-1"><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
                 </tr>
                 <?php }?>
             </table>
@@ -73,5 +69,4 @@ $title = "COGIP - Invoice Details";
     $content = ob_get_clean();
     
     require('base.php');
-?>
 
