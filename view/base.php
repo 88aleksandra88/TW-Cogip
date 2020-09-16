@@ -20,7 +20,7 @@
             <section class="collapse navbar-collapse" id="navbarColor03">
 
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
 
@@ -60,32 +60,32 @@
                     </li>
                     <?php } ?>
 
-                    <?php if(!empty($_SESSION)) { ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?action=adminPanel">Admin Panel</a>
-                    </li>
-                    <?php } ?>
+                
                 </ul>
             </section>
             <!-- Section login -->
             <section class="mx-4">
-            <ul class="navbar-nav mr-auto">
-            <?php if(empty($_SESSION)){ ?>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="true" aria-expanded="false">Members section</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="?action=login">Log in</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="?action=registration">Register</a>
-                    </div>
-                </li>
-                    <?php } else { ?>
+                <ul class="navbar-nav mr-auto">
+                <!-- login panel -->
+                <?php if(empty($_SESSION)){ ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Members section</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="?action=login">Log in</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item"href="?action=registration">Register</a>
+                        </div>
+                    </li>
+                <?php } else { ?>
+                    <li class="nav-item mx-2">
+                            <a class="nav-link btn btn-danger btn-sm text-white" href="?action=adminPanel">Admin Panel</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-outline-secondary btn-sm " href="?action=logout"><i class="fa fa-sign-in"></i> Log out</a>
                     <?php } ?>
-                </li>
-            </ul>
+                    </li>
+                </ul>
             </section>
         </nav>
 

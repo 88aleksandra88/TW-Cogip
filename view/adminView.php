@@ -76,9 +76,9 @@ $title = "COGIP - Administration panel";
                 </tr>
                 <?php while($row = $lastCompanies->fetch()){ ?>
                 <tr class='row'>
-                    <td class='col-3'><a href='index.php?action=detailCompany&id=<?=$row['id']?>"'><?= $row['company_name']?></a></td>
+                    <td class='col-3'><a href='index.php?action=detailCompany&id=<?=$row['id']?>'><?= $row['company_name']?></a></td>
                     <td class='col-4'><?= $row['country']?></td>
-                    <td class='col-3'><a href='index.php?action=detailCompany&id=<?=$row['id']?>"'><?= $row['company_vat']?></a></td>
+                    <td class='col-3'><a href='index.php?action=detailCompany&id=<?=$row['id']?>'><?= $row['company_vat']?></a></td>
                     <?php if($_SESSION['type'] == 1) { ?>
                     <td class='col-1'><button class="btn btn-light border-warning text-center text-warning"><i class="fas fa-edit"></i></button></td>
                     <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><i class="fas fa-times"></i></button></td>
