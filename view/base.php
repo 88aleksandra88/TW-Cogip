@@ -17,37 +17,70 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <section class="collapse navbar-collapse" id="navbarColor03">
+
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
+
+                    <?php if(!empty($_SESSION)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=listInvoices">Invoices</a>
-                    </li>
+                    </li> 
+                    <?php } ?>
+
+                    <?php if(!empty($_SESSION)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=listCompanies">Companies</a>
                     </li>
+                    <?php } ?>
+                    
+                    <?php if(!empty($_SESSION)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=listContacts">Contacts</a>
                     </li>
+                    <?php } ?>
+
+                    <?php if(!empty($_SESSION)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=newInvoice">New Invoice</a>
                     </li>
-                    <li class="nav-item">
+                    <?php } ?>
+
+                    <?php if(!empty($_SESSION)) { ?>
+                     <li class="nav-item">
                         <a class="nav-link" href="?action=newCompany">New Company</a>
                     </li>
+                    <?php } ?>
+
+                    <?php if(!empty($_SESSION)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=newContact">New Contact</a>
                     </li>
+                    <?php } ?>
+
+                    <?php if(!empty($_SESSION)) { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?action=adminView">Admin Panel</a>
+                    </li>
+                    <?php } ?>
+
+
+                    <?php if(empty($_SESSION)){ ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">Members section</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="?action=login">Log in</a>
-                            <a class="dropdown-item" href="./login must be split/logout.php">Log out</a>
                             <div class="dropdown-divider"></div>
                              <a class="dropdown-item" href="?action=registration">Register</a>
                         </div>
+                    </li>
+                        <?php } else { ?>
+
+                    <li class="nav-item">
+                            <a class="nav-link btn btn-outline-secondary btn-sm " href="?action=logout"><i class="fa fa-sign-in"></i> Log out</a>
+                        <?php } ?>
                     </li>
                 </ul>
             </section>

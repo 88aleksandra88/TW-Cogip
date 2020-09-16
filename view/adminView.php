@@ -14,7 +14,10 @@ if(empty($_SESSION['username'])){
 $title = "COGIP - Administration panel"; 
 ?>
 
+    <!-- Test de connexion -->
+    
 <section class="jumbotron d-flex flex-row justify-content-end">
+    <h3 class="mr-5 text-info"> Bienvenue <?= $_SESSION['username'] ?> !</h3>
     <h1 class="mr-5 text-info"><i class="fas fa-users-cog"></i> Administration Panel</h1>
 </section>
 <section class="container">
@@ -33,9 +36,11 @@ $title = "COGIP - Administration panel";
                 <tr class="row">
                     <td class='col-2'><a href='index.php?action=detailInvoice&id="<?= $row['invoice_id']?>"'><?= $row['invoice_number']?></a></td>
                     <td class='col-4'><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['last_name']?></a></td>
-                    <td class='col-4'><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['first_name']?></td></a>
-                    <td class='col-1'><button class="btn btn-primary btn-warning">EDIT</button></td>
-                    <td class='col-1'><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
+                    <td class='col-3'><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['first_name']?></td></a>
+                    <?php if($_SESSION['type'] == 1) { ?>
+                    <td class='col-1'><button class="btn btn-light border-warning text-center text-warning"><i class="fas fa-edit"></i></button></td>
+                    <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><i class="fas fa-times"></i></button></td>
+                    <?php } ?>
                 </tr>
                 <?php }?>
             </table>
@@ -50,11 +55,14 @@ $title = "COGIP - Administration panel";
                     <th col='col'>Country</th>
                 </tr>
                 <?php while($row = $lastCompanies->fetch()){ ?>
-                <tr>
-                    <td><?= $row['company_name']?></td>
-                    <td><?= $row['country']?></td>
-                    <td><button class="btn btn-primary btn-warning">EDIT</button></td>
-                    <td><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
+                <tr class='row'>
+                    <td class='col-3'><a href='index.php?action=detailCompany&id=<?=$row['id']?>"'><?= $row['company_name']?></a></td>
+                    <td class='col-4'><?= $row['country']?></td>
+                    <td class='col-3'><a href='index.php?action=detailCompany&id=<?=$row['id']?>"'><?= $row['company_vat']?></a></td>
+                    <?php if($_SESSION['type'] == 1) { ?>
+                    <td class='col-1'><button class="btn btn-light border-warning text-center text-warning"><i class="fas fa-edit"></i></button></td>
+                    <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><i class="fas fa-times"></i></button></td>
+                    <?php } ?>
                 </tr>
                 <?php }?>
             </table>
@@ -70,11 +78,14 @@ $title = "COGIP - Administration panel";
                     <th col='col-4'>Email</th>
                 </tr>
                 <?php while($row = $lastContacts->fetch()){ ?>
-                <tr>
-                    <td><?= $row['last_name']?></td>
-                    <td><?= $row['first_name']?></td>
-                    <td><?= $row['email']?></td>
-                    <td><button class="btn btn-primary btn-warning">EDIT</button><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
+                <tr class='row'>
+                    <td class='col-3'><a href="index.php?action=detailContact&id=<?=$row['id']?>"><?= $row['last_name']?></a></td>
+                    <td class='col-4'><a href="index.php?action=detailContact&id=<?=$row['id']?>"><?= $row['first_name']?></a></td>
+                    <td class='col-3'><a href="mailto:<?=$row['email']?>"><?= $row['email']?></a></td>
+                    <?php if($_SESSION['type'] == 1) { ?>
+                        <td class='col-1'><button class="btn btn-light border-warning text-center text-warning"><i class="fas fa-edit"></i></button></td>
+                        <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><i class="fas fa-times"></i></button></td>
+                     <?php } ?>
                 </tr>
                 <?php }?>
             </table>

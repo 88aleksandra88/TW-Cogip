@@ -62,7 +62,6 @@ class LoginManager extends Connection {
                   if (count($errors) == 0) {
                         echo "On met tout dans la DB ! ";  // Test d'erreurs affichage
                         $password = ($hashed_password);
-
                         $query = "INSERT INTO registration (username, email, password) 
                                     VALUES('$username', '$email', '$password')";
                         mysqli_query($db, $query);
@@ -112,6 +111,12 @@ class LoginManager extends Connection {
                               echo "Vous êtes connecté ! ";
                               $_SESSION['username'] = $username;
                               $_SESSION['password'] = $password;
+                              $_SESSION['type'] = $row['4'];
+                              // if($row[4] == 1){
+                              //       $_SESSION['type'] = 1;
+                              // } else {
+                              //       $_SESSION['type'] = 2;
+                              // }
                               //print_r($_SESSION);
                               $_SESSION['success'] = "You are no connected !";
                               header('location: ?action=adminPanel');
@@ -136,6 +141,7 @@ class LoginManager extends Connection {
       function logout(){
             // session_start();
             unset($_SESSION['username']);
+            session_unset();
             header("location:./index.php");
             exit();
       }
