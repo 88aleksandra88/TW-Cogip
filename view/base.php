@@ -81,8 +81,7 @@
                     </div>
                 </li>
                     <?php } else { ?>
-
-                <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link btn btn-outline-secondary btn-sm " href="?action=logout"><i class="fa fa-sign-in"></i> Log out</a>
                     <?php } ?>
                 </li>
@@ -103,10 +102,10 @@
                 <article class="col-12 col-md">
                 <!--- Logo a mettre ---------->
                     <img class="mb-2" src='./img/logo2.png' alt="logo" width="60" height="60">
-                    <small class="d-block mb-3 text-muted text-info ">Vive la COGIP!</small>
+                    <small class="d-block mb-3 text-info ">Vive la COGIP!</small>
                 </article>
                 <article class="col-6 col-md ">
-                    <h5>Direct access</h5>
+                    <h5 class="text-info">Direct access</h5>
                     <ul class="list-unstyled text-small">
                         <li><a class="text-muted" href="#">Invoices</a></li>
                         <li><a class="text-muted " href="#">Contacts</a></li>
@@ -114,7 +113,7 @@
                     </ul>
                 </article>
                 <article class="col-6 col-md">
-                    <h5>Resources</h5>
+                    <h5 class="text-info">Resources</h5>
                     <ul class="list-unstyled text-small">
                         <li><a class="text-muted" href="#">Twitter</a></li>
                         <li><a class="text-muted" href="#">Linkedin</a></li>
@@ -123,7 +122,7 @@
                     </ul>
                 </article>
                 <article class="col-6 col-md text-info">
-                    <h5>About</h5>
+                    <h5 class="text-info">About</h5>
                     <ul class="list-unstyled text-small ">
                     <li><a class="text-muted" href="#">Team</a></li>
                     <li><a class="text-muted" href="#">Legal</a></li>

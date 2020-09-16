@@ -25,14 +25,14 @@ $title = "COGIP - user panel gestion";
 <!-- User details -->
 <section class="col-8 m-auto">
     <table class='table'>
-    <h2>
-     <span class="badge badge-warning "><i class="fas fa-list"></i> Users list</span>
-    </h2>
+    <h3>
+     <span class="badge badge-info"><i class="fas fa-list"></i> Users list</span>
+    </h3>
 
         <tr class="row bg-light text-primary">
-            <th class='col-3'>Username</th>
-            <th class='col-3'>Email</th>
-            <th class='col-5'>Droits</th>
+            <th class='col-3 text-info'>Username</th>
+            <th class='col-3 text-info'>Email</th>
+            <th class='col-5 text-info'>Droits</th>
         </tr>
         <?php while($row = $listUsers->fetch()){ ?>
         <tr class="row">

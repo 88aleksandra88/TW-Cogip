@@ -34,7 +34,7 @@ $title = "COGIP - Companies Directory";
                 </thead>
                     <?php while($row = $clientsList->fetch()){ ?>
                     <tr>
-                        <td><a href='index.php?action=detailCompany&id=<?=$row['id']?>"'><?=$row['company']?></td>
+                        <td><a href='index.php?action=detailCompany&id=<?=$row['id']?>'><?=$row['company']?></td>
                         <td><?=$row['country']?></td>
                         <td><a href="index.php?action=detailCompany&id=<?=$row['id']?>"><?=$row['vat']?></td></a>
                     </tr>
