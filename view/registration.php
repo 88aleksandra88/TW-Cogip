@@ -5,6 +5,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+if(!empty($_SESSION['username'])){
+  header('location:./index.php');
+  exit();
+}
+
 $title = "COGIP - Log in";
 ?>
 
@@ -47,7 +52,7 @@ $title = "COGIP - Log in";
 
 
       <div class="form-group col-md-5">
-      <h3><span class="col-auto badge badge-primary">Registration</span></h3>
+      <h3><span class="col-auto badge badge-warning">Registration</span></h3>
           <label for="exampleInputPassword1">Username</label><span style="color: red; display: inline; float: none;">*</span>
           <input type="text" name="username"  value="<?php $username; ?>" class="form-control"  placeholder="Username" required>
         </div>
@@ -69,11 +74,11 @@ $title = "COGIP - Log in";
         </div>
 
       <div class="form-group col-md-5">
-        <button type="submit" class="btn btn-outline-primary" name="reg_user">Register</button>
+        <button type="submit" class="btn btn-outline-warning" name="reg_user">Register</button>
       </div>
 
       <p class="col-md-5">
-        Already a member? <a href="?action=login">Sign in</a>
+        Already a member? <a class="text-warning" href="?action=login">Sign in</a>
       </p>
 
     </form>

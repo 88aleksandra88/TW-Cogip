@@ -62,8 +62,8 @@ class LoginManager extends Connection {
                   if (count($errors) == 0) {
                         echo "On met tout dans la DB ! ";  // Test d'erreurs affichage
                         $password = ($hashed_password);
-                        $query = "INSERT INTO registration (username, email, password) 
-                                    VALUES('$username', '$email', '$password')";
+                        $query = "INSERT INTO registration (username, email, password, user_type) 
+                                    VALUES('$username', '$email', '$password', 0)";
                         mysqli_query($db, $query);
                         header('location:?action=login');
                         exit();
@@ -88,7 +88,7 @@ class LoginManager extends Connection {
                   $password = mysqli_real_escape_string($db, $_POST['password']);
                   $password = mysqli_real_escape_string($db, $_POST['password']);
 
-                  echo "Phase 1";
+                  //echo "Phase 1";
             
                  if (empty($username)) {
                          array_push($errors, "Username is required");
@@ -104,34 +104,27 @@ class LoginManager extends Connection {
                         $results = mysqli_query($db, $query);
                         $row = mysqli_fetch_array($results, MYSQLI_NUM);
                         $verifyPwd = password_verify($password, $row[3]);
-                        var_dump($verifyPwd);
+                        //var_dump($verifyPwd);
                         if (mysqli_num_rows($results) == 1) {
-                              echo "phase 3";
+                              //echo "phase 3";
                               session_start();
-                              echo "Vous êtes connecté ! ";
+                              //echo "Vous êtes connecté ! ";
                               $_SESSION['username'] = $username;
                               $_SESSION['password'] = $password;
                               $_SESSION['type'] = $row['4'];
-                              // if($row[4] == 1){
-                              //       $_SESSION['type'] = 1;
-                              // } else {
-                              //       $_SESSION['type'] = 2;
-                              // }
-                              //print_r($_SESSION);
-                              $_SESSION['success'] = "You are no connected !";
                               header('location: ?action=adminPanel');
                               exit();
                         }else {
-                               array_push($errors, "Wrong username/password combination");
+                               array_push($errors,"Wrong username/password combination");
                               // return  "Wrong information or account inexistant";
                               foreach($errors as $error){
-                                    $displayError .=  '- ' . $error;
+                                    $displayError .=  $error;
                               }
                               return $displayError;
                         }
                   } else {
                         foreach($errors as $error){
-                              $displayError .= '- ' . $error . '<br />';
+                              $displayError .= $error . '<br />';
                         }
                         return $displayError;
                   }

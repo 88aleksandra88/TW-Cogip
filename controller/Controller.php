@@ -26,6 +26,13 @@ class Controller
       require('./view/adminView.php');
    }
 
+   function userGestion()
+   {
+      $listUsers = (new AdminManager)->getUserList();
+
+      require('./view/listUser.php');
+   }
+
    function detailCompany() 
    {
       $companyDetails = (new CompanyManager)->getCompanyDetails();

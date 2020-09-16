@@ -1,6 +1,6 @@
 <?php 
-// Start recording view
 ob_start(); 
+// Start recording view
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -35,6 +35,10 @@ $title = "COGIP - Company Details";
                     <td class='col-3'><?= $row['company_name']?></td>
                     <td class='col-3'><?= $row['country']?></td>
                     <td class='col-2'><?= $row['company_type']?></td>
+                    <?php if($_SESSION['type'] == 1) { ?>
+                        <td class='col-1'><button class="btn btn-primary btn-warning">EDIT</button></td>
+                        <td class='col-1'><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
+                    <?php } ?>
                 </tr>
                 <?php }?>
             </table>
@@ -52,7 +56,7 @@ $title = "COGIP - Company Details";
                 </tr>
                 <?php while($row = $companyContacts->fetch()){ ?>
                 <tr class="row">
-                    <td class="col-3"><a href='index.php?action=detailContact&id="<?= $row['id']?>"'><?= $row['last_name']?></a></td>
+                    <td class="col-3"><a href='index.php?action=detailContact&id="<?= $row['id']?>" '><?= $row['last_name']?></a></td>
                     <td class='col-3'><?= $row['first_name']?></td>
                     <td class='col-3'><a href="mailto:<?=$row['email']?>"><?= $row['email']?></a></td>
                     <td class='col-3'><?= $row['phone']?></td>

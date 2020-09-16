@@ -33,7 +33,7 @@ $title = "COGIP - Companies Directory";
                 </thead>
                     <?php while($row = $clientsList->fetch()){ ?>
                     <tr>
-                        <td><a href='index.php?action=detailCompany&id=<?=$row['id']?>"'><?=$row['company']?></td>
+                        <td><a href='index.php?action=detailCompany&id=<?=$row['id']?>'><?=$row['company']?></td>
                         <td><?=$row['country']?></td>
                         <td><a href="index.php?action=detailCompany&id=<?=$row['id']?>"><?=$row['vat']?></td></a>
                         <td class='col-1'><form method="post"><button type="submit" name="edit" class="btn btn-primary btn-warning" value=<?=$row['id']?>>EDIT</button></form></td>

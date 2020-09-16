@@ -9,7 +9,7 @@ class CompanyManager extends Connection
 {
     function getCompanyDetails() 
     {
-        return $this->dbConnect()->query('SELECT * FROM companies  WHERE companies.id='.$_GET['id']);
+        return $this->dbConnect()->query('SELECT * FROM companies  WHERE id='.$_GET['id']);
     }
 
     function getCompanyContacts()
