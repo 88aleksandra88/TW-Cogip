@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 // namespace Becode\Cogip\model;
 
 require_once('./model/Connection.php');

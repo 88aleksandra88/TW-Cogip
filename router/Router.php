@@ -17,11 +17,6 @@ class Router extends Controller
             {
                 $this->adminPanel();
             } 
-            //& Modo routing
-            else if ($_GET['action'] == 'modoPanel')
-            {
-                $this->modoPanel();
-            } 
             //& Company routing
             else if ($_GET['action'] == 'detailCompany') 
             {
@@ -61,10 +56,6 @@ class Router extends Controller
             {
                 $this->newInvoice();
             } 
-            else if ($_GET['action'] == 'deleteInvoice') 
-            {
-                $this->deleteInvoice();
-            } 
             else if ($_GET['action'] == 'registration') 
             {
                 $this->getRegister();
@@ -72,10 +63,6 @@ class Router extends Controller
             else if ($_GET['action'] == 'login') 
             {
                 $this->getLogged();
-            } 
-            else if ($_GET['action'] == 'logout') 
-            {
-                $this->getLogout();
             } 
             else 
             {

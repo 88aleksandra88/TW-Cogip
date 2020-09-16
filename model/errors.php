@@ -7,5 +7,5 @@ if (count($errors) > 0){ ?>
   	  <p><?= $error ?></p>
 	  <?php }?>
   </div>
-<?php  } ?>
+<?php  }
 

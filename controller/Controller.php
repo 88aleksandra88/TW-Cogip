@@ -4,7 +4,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once('./model/AdminManager.php');
-require_once('./model/ModoManager.php');
 require_once('./model/CompanyManager.php');
 require_once('./model/ContactManager.php');
 require_once('./model/InvoiceManager.php');
@@ -27,15 +26,6 @@ class Controller
       require('./view/adminView.php');
    }
 
-   function modoPanel()
-   {
-      $lastInvoices = (new ModoManager)->getLastInvoices();
-      $lastCompanies = (new ModoManager)->getLastCompanies();
-      $lastContacts = (new ModoManager)->getLastContacts();
-
-      require('./view/modoView.php');
-   }
-
    function detailCompany() 
    {
       $companyDetails = (new CompanyManager)->getCompanyDetails();
@@ -49,6 +39,7 @@ class Controller
    {  
       $clientsList = (new CompanyManager)->getClientsCompany();
       $providersList = (new CompanyManager)->getProvidersCompany();
+      $deleteCompany = (new CompanyManager)->deleteCompany();
       
       require('./view/listCompaniesView.php');
    }
@@ -71,7 +62,8 @@ class Controller
 
    function listContacts() 
    {
-      $listContacts = (new ContactManager)->getListContacts(); 
+      $listContacts = (new ContactManager)->getListContacts();
+      $deleteContact = (new ContactManager)->deleteContact();
 
       require('./view/listContactsView.php');
    }
@@ -94,7 +86,8 @@ class Controller
 
    function listInvoices() 
    {
-      $listInvoices = (new InvoiceManager)->getListInvoices(); 
+      $listInvoices = (new InvoiceManager)->getListInvoices();
+      $deleteInvoice = (new InvoiceManager)->deleteInvoice();
 
       require('./view/listInvoicesView.php');
    }
@@ -108,11 +101,6 @@ class Controller
       require('view/newInvoice.php');
    }
 
-   function deleteInvoice()
-   {
-      $deleteInvoice = (new InvoiceManager)->deleteInvoice();
-   }
-
    function getLogged(){
       $login = new LoginManager;
       // $login->login();
@@ -121,14 +109,8 @@ class Controller
 
    function getRegister(){
       $register = new LoginManager;
-      // $register->register(); 
+      $register->register();
       require('view/registration.php');
-   }
-
-   function getLogout(){
-      $logout = new LoginManager;
-      $logout->logout(); 
-      require('view/logout.php');
    }
 }
 

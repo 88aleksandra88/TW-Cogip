@@ -1,5 +1,5 @@
-<?php ob_start(); ?>
-<?php 
+<?php
+ob_start();
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -11,7 +11,6 @@ if(empty($_SESSION['username'])){
 }
 
 $title = "COGIP - Invoices Directory"; ?>
-
 
 <section class="jumbotron d-flex flex-row justify-content-end">
     <h1 class="mr-5 text-info"><i class="fas fa-file-invoice-dollar"></i> Invoices Directory</h1>
@@ -37,6 +36,8 @@ $title = "COGIP - Invoices Directory"; ?>
                     <td><?=$row['invoice_date']?></td>
                     <td><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?=$row['last_name']?></a></td>
                     <td><a href='index.php?action=detailCompany&id="<?= $row['company_id']?>"'><?=$row['company_name']?></a></td>
+                    <td class='col-1'><form method="post"><button type="submit" name="edit" class="btn btn-primary btn-warning" value=<?=$row['id']?>>EDIT</button></form></td>
+                    <td class='col-1'><form method="post"><button type="submit" name="delete" class="ml-2 btn btn-primary btn-danger" value=<?=$row['id']?>>DELETE</button></form></td>
                 </tr>
             <?php }?>
             </table>

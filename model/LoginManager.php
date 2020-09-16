@@ -14,6 +14,7 @@ class LoginManager extends Connection {
 
             $username = "";
             $email    = "";
+            $errors = array(); 
             $password = "";
             //$emailSanitized = "";
 
@@ -55,10 +56,11 @@ class LoginManager extends Connection {
                         if ($user['email'] === $email) {
                               array_push($errors, "Email already exists");
                         }
-                  } 
+                  }
 
-                  if (count($errors) == 0) {      
-                        // echo "On met tout dans la DB ! ";  // Test d'erreurs affichage
+                  // Finally, register user if there are no errors in the form
+                  if (count($errors) == 0) {
+                        echo "On met tout dans la DB ! ";  // Test d'erreurs affichage
                         $password = ($hashed_password);
 
                         $query = "INSERT INTO registration (username, email, password) 
@@ -70,7 +72,7 @@ class LoginManager extends Connection {
                         foreach($errors as $error){
                               $displayError .= '- ' . $error . '<br />';
                         }
-                       return $displayError;
+                        return $displayError;
                   }
             }
       }

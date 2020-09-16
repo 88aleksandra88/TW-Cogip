@@ -41,8 +41,6 @@ $title = "COGIP - Invoice Details";
                 </td>
                 <tr class="row">
                     <td class="col-10"><?= $row['invoice_content']?></td>
-                    <td class="col-1"><button class="btn btn-primary btn-warning">EDIT</button></td>
-                    <td class="col-1"><button class="ml-2 btn btn-primary btn-danger">DELETE</button></td>
                 </tr>
                 <?php }?>
             </table>
