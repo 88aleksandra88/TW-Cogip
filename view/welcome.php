@@ -10,9 +10,6 @@ $title = "COGIP - Log in"; ?>
             <article class="display-4 text-center">
                         <img src="./img/cogip_logo.png" alt="La Cogip">
             </article>
-            <article class="row">
-                  <img  class="my-4 mx-auto d-block" src='./img/logo.png' alt='Logo Cogip'/>
-            </article>
             <p class="lead text-center text-white">The intranet becomes child's play !</p>
             <?php if(empty($_SESSION)){ ?>
             <a href="?action=login" class="col-md-2 btn btn-warning mx-auto d-block font-weight-bold" >Log in</a>

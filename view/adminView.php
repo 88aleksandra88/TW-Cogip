@@ -18,7 +18,7 @@ $title = "COGIP - Administration panel";
  
 <section class="jumbotron d-flex flex-row justify-content-end">
     <p class="display-4 mr-5 text-info"> Welcome<span class="font-weight-bold text-warning"> <?= $_SESSION['username'] ?></span> !</p>
-    <h1 class="display-4 mr-5 text-info"><i class="fas fa-users-cog"></i> Administration Panel</h1>
+    <h1 class="display-4 mr-5 text-info"><i class="fas fa-user-tie"></i> Personnal Panel</h1>
 </section>
 <section class="container">
     <article class="column">
