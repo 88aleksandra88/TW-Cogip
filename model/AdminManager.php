@@ -26,7 +26,7 @@ class AdminManager extends Connection
     }
 
     function getUserList(){
-        return $this->dbConnect()->query('SELECT username, email, user_type as droit FROM registration ORDER BY username');
+        return $this->dbConnect()->query('SELECT username, email, user_type as droit FROM registration ORDER BY user_type ASC, username ASC');
     }
 }
 

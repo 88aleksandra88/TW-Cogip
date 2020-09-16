@@ -19,10 +19,6 @@ $title = "COGIP - Administration panel";
 <section class="jumbotron d-flex flex-row justify-content-end">
     <p class="display-4 mr-5 text-info"> Welcome<span class="font-weight-bold text-warning"> <?= $_SESSION['username'] ?></span> !</p>
     <h1 class="display-4 mr-5 text-info"><i class="fas fa-users-cog"></i> Administration Panel</h1>
-        <button class=" col-auto btn btn-outline-warning btn-sm " href="?action=userGestion"><i class=""></i> Users list</button>
-    <p>
-    </p>
-
 </section>
 <section class="container">
     <article class="column">
@@ -30,8 +26,15 @@ $title = "COGIP - Administration panel";
         <!-- Display last created invoices -->
         <section class="col">
             <table class='table'>
+            <?php if($_SESSION['type'] == 1) { ?>
+                <p>
+                    <a class="display-4 mr-4 nav-link btn btn-outline-warning btn-lg" href="?action=userGestion"><i class="fas fa-list"></i> Users list page</a>
+                </p>
+            <?php } ?>
                 <h3 class='text-primary text-right'>Last 5 Invoices</h3>
-                <h3><a href='index.php?action=newInvoice'><span class="btn btn-info"><i class="fas fa-plus"></i> New Invoice </span></a></h3>
+                <?php if($_SESSION['type'] == 1) { ?>
+                    <h3><a href='index.php?action=newInvoice'><span class="btn btn-info"><i class="fas fa-plus"></i> New Invoice </span></a></h3>
+            <?php } ?>
                 <tr class="row bg-light text-primary">
                     <th class='col-3'>Invoice ID</th>
                     <th class='col-4'>Last Name</th>
@@ -61,7 +64,9 @@ $title = "COGIP - Administration panel";
         <section class="col">
             <table class='table'>
                 <h3 class='text-primary text-right'>Last 5 Companies</span></h3>
-                <h3><a href='index.php?action=newCompany'><span class="btn btn-info"><i class="fas fa-plus"></i> New Company</span></a></h3>
+                <?php if($_SESSION['type'] == 1) { ?>
+                    <h3><a href='index.php?action=newCompany'><span class="btn btn-info"><i class="fas fa-plus"></i> New Company</span></a></h3>
+                <?php } ?>
                 <tr class="row bg-light text-primary">
                     <th class='col-3'>Company Name</th>
                     <th class='col-4'>Country</th>
@@ -87,7 +92,9 @@ $title = "COGIP - Administration panel";
         <section class="col">
             <table class='table'>
                 <h3 class='text-primary text-right'>Last 5 Contacts</span></h3>
-                <h3><a href='index.php?action=newCompany'><span class="btn btn-info"><i class="fas fa-plus"></i> New Contact</span></a></h3>
+                <?php if($_SESSION['type'] == 1) { ?>
+                    <h3><a href='index.php?action=newCompany'><span class="btn btn-info"><i class="fas fa-plus"></i> New Contact</span></a></h3>
+                <?php } ?>
                 <tr class="row bg-light text-primary">
                     <th class='col-3'>Last Name</th>
                     <th class='col-4'>First Name</th>

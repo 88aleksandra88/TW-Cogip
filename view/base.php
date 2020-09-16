@@ -16,6 +16,7 @@
                 aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Section gauche -->
             <section class="collapse navbar-collapse" id="navbarColor03">
 
                 <ul class="navbar-nav mr-auto">
@@ -64,26 +65,28 @@
                         <a class="nav-link" href="?action=adminPanel">Admin Panel</a>
                     </li>
                     <?php } ?>
-
-
-                    <?php if(empty($_SESSION)){ ?>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">Members section</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="?action=login">Log in</a>
-                            <div class="dropdown-divider"></div>
-                             <a class="dropdown-item" href="?action=registration">Register</a>
-                        </div>
-                    </li>
-                        <?php } else { ?>
-
-                    <li class="nav-item">
-                            <a class="nav-link btn btn-outline-secondary btn-sm " href="?action=logout"><i class="fa fa-sign-in"></i> Log out</a>
-                        <?php } ?>
-                    </li>
-
                 </ul>
+            </section>
+            <!-- Section login -->
+            <section class="mx-4">
+            <ul class="navbar-nav mr-auto">
+            <?php if(empty($_SESSION)){ ?>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">Members section</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="?action=login">Log in</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="?action=registration">Register</a>
+                    </div>
+                </li>
+                    <?php } else { ?>
+
+                <li class="nav-item">
+                        <a class="nav-link btn btn-outline-secondary btn-sm " href="?action=logout"><i class="fa fa-sign-in"></i> Log out</a>
+                    <?php } ?>
+                </li>
+            </ul>
             </section>
         </nav>
 
@@ -95,18 +98,18 @@
 
         </main>
         <!-- Footer -->
-        <footer class="pl-5 pt-4 mb-md-5 pt-md-5 border-top">
-            <section class="row">
+        <footer class="pl-5 pt-4 mb-md-5 pt-md-5 border-top">            
+        <section class="row">
                 <article class="col-12 col-md">
                 <!--- Logo a mettre ---------->
                     <img class="mb-2" src='./img/logo2.png' alt="logo" width="60" height="60">
-                    <small class="d-block mb-3 text-muted">Vive la COGIP!</small>
+                    <small class="d-block mb-3 text-muted text-info ">Vive la COGIP!</small>
                 </article>
-                <article class="col-6 col-md">
+                <article class="col-6 col-md ">
                     <h5>Direct access</h5>
                     <ul class="list-unstyled text-small">
                         <li><a class="text-muted" href="#">Invoices</a></li>
-                        <li><a class="text-muted" href="#">Contacts</a></li>
+                        <li><a class="text-muted " href="#">Contacts</a></li>
                         <li><a class="text-muted" href="#">Companies</a></li>
                     </ul>
                 </article>
@@ -119,9 +122,9 @@
                         <li><a class="text-muted" href="#">Instagram</a></li>
                     </ul>
                 </article>
-                <article class="col-6 col-md">
+                <article class="col-6 col-md text-info">
                     <h5>About</h5>
-                    <ul class="list-unstyled text-small">
+                    <ul class="list-unstyled text-small ">
                     <li><a class="text-muted" href="#">Team</a></li>
                     <li><a class="text-muted" href="#">Legal</a></li>
                     <li><a class="text-muted" href="#">Privacy</a></li>
