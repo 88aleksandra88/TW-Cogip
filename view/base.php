@@ -18,16 +18,25 @@
             </button>
             <!-- Section gauche -->
             <section class="collapse navbar-collapse" id="navbarColor03">
+
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="./index.php">Home <span class="sr-only">(current)</span></a>
                     </li>
+
+                    <?php if(!empty($_SESSION)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=listInvoices">Invoices</a>
-                    </li>
+                    </li> 
+                    <?php } ?>
+
+                    <?php if(!empty($_SESSION)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=listCompanies">Companies</a>
                     </li>
+                    <?php } ?>
+                    
+                    <?php if(!empty($_SESSION)) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=listContacts">Contacts</a>
                     </li>
@@ -64,7 +73,6 @@
                             aria-haspopup="true" aria-expanded="false">Members section</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="?action=login">Log in</a>
-                            <a class="dropdown-item" href="?action=logout">Log out</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item"href="?action=registration">Register</a>
                         </div>

@@ -74,7 +74,7 @@ class Router extends Controller
         } 
         else 
         {
-            $this->getLogged();
+            $this->welcome();
             echo 'No ACTION defined';
         }
     }
