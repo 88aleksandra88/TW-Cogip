@@ -19,6 +19,10 @@ $title = "COGIP - Administration panel";
 <section class="jumbotron d-flex flex-row justify-content-end">
     <p class="display-4 mr-5 text-info"> Welcome<span class="font-weight-bold text-warning"> <?= $_SESSION['username'] ?></span> !</p>
     <h1 class="display-4 mr-5 text-info"><i class="fas fa-users-cog"></i> Administration Panel</h1>
+        <button class=" col-auto btn btn-outline-warning btn-sm " href="?action=userGestion"><i class=""></i> Users list</button>
+    <p>
+    </p>
+
 </section>
 <section class="container">
     <article class="column">
@@ -38,10 +42,14 @@ $title = "COGIP - Administration panel";
                 <?php while($row = $lastInvoices->fetch()){ ?>
                 <tr class="row">
                     <td class='col-3'><a href='index.php?action=detailInvoice&id="<?= $row['invoice_id']?>"'><?= $row['invoice_number']?></a></td>
+
                     <td class='col-4'><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['last_name']?></a></td>
+
                     <td class='col-3'><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['first_name']?></td></a>
+
                     <?php if($_SESSION['type'] == 1) { ?>
                     <td class='col-1'><button class="btn btn-light border-warning text-center text-warning"><i class="fas fa-edit"></i></button></td>
+
                     <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><i class="fas fa-times"></i></button></td>
                     <?php } ?>
                 </tr>

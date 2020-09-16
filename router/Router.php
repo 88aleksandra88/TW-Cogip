@@ -22,6 +22,11 @@ class Router extends Controller
             {
                 $this->modoPanel();
             } 
+            // user gestion
+            else if ($_GET['action'] == 'userGestion') 
+            {
+                $this->userGestion();
+            } 
             //& Company routing
             else if ($_GET['action'] == 'detailCompany') 
             {

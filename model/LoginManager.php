@@ -110,7 +110,6 @@ class LoginManager extends Connection {
                               $_SESSION['username'] = $username;
                               $_SESSION['password'] = $password;
                               $_SESSION['type'] = $row['4'];
-                              $_SESSION['success'] = "You are no connected !";
                               header('location: ?action=adminPanel');
                               exit();
                         }else {

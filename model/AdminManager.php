@@ -24,6 +24,10 @@ class AdminManager extends Connection
     {
         return $this->dbConnect()->query('SELECT * FROM users ORDER BY last_name DESC LIMIT 0, 5');
     }
+
+    function getUserList(){
+        return $this->dbConnect()->query('SELECT username, email, user_type as droit FROM registration ORDER BY username');
+    }
 }
 
 
