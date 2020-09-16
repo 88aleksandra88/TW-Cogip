@@ -14,9 +14,10 @@ if(empty($_SESSION['username'])){
 $title = "COGIP - Administration panel"; 
 ?>
 
-<section class="jumbotron d-flex flex-row justify-content-end">
     <!-- Test de connexion -->
-    <p> Bienvenue <?= $_SESSION['username'] ?> ! </p>
+    
+<section class="jumbotron d-flex flex-row justify-content-end">
+    <h3 class="mr-5 text-info"> Bienvenue <?= $_SESSION['username'] ?> !</h3>
     <h1 class="mr-5 text-info"><i class="fas fa-users-cog"></i> Administration Panel</h1>
 </section>
 <section class="container">
@@ -39,8 +40,10 @@ $title = "COGIP - Administration panel";
                     <td class='col-3'><a href='index.php?action=detailInvoice&id="<?= $row['invoice_id']?>"'><?= $row['invoice_number']?></a></td>
                     <td class='col-4'><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['last_name']?></a></td>
                     <td class='col-3'><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?= $row['first_name']?></td></a>
+                    <?php if($_SESSION['type'] == 1) { ?>
                     <td class='col-1'><button class="btn btn-light border-warning text-center text-warning"><i class="fas fa-edit"></i></button></td>
-                    <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><a href="index.php?action=deleteInvoice&id=<?= $row['invoice_id']?>"></a><i class="fas fa-times"></i></button></td>
+                    <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><i class="fas fa-times"></i></button></td>
+                    <?php } ?>
                 </tr>
                 <?php }?>
             </table>
@@ -63,8 +66,10 @@ $title = "COGIP - Administration panel";
                     <td class='col-3'><a href='index.php?action=detailCompany&id=<?=$row['id']?>"'><?= $row['company_name']?></a></td>
                     <td class='col-4'><?= $row['country']?></td>
                     <td class='col-3'><a href='index.php?action=detailCompany&id=<?=$row['id']?>"'><?= $row['company_vat']?></a></td>
+                    <?php if($_SESSION['type'] == 1) { ?>
                     <td class='col-1'><button class="btn btn-light border-warning text-center text-warning"><i class="fas fa-edit"></i></button></td>
-                    <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><a href="delete.php?id="<?=$row['id']?>"></a><i class="fas fa-times"></i></button></td>
+                    <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><i class="fas fa-times"></i></button></td>
+                    <?php } ?>
                 </tr>
                 <?php }?>
             </table>
@@ -87,8 +92,10 @@ $title = "COGIP - Administration panel";
                     <td class='col-3'><a href="index.php?action=detailContact&id=<?=$row['id']?>"><?= $row['last_name']?></a></td>
                     <td class='col-4'><a href="index.php?action=detailContact&id=<?=$row['id']?>"><?= $row['first_name']?></a></td>
                     <td class='col-3'><a href="mailto:<?=$row['email']?>"><?= $row['email']?></a></td>
-                    <td class='col-1'><button class="btn btn-light border-warning text-center text-warning"><i class="fas fa-edit"></i></button></td>
-                    <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><i class="fas fa-times"></i></button></td>
+                    <?php if($_SESSION['type'] == 1) { ?>
+                        <td class='col-1'><button class="btn btn-light border-warning text-center text-warning"><i class="fas fa-edit"></i></button></td>
+                        <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><i class="fas fa-times"></i></button></td>
+                     <?php } ?>
                 </tr>
                 <?php }?>
             </table>
