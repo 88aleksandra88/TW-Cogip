@@ -17,7 +17,7 @@ class LoginManager extends Connection {
             $password = "";
             //$emailSanitized = "";
 
-            $db = mysqli_connect('mysqldb', 'root', 'root', 'cogip');
+            $db = mysqli_connect('localhost', 'user_cogip', 'cogip_pwd', 'cogip');
 
             // REGISTER USER
             if (isset($_POST['reg_user'])) {
@@ -78,7 +78,7 @@ class LoginManager extends Connection {
        function login(){
             $errors = array();
             $displayError = "";
-            $db = mysqli_connect('mysqldb', 'root', 'root', 'cogip');
+            $db = mysqli_connect('localhost', 'user_cogip', 'cogip_pwd', 'cogip');
 
             if (isset($_POST['login_user'])) {
                   $username = mysqli_real_escape_string($db, $_POST['username']);

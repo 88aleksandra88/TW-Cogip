@@ -11,7 +11,7 @@
 
         <!-- Navigation -->
         <nav class="pl-5 navbar navbar-expand-lg navbar-light bg-light ">
-            <a class="navbar-brand" href="#">COGIP</a>
+            <a class="navbar-brand" href="#"><img src="./img/cogip_logo.png" alt="La Cogip" width="100vw" height="100vw"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
                 aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -100,8 +100,7 @@
         <footer class="pl-5 pt-4 mb-md-5 pt-md-5 border-top">            
         <section class="row">
                 <article class="col-12 col-md">
-                <!--- Logo a mettre ---------->
-                    <img class="mb-2" src='./img/logo2.png' alt="logo" width="60" height="60">
+                    <img class="mb-2" src='./img/cogip_logo.png' alt="logo" width="60" height="60">
                     <small class="d-block mb-3 text-info ">Vive la COGIP!</small>
                 </article>
                 <article class="col-6 col-md ">
