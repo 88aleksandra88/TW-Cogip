@@ -13,6 +13,8 @@
         $idComp = $_POST['company_id'];
         $idUser = $_POST['user_id'];
     };
+    $title= "COGIP - new Invoice";
+
 ?>
 <section class="jumbotron d-flex flex-row justify-content-end">
     <h1 class="pr-5 text-info"><i class="fas fa-file-invoice-dollar"></i> Create new invoice</h1>

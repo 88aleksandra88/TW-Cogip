@@ -14,6 +14,8 @@ if(empty($_SESSION['username']) || $_SESSION['type'] == 0){
         $phone = $_POST['phone'];
         $id = $_POST['company_id'];
     };
+    $title= "COGIP - new Contact";
+
 ?>
 <section class="jumbotron d-flex flex-row justify-content-end">
     <h1 class="pr-5 text-info"><i class="fas fa-address-book"></i> Create new contact</h1>

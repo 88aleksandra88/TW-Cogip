@@ -55,16 +55,25 @@ class CompanyManager extends Connection
             $country = $_POST['country'];
             $vat = $_POST['company_vat'];
             $type = $_POST['company_type'];
-            $sql = "INSERT INTO companies (company_name, country, company_vat, company_type) 
+            // Check dans la DB si ca existe déjà 
+            $query = "SELECT * FROM companies WHERE company_name='$name' AND company_vat = $vat ";
+            var_dump($query);
+            if($query){
+                $sql = "UPDATE companies SET company_name='$name', country='$country', company_vat='$vat', company_type='$type'
+                            WHERE company_vat='$vat' "; 
+                $this->dbConnect()->exec($sql);
+            }else{
+                $sql = "INSERT INTO companies (company_name, country, company_vat, company_type) 
                             VALUES (:company_name, :country, :company_vat, :company_type)";
             
             $stmt = $this->dbConnect()->prepare($sql);
-
+            
             $stmt->execute([
                 'company_name' => $name,
                 'country' => $country,
                 'company_vat' => $vat,
                 'company_type' => $type]);
+            }
         };
     } 
 

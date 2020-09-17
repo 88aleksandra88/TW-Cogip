@@ -6,6 +6,7 @@
         header('location:./index.php');
         exit();
     }
+    $title= "COGIP - new Company";
 ?>
 <section class="jumbotron d-flex flex-row justify-content-end">
     <h1 class="pr-5 text-info"><i class="fas fa-building"></i> Create new company</h1>
