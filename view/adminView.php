@@ -28,8 +28,8 @@ $title = "COGIP - Administration panel";
         <section class="col">
             <table class='table'>
             <?php if($_SESSION['type'] == 1) { ?>
-                <p class="d-flex justify-content-center">
-                    <a class="display-4 mr-4 nav-link btn btn-outline-warning btn-lg text-info col-6" href="?action=userGestion"><i class="fas fa-list"></i> Users list page</a>
+                <p>
+                    <a class="display-4 mr-4 nav-link btn btn-outline-warning btn-lg" href="?action=userGestion"><i class="fas fa-list"></i> Users list page</a>
                 </p>
             <?php } ?>
                 <h3 class='text-primary text-right text-info'>Last 5 Invoices</h3>
