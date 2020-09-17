@@ -8,7 +8,6 @@
     }
 
     $title= "COGIP - new Invoice";
-var_dump($_POST['button']);
 ?>
 <section class="jumbotron d-flex flex-row justify-content-end">
     <h1 class="pr-5 text-info"><i class="fas fa-file-invoice-dollar"></i> Create new invoice</h1>

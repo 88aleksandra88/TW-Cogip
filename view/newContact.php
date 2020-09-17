@@ -18,7 +18,7 @@ if(empty($_SESSION['username']) || $_SESSION['type'] == 0){
         <form method="post" action="" class="container col-10">
             <h3 class="text-info">New contact</h3>
             <label class="p-1 mt-2 text-primary" for="first_name">First name</label>
-            <input id="first_name" name="first_name" class="form-control" type="text" value="<?= $getContactData['first_name'] ?>'">
+            <input id="first_name" name="first_name" class="form-control" type="text" value="<?= $getContactData['first_name'] ?>">
             <label class="p-1 mt-2 text-primary" for="last_name">Last name</label>
             <input id="last_name" name="last_name" class="form-control" type="textxt" value="<?= $getContactData['last_name'] ?>">
             <label class="p-1 mt-2 text-primary" for="email">E-mail</label>
