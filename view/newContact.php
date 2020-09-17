@@ -6,14 +6,7 @@ if(empty($_SESSION['username']) || $_SESSION['type'] == 0){
     header('location:./index.php');
     exit();
 }
-    if (isset($_POST['first_name']) AND isset($_POST['last_name'])
-    AND isset($_POST['email']) AND isset($_POST['phone'])) {
-        $firstname = $_POST['first_name'];
-        $lastname = $_POST['last_name'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $id = $_POST['company_id'];
-    };
+
     $title= "COGIP - new Contact";
 
 ?>
@@ -25,19 +18,20 @@ if(empty($_SESSION['username']) || $_SESSION['type'] == 0){
         <form method="post" action="" class="container col-10">
             <h3 class="text-info">New contact</h3>
             <label class="p-1 mt-2 text-primary" for="first_name">First name</label>
-            <input id="first_name" name="first_name" class="form-control" type="text">
+            <input id="first_name" name="first_name" class="form-control" type="text" value="<?= $getContactData['first_name'] ?>'">
             <label class="p-1 mt-2 text-primary" for="last_name">Last name</label>
-            <input id="last_name" name="last_name" class="form-control" type="text">
+            <input id="last_name" name="last_name" class="form-control" type="textxt" value="<?= $getContactData['last_name'] ?>">
             <label class="p-1 mt-2 text-primary" for="email">E-mail</label>
-            <input id="email" name="email" class="form-control" type="email" placeholder="name@example.com">
+            <input id="email" name="email" class="form-control" type="email" placeholder="name@example.com" value="<?= $getContactData['email'] ?>">
             <label class="p-1 mt-2 text-primary" for="phone">Phone Number</label>
-            <input id="phone" name="phone" class="form-control" type="text" placeholder="0400/000000">
+            <input id="phone" name="phone" class="form-control" type="text" placeholder="0400/000000" value="<?= $getContactData['phone'] ?>">
             <label class="p-1 mt-2 text-primary" for="company_id">Company</label>
             <select id="company_id" name="company_id" class="form-control">
+            <?= $company; ?> 
             <?php
-                echo "<option value='' selected></option>";
+
                 foreach ($listCompanies as $row) {
-                echo "<option value=".$row['id'].">".$row['company_name']."</option>";
+                echo "< value=".$row['id']." >".$row['company_name']."</option>";
             }; ?>
             </select>
             <button class="btn btn-warning mt-2 mb-2 text-dark font-weight-bold" type="submit" name="button">Envoyer</button>

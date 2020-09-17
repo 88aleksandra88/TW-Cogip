@@ -55,10 +55,12 @@ class CompanyManager extends Connection
             $country = $_POST['country'];
             $vat = $_POST['company_vat'];
             $type = $_POST['company_type'];
+           
             // Check dans la DB si ca existe déjà 
-            $query = "SELECT * FROM companies WHERE company_name='$name' AND company_vat = $vat ";
-            var_dump($query);
-            if($query){
+            $query = $this->dbConnect()->query("SELECT id FROM companies ");
+            $result = $query->fetchAll();
+
+            if(!empty($_POST['button'])){
                 $sql = "UPDATE companies SET company_name='$name', country='$country', company_vat='$vat', company_type='$type'
                             WHERE company_vat='$vat' "; 
                 $this->dbConnect()->exec($sql);
@@ -123,10 +125,6 @@ class CompanyManager extends Connection
             $t = $data['company_type'];
             ($t == 3) ? $type = "<option value=".$t.">Client</option>" : $type = "<option value=".$t.">Provider</option>";
 
-            if (isset($_POST['button']))
-            {
-                $this->deleteCompany();
-            }
         } 
     }
 }

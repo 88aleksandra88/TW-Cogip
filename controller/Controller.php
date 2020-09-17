@@ -92,6 +92,9 @@ class Controller
    {
       $listCompanies = (new ContactManager)->getListCompanies();
       $newContact = (new ContactManager)->addContact();
+      $getContactData = (new ContactManager)->getContactData();
+      $displayContact = (new ContactManager)->displayContact($getContactData);
+
 
       require('view/newContact.php');
    }

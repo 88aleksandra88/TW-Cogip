@@ -50,17 +50,27 @@ class ContactManager extends Connection
             $email = $_POST['email'];
             $phone = $_POST['phone'];
             $id = $_POST['company_id'];
-        };
+            $btn = $_POST['button'];
+            // Check dans la DB si ca existe déjà 
+            $query = $this->dbConnect()->query("SELECT id FROM users ");
+            $result = $query->fetchAll();
 
-        $sql = "INSERT INTO users (first_name, last_name, email, phone, company_id) 
-                            VALUES (:first_name, :last_name, :email, :phone, :company_id)";
-            
-        $stmt = $this->dbConnect()->prepare($sql);
-        $stmt->execute(['first_name' => $firstname,
-                        'last_name' => $lastname,
-                        'email' => $email,
-                        'phone' => $phone,
-                        'company_id' => $id]);
+            if(!empty($_POST['button'])){
+                $sql = "UPDATE user SET first_name='$firstname', last_name='$lastname', email='$email', phone='$phone', company_id='$id' 
+                            WHERE id=$btn"; 
+                $this->dbConnect()->exec($sql);
+            }else{
+            $sql = "INSERT INTO users (first_name, last_name, email, phone, company_id) 
+                                VALUES (:first_name, :last_name, :email, :phone, :company_id)";
+                
+            $stmt = $this->dbConnect()->prepare($sql);
+            $stmt->execute(['first_name' => $firstname,
+                            'last_name' => $lastname,
+                            'email' => $email,
+                            'phone' => $phone,
+                            'company_id' => $id]);
+            };
+         }
     }
 
     function deleteContact()
@@ -80,6 +90,33 @@ class ContactManager extends Connection
                 echo $sql . "<br>" . $e->getMessage();
             }
         };
+    }
+
+    function getContactData()
+    {
+        if (isset($_POST['edit']))
+        {
+            $id = $_POST['edit'];
+            $data = $this->dbConnect()->query("SELECT * FROM users WHERE id=$id");
+            $contact = $data->fetch();
+
+            return $contact;
+        }
+    }
+
+
+    function displayContact($data)
+    {
+        if (isset($_POST['edit']))
+        {
+            $c = $data['company_id'];
+
+            $comp = $this->dbConnect()->query("SELECT company_name FROM companies WHERE id=$c");
+            $result = $comp->fetch();
+            var_dump($result);
+            $company = "<option value='". $c . " ' selected > ". $result['company_name'] . " </option>";
+            var_dump($company);
+        } 
     }
 
     function getListCompanies()
