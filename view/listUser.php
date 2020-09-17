@@ -53,9 +53,9 @@ $title = "COGIP - user panel gestion";
                   <?= $row['droit'] ?>
             </td>
             <?php if($_SESSION['type'] == 1) { ?>
-                    <td class='col-1'><button class="btn btn-light border-warning text-center text-warning"><i class="fas fa-edit"></i></button></td>
-                    <td class='col-1'><button class="ml-2 btn btn-light border-danger text-center text-danger"><i class="fas fa-times"></i></button></td>
-                    <?php } ?>
+                <td class='col-1'><form method="post" action="index.php?action=newCompany"><button type="submit" name="edit" class="btn btn-primary btn-warning" value=<?=$row['id']?>>EDIT</button></form></td>
+                <td class='col-1'><form method="post"><button type="submit" name="delete" class="ml-2 btn btn-primary btn-danger" value=<?=$row['id']?>>DELETE</button></form></td>
+            <?php } ?>
         </tr>
         <?php }?>
     </table>

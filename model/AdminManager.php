@@ -26,7 +26,26 @@ class AdminManager extends Connection
     }
 
     function getUserList(){
-        return $this->dbConnect()->query('SELECT username, email, user_type as droit FROM registration ORDER BY user_type ASC, username ASC');
+        return $this->dbConnect()->query('SELECT id, username, email, user_type as droit FROM registration ORDER BY user_type ASC, username ASC');
+    }
+
+    function deleteUser()
+    {
+        if (isset($_POST['delete']))
+        {
+            try {
+                $id = $_POST['delete'];
+                $sql = "DELETE FROM registration WHERE id=$id";
+
+                $stmt = $this->dbConnect();
+                $stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $stmt->exec($sql);
+                header('Location: index.php?action=userGestion');
+            }
+            catch (PDOException $e) {
+                echo $sql . "<br>" . $e->getMessage();
+            }
+        };
     }
 }
 

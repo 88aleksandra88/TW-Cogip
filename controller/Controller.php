@@ -39,6 +39,7 @@ class Controller
    function userGestion()
    {
       $listUsers = (new AdminManager)->getUserList();
+      $deleteUser = (new AdminManager)->deleteUser();
 
       require('./view/listUser.php');
    }
