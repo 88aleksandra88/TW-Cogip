@@ -92,6 +92,9 @@ class Controller
    {
       $listCompanies = (new ContactManager)->getListCompanies();
       $newContact = (new ContactManager)->addContact();
+      $getContactData = (new ContactManager)->getContactData();
+      $displayContact = (new ContactManager)->displayContact($getContactData);
+
 
       require('view/newContact.php');
    }
@@ -117,6 +120,9 @@ class Controller
       $listCompanies = (new InvoiceManager)->getListCompanies();
       $listContacts = (new InvoiceManager)->getListContacts();
       $newInvoice = (new InvoiceManager)->addInvoice();
+      $getInvoiceData = (new InvoiceManager)->getInvoiceData();
+      $displayInvoice = (new InvoiceManager)->displayInvoice($getInvoiceData);
+
 
       require('view/newInvoice.php');
    }

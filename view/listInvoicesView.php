@@ -39,7 +39,7 @@ $title = "COGIP - Invoices Directory"; ?>
                     <td><?=$row['invoice_date']?></td>
                     <td><a href='index.php?action=detailContact&id="<?= $row['user_id']?>"'><?=$row['last_name']?></a></td>
                     <td><a href='index.php?action=detailCompany&id="<?= $row['company_id']?>"'><?=$row['company_name']?></a></td>
-                    <td class='col-1'><form method="post" action="index.php?action=newCompany"><button type="submit" name="edit" class="btn btn-primary btn-warning" value=<?=$row['id']?>>EDIT</button></form></td>
+                    <td class='col-1'><form method="post" action="index.php?action=newInvoice"><button type="submit" name="edit" class="btn btn-primary btn-warning" value=<?=$row['id']?>>EDIT</button></form></td>
                     <td class='col-1'><form method="post"><button type="submit" name="delete" class="ml-2 btn btn-primary btn-danger" value=<?=$row['id']?>>DELETE</button></form></td>
                 </tr>
             <?php }?>
