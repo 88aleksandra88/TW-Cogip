@@ -58,6 +58,25 @@ class InvoiceManager extends Connection
                         'company_id' => $idComp]);
     }
 
+    function deleteInvoice()
+    {
+        if (isset($_POST['delete']))
+        {
+            try {
+                $id = $_POST['delete'];
+                $sql = "DELETE FROM invoices WHERE id=$id";
+
+                $stmt = $this->dbConnect();
+                $stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $stmt->exec($sql);
+                header('Location: index.php?action=listInvoices');
+            }
+            catch (PDOException $e) {
+                echo $sql . "<br>" . $e->getMessage();
+            }
+        };
+    }
+
     function getListCompanies()
     {
         $result =  $this->dbConnect()->query('SELECT * FROM companies');

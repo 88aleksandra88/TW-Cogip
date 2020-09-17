@@ -55,16 +55,69 @@ class CompanyManager extends Connection
             $country = $_POST['country'];
             $vat = $_POST['company_vat'];
             $type = $_POST['company_type'];
-        };
-
-        $sql = "INSERT INTO companies (company_name, country, company_vat, company_type) 
+            $sql = "INSERT INTO companies (company_name, country, company_vat, company_type) 
                             VALUES (:company_name, :country, :company_vat, :company_type)";
             
-        $stmt = $this->dbConnect()->prepare($sql);
+            $stmt = $this->dbConnect()->prepare($sql);
 
-        $stmt->execute(['company_name' => $name,
-                        'country' => $country,
-                        'company_vat' => $vat,
-                        'company_type' => $type]);
+            $stmt->execute([
+                'company_name' => $name,
+                'country' => $country,
+                'company_vat' => $vat,
+                'company_type' => $type]);
+        };
     } 
+
+    function deleteCompany()
+    {
+        if (isset($_POST['delete']) OR isset($_POST['edit']))
+        {
+            if (isset($_POST['delete'])) {
+                $id = $_POST['delete'];
+            }
+            else if (isset($getCompanyData)) {
+                $id = $getCompanyData['id'];
+            }
+            try {
+
+                $sql = "DELETE FROM companies WHERE id=$id";
+                $stmt = $this->dbConnect();
+                $stmt->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $stmt->exec($sql);
+                header('Location: index.php?action=listCompanies');
+            }
+            catch (PDOException $e) {
+                echo $sql . "<br>" . $e->getMessage();
+            }
+        }
+    }
+
+    function getCompanyData()
+    {
+        if (isset($_POST['edit']))
+        {
+            $id = $_POST['edit'];
+            $data = $this->dbConnect()->query("SELECT * FROM companies WHERE id=$id");
+            $company = $data->fetch();
+
+            return $company;
+        }
+    }
+
+    function displayCompany($data)
+    {
+        if (isset($_POST['edit']))
+        {
+            $c = $data['country'];
+            $country = "<option value=".$c.">".$c."</option>";
+
+            $t = $data['company_type'];
+            ($t == 3) ? $type = "<option value=".$t.">Client</option>" : $type = "<option value=".$t.">Provider</option>";
+
+            if (isset($_POST['button']))
+            {
+                $this->deleteCompany();
+            }
+        } 
+    }
 }

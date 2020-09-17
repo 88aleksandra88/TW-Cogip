@@ -6,13 +6,6 @@
         header('location:./index.php');
         exit();
     }
-
-    if (isset($_POST['company_name']) AND isset($_POST['company_vat'])) {
-        $name = $_POST['company_name'];
-        $country = $_POST['country'];
-        $vat = $_POST['company_vat'];
-        $type = $_POST['company_type'];
-    };
 ?>
 <section class="jumbotron d-flex flex-row justify-content-end">
     <h1 class="pr-5 text-info"><i class="fas fa-building"></i> Create new company</h1>
@@ -22,13 +15,14 @@
         <form method="post" action="" class="container col-10">
             <h3 class="text-info">New company</h3>
             <label class="p-1 mt-2 text-primary" for="company_name">Company name</label>
-            <input id="company_name" name="company_name" class="form-control" type="text" value="">
+            <input id="company_name" name="company_name" class="form-control" type="text" value="<?=$getCompanyData['company_name']?>">
             <label class="p-1 mt-2 text-primary" for="country">Country</label>
             <select id="country" name="country" class="form-control">
+                <?= $country ?>
                 <option value="Belgium">Belgium</option>
-                <option value="Belgium">Netherlands</option>
-                <option value="Belgium">France</option>
-                <option value="Belgium">Germany</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="France">France</option>
+                <option value="Germany">Germany</option>
                 <option>------------</option>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
@@ -276,13 +270,14 @@
                 <option value="Zimbabwe">Zimbabwe</option>
             </select>
         <label class="p-1 mt-2 text-primary" for="company_vat">VAT number</label>
-        <input id="company_vat" name="company_vat" class="form-control" type="text" value="">
+        <input id="company_vat" name="company_vat" class="form-control" type="text" value="<?=$getCompanyData['company_vat']?>">
         <label class="p-1 mt-2 text-primary" for="company_type">Type</label>
         <select id="company_type" name="company_type" class="form-control">
+            <?= $type ?>
             <option value="3">Client</option>
             <option value="4">Provider</option>
         </select>
-        <button class="btn btn-warning mt-2 mb-2 text-dark font-weight-bold" type="submit" name="button">Envoyer</button>
+        <button class="btn btn-warning mt-2 mb-2 text-dark font-weight-bold" type="submit" name="button" value="<?=$getCompanyData['id']?>">Envoyer</button>
     </form>
 </section>
 <?php
