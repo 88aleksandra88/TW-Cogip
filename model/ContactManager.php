@@ -56,7 +56,7 @@ class ContactManager extends Connection
             $result = $query->fetchAll();
 
             if(!empty($_POST['button'])){
-                $sql = "UPDATE user SET first_name='$firstname', last_name='$lastname', email='$email', phone='$phone', company_id='$id' 
+                $sql = "UPDATE users SET first_name='$firstname', last_name='$lastname', email='$email', phone='$phone', company_id='$id' 
                             WHERE id=$btn"; 
                 $this->dbConnect()->exec($sql);
             }else{
@@ -113,9 +113,7 @@ class ContactManager extends Connection
 
             $comp = $this->dbConnect()->query("SELECT company_name FROM companies WHERE id=$c");
             $result = $comp->fetch();
-            var_dump($result);
-            $company = "<option value='". $c . " ' selected > ". $result['company_name'] . " </option>";
-            var_dump($company);
+            $company = "<option value='". $c . "' selected > ". $result['company_name'] . " </option>";
         } 
     }
 

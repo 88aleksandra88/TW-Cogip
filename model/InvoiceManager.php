@@ -41,22 +41,32 @@ class InvoiceManager extends Connection
             $invContent = $_POST['invoice_content'];
             $idComp = $_POST['company_id'];
             $idUser = $_POST['user_id'];
-            
+            $id = $_POST['button'];
             date_default_timezone_set('Europe/Brussels');
             $tz = date_default_timezone_get();
             $date = date('Y-m-d H:i:s');
-    
-            $sql = "INSERT INTO invoices (invoice_number, invoice_date, invoice_content, user_id, company_id) 
-                                VALUES (:invoice_number, :invoice_date, :invoice_content, :user_id, :company_id)";
-                
-            $stmt = $this->dbConnect()->prepare($sql);
-            $stmt->execute(['invoice_number' => $number,
-                            'invoice_date' => $date,
-                            'invoice_content' => $invContent,
-                            'user_id' => $idUser,
-                            'company_id' => $idComp]);
-        };
+            
+             // Check dans la DB si ca existe déjà 
+             $query = $this->dbConnect()->query("SELECT id FROM invoices ");
+             $result = $query->fetchAll();
+ 
+             if(!empty($_POST['button'])){
+                 $sql = "UPDATE invoices SET invoice_number='$number', invoice_content='$invContent', company_id='$idComp', user_id='$idUser'
+                             WHERE id='$id' "; 
+                 $this->dbConnect()->exec($sql);
+             }else{
 
+                $sql = "INSERT INTO invoices (invoice_number, invoice_date, invoice_content, user_id, company_id) 
+                                    VALUES (:invoice_number, :invoice_date, :invoice_content, :user_id, :company_id)";
+                    
+                $stmt = $this->dbConnect()->prepare($sql);
+                $stmt->execute(['invoice_number' => $number,
+                                'invoice_date' => $date,
+                                'invoice_content' => $invContent,
+                                'user_id' => $idUser,
+                                'company_id' => $idComp]);
+            };
+        }
     }
 
     function deleteInvoice()
@@ -92,6 +102,37 @@ class InvoiceManager extends Connection
         $rows = $result->fetchAll();
 
         return $rows;
+    }
+
+    function getInvoiceData()
+    {
+        if (isset($_POST['edit']))
+        {
+            $id = $_POST['edit'];
+            $data = $this->dbConnect()->query("SELECT * FROM invoices WHERE id=$id");
+            $invoice = $data->fetch();
+
+            return $invoice;
+        }
+    }
+
+    function displayInvoice($data)
+    {
+        if (isset($_POST['edit']))
+        {
+            $c = $data['company_id'];
+            $u = $data['user_id'];
+
+            $comp = $this->dbConnect()->query("SELECT company_name FROM companies WHERE id=$c");
+            $result = $comp->fetch();
+            // $company = "<option value='". $c . "' selected > ". $result['company_name'] . " </option>";
+            $company = $result['company_name'];
+
+
+            $us = $this->dbConnect()->query("SELECT first_name, last_name FROM users WHERE id=$u");
+            $result2 = $us->fetch();
+            $user = "<option value='". $u . "' selected > ". $result2['first_name'] . $result2['last_name'] . " </option>";
+        } 
     }
 }
 

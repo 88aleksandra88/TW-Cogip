@@ -120,6 +120,9 @@ class Controller
       $listCompanies = (new InvoiceManager)->getListCompanies();
       $listContacts = (new InvoiceManager)->getListContacts();
       $newInvoice = (new InvoiceManager)->addInvoice();
+      $getInvoiceData = (new InvoiceManager)->getInvoiceData();
+      $displayInvoice = (new InvoiceManager)->displayInvoice($getInvoiceData);
+
 
       require('view/newInvoice.php');
    }

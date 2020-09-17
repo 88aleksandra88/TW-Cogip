@@ -27,14 +27,14 @@ if(empty($_SESSION['username']) || $_SESSION['type'] == 0){
             <input id="phone" name="phone" class="form-control" type="text" placeholder="0400/000000" value="<?= $getContactData['phone'] ?>">
             <label class="p-1 mt-2 text-primary" for="company_id">Company</label>
             <select id="company_id" name="company_id" class="form-control">
-            <?= $company; ?> 
+            <?= $company ?> 
             <?php
 
                 foreach ($listCompanies as $row) {
-                echo "< value=".$row['id']." >".$row['company_name']."</option>";
+                echo "<option value=".$row['id']." >".$row['company_name']."</option>";
             }; ?>
             </select>
-            <button class="btn btn-warning mt-2 mb-2 text-dark font-weight-bold" type="submit" name="button">Envoyer</button>
+            <button class="btn btn-warning mt-2 mb-2 text-dark font-weight-bold" type="submit" name="button" value="<?=$getContactData['id']?>"">Envoyer</button>
         </form>
     </article>
 </section>

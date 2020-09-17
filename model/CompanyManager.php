@@ -55,7 +55,6 @@ class CompanyManager extends Connection
             $country = $_POST['country'];
             $vat = $_POST['company_vat'];
             $type = $_POST['company_type'];
-           
             // Check dans la DB si ca existe déjà 
             $query = $this->dbConnect()->query("SELECT id FROM companies ");
             $result = $query->fetchAll();
