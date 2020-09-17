@@ -17,7 +17,7 @@ class LoginManager extends Connection {
             $password = "";
             //$emailSanitized = "";
 
-            $db = mysqli_connect('localhost', 'user_cogip', 'cogip_pwd', 'root');
+            $db = mysqli_connect('localhost', 'user_cogip', 'cogip_pwd', 'cogip');
 
             // REGISTER USER
             if (isset($_POST['reg_user'])) {
